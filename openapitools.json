@@ -1,0 +1,26 @@
+{
+  "$schema": "node_modules/@openapitools/openapi-generator-cli/config.schema.json",
+  "spaces": 2,
+  "generator-cli": {
+    "version": "5.3.1",
+    "generators": {
+      "server-v1": {
+        "generatorName": "typescript-inversify",
+        "templateDir": "./generators/ts-inversify/v1",
+        "config": "./generators/ts-inversify/v1/config.json",
+        "output": "./server/v1",
+        "glob": "../server/swagger/swagger.json",
+        "additionalProperties": {
+          "useRxJS6": true,
+          "usePromise": true,
+          "supportsES6": true,
+          "withInterfaces": true
+        },
+        "gitRepoId": "openapi-generator-clients",
+        "gitUserId": "BradenM",
+        "gitHost": "github.com",
+        "packageName": "openapi-generator-clients"
+      }
+    }
+  }
+}
