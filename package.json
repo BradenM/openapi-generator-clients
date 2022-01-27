@@ -49,11 +49,11 @@
   },
   "peerDependencies": {
     "reflect-metadata": "~0.1",
-    "inversify": "~6",
-    "rxjs": "~7",
     "whatwg-fetch": "~3"
   },
   "dependencies": {
-    "@openapitools/openapi-generator-cli": "^2.4.25"
+    "@openapitools/openapi-generator-cli": "^2.4.25",
+    "inversify": "^6.0.1",
+    "rxjs": "^7.5.2"
   }
 }
