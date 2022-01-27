@@ -12,15 +12,17 @@
     "access": "restricted"
   },
   "sideEffects": false,
-  "module": "./dist/index.mjs",
-  "types": "./dist/index.d.ts",
   "files": [
     "dist"
   ],
   "exports": {
-    ".": {
-      "import": "./dist/index.mjs",
-      "types": "./dist/index.d.ts"
+    "server": {
+      "import": "./dist/server/v1/index.mjs",
+      "types": "./dist/server/v1/index.mjs"
+    },
+    "server/v1": {
+      "import": "./dist/server/v1/index.mjs",
+      "types": "./dist/server/v1/index.mjs"
     }
   },
   "author": "Braden Mars <bradenmars@bradenmars.me>",
@@ -29,12 +31,18 @@
     "url": "https://github.com/BradenM/openapi-generator-clients/issues"
   },
   "scripts": {
-    "post-process:lint": "eslint_d --config ../../.eslintrc --cache --ext ts --fix ./server/**/*",
+    "post-process:lint": "eslint_d --cache --ext ts --fix ./server/**/*",
     "post-process:format": "prettier --write --ignore-path ../../.prettierignore --config ../../.prettierrc ./**/*",
     "post-process": "nr post-process:lint && nr post-process:format",
     "generate:batch": "openapi-generator-cli batch --clean --root-dir ../viewmodels -v config.yaml",
     "generate": "openapi-generator-cli generate",
     "build": "nr generate -- && nr post-process"
+  },
+  "peerDependencies": {
+    "reflect-metadata": "~0.1",
+    "inversify": "~6",
+    "rxjs": "~7",
+    "whatwg-fetch": "~3"
   },
   "dependencies": {
     "@openapitools/openapi-generator-cli": "^2.4.25"
