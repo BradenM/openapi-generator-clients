@@ -44,9 +44,8 @@
     "post-process": "nr post-process:lint && nr post-process:format",
     "generate:batch": "openapi-generator-cli batch --clean --root-dir ../viewmodels -v config.yaml",
     "generate": "openapi-generator-cli generate",
-    "build:clients": "nr generate -- && nr post-process",
-    "build:src": "unbuild",
-    "build": "nr build:clients && nr build:src"
+    "build:clients": "nr generate -- && nr post-process && nr build",
+    "build": "unbuild"
   },
   "peerDependencies": {
     "reflect-metadata": "~0.1",
