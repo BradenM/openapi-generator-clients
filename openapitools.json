@@ -20,6 +20,26 @@
         "gitUserId": "BradenM",
         "gitHost": "github.com",
         "packageName": "openapi-generator-clients"
+      },
+      "clever-v1": {
+        "generatorName": "typescript-inversify",
+        "inputSpec": "https://converter.swagger.io/api/convert?url=https://raw.githubusercontent.com/Clever/swagger-api/master/full-v3.yml",
+        "glob": "",
+        "config": "./generators/ts-inversify/v1/config.json",
+        "output": "./clever/v1",
+        "gitRepoId": "openapi-generator-clients",
+        "gitUserId": "BradenM",
+        "gitHost": "github.com",
+        "templateDir": "./generators/ts-inversify/v1",
+        "modelNamePrefix": "Clever",
+        "apiNameSuffix": "Clever",
+        "additionalProperties": {
+          "legacyDiscriminatorBehavior": false,
+          "supportsES6": true,
+          "usePromise": true,
+          "useRxJS6": true,
+          "withInterfaces": true
+        }
       }
     }
   }
