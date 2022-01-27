@@ -1,0 +1,25 @@
+const typeMap: ModelTypeMap<{{classname}}> = {
+{{#vars}}
+    {{name}}: {
+        value: "{{#isEnum}}{{{datatypeWithEnum}}}{{/isEnum}}{{^isEnum}}{{{dataType}}}{{/isEnum}}{{#isNullable}} | null{{/isNullable}}",
+        nullable: {{#isNullable}}true{{/isNullable}}{{^isNullable}}false{{/isNullable}},
+        required: {{#required}}true{{/required}}{{^required}}false{{/required}},
+    },
+{{/vars}}
+}
+
+
+export class {{classname}}Shape implements {{classname}} { {{>modelGenericAdditionalProperties}}
+{{#vars}}
+    {{#description}}
+    /**
+     * {{{description}}}
+     */
+    {{/description}}
+    {{#isReadOnly}}readonly {{/isReadOnly}}{{name}}{{^required}}?{{/required}}{{#required}}!{{/required}}: {{#isEnum}}{{{datatypeWithEnum}}}{{/isEnum}}{{^isEnum}}{{{dataType}}}{{/isEnum}}{{#isNullable}} | null{{/isNullable}};
+{{/vars}}
+
+    static readonly typeName: string = "{{#lambda.lowercase}}{{classname}}{{/lambda.lowercase}}";
+    static readonly typeMap = typeMap;
+
+}

@@ -1,0 +1,36 @@
+{
+  "name": "{{{npmName}}}",
+  "version": "{{{npmVersion}}}",
+  "description": "{{{npmName}}}",
+  "author": "Braden Mars <bradenmars@bradenmars.me>",
+  "keywords": [
+    "openapi-client",
+    "openapi-generator"
+  ],
+  "license": "Unlicense",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc --outDir dist/",
+    "postinstall": "npm run build",
+    "prepublish": "tsc"
+  },
+  "dependencies": {
+    "inversify": "^4.3.0",
+    "whatwg-fetch": "~2.0.1",
+    "reflect-metadata": "0.1.8",
+    {{#useRxJS6}}
+    "rxjs": "^6.0.0"
+    {{/useRxJS6}}
+    {{^useRxJS6}}
+    "rxjs": "^5.0.0"
+    {{/useRxJS6}}
+  },
+  "devDependencies": {
+  }{{#npmRepository}},{{/npmRepository}}
+{{#npmRepository}}
+  "publishConfig": {
+    "registry": "{{{npmRepository}}}"
+  }
+{{/npmRepository}}
+}

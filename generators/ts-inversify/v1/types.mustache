@@ -1,0 +1,8 @@
+export interface FieldTypeMap {
+    value: string;
+    nullable: boolean;
+    required: boolean;
+}
+export type ModelTypeMap<T> = { [Property in keyof T]: FieldTypeMap };
+
+export interface ViewModel {};

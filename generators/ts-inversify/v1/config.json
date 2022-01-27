@@ -1,0 +1,12 @@
+{
+  "files": {
+    "types.mustache": {
+      "templateType": "SupportingFiles",
+      "destinationFilename": "types.ts"
+    },
+    "constants.mustache": {
+      "templateType": "SupportingFiles",
+      "destinationFilename": "constants.ts"
+    }
+  }
+}
