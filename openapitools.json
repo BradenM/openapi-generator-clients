@@ -31,8 +31,6 @@
         "gitUserId": "BradenM",
         "gitHost": "github.com",
         "templateDir": "./generators/ts-inversify/v1",
-        "modelNamePrefix": "Clever",
-        "apiNameSuffix": "Clever",
         "additionalProperties": {
           "legacyDiscriminatorBehavior": false,
           "supportsES6": true,
