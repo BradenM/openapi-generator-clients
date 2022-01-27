@@ -7,7 +7,8 @@
     "declaration": true,
     "suppressImplicitAnyIndexErrors": true,
     "noImplicitAny": false,
-    "noUnusedLocals": false
+    "noUnusedLocals": false,
+    "suppressExcessPropertyErrors": true
   },
-  "include": ["*.ts", "src/**/*"]
+  "include": ["*.ts", "**/*"]
 }
