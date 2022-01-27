@@ -1,0 +1,42 @@
+{
+  "name": "openapi-generator-clients",
+  "version": "0.1.0",
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/BradenM/openapi-generator-clients",
+    "directory": "packages/clients"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com",
+    "access": "restricted"
+  },
+  "sideEffects": false,
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "author": "Braden Mars <bradenmars@bradenmars.me>",
+  "homepage": "https://github.com/BradenM/openapi-generator-clients/tree/main/packages/clients/README.md",
+  "bugs": {
+    "url": "https://github.com/BradenM/openapi-generator-clients/issues"
+  },
+  "scripts": {
+    "post-process:lint": "eslint_d --config ../../.eslintrc --cache --ext ts --fix ./server/**/*",
+    "post-process:format": "prettier --write --ignore-path ../../.prettierignore --config ../../.prettierrc ./**/*",
+    "post-process": "nr post-process:lint && nr post-process:format",
+    "generate:batch": "openapi-generator-cli batch --clean --root-dir ../viewmodels -v config.yaml",
+    "generate": "openapi-generator-cli generate",
+    "build": "nr generate -- && nr post-process"
+  },
+  "dependencies": {
+    "@openapitools/openapi-generator-cli": "^2.4.25"
+  }
+}
