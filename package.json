@@ -23,6 +23,14 @@
     "server/v1": {
       "import": "./dist/server/v1/index.mjs",
       "types": "./dist/server/v1/index.mjs"
+    },
+    "clever/v1": {
+      "import": "./dist/clever/v1/index.mjs",
+      "types": "./dist/clever/v1/index.mjs"
+    },
+    "clever": {
+      "import": "./dist/clever/v1/index.mjs",
+      "types": "./dist/clever/v1/index.mjs"
     }
   },
   "author": "Braden Mars <bradenmars@bradenmars.me>",
@@ -36,7 +44,9 @@
     "post-process": "nr post-process:lint && nr post-process:format",
     "generate:batch": "openapi-generator-cli batch --clean --root-dir ../viewmodels -v config.yaml",
     "generate": "openapi-generator-cli generate",
-    "build": "nr generate -- && nr post-process"
+    "build:clients": "nr generate -- && nr post-process",
+    "build:src": "unbuild",
+    "build": "nr build:clients && nr build:src"
   },
   "peerDependencies": {
     "reflect-metadata": "~0.1",
