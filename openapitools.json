@@ -22,21 +22,24 @@
         "packageName": "openapi-generator-clients"
       },
       "clever-v1": {
-        "generatorName": "typescript-inversify",
-        "inputSpec": "https://converter.swagger.io/api/convert?url=https://raw.githubusercontent.com/Clever/swagger-api/master/full-v3.yml",
-        "glob": "",
-        "config": "./generators/ts-inversify/v1/config.json",
-        "output": "./clever/v1",
+        "generatorName": "typescript",
         "gitRepoId": "openapi-generator-clients",
         "gitUserId": "BradenM",
         "gitHost": "github.com",
-        "templateDir": "./generators/ts-inversify/v1",
+        "inputSpec": "https://converter.swagger.io/api/convert?url=https://raw.githubusercontent.com/Clever/swagger-api/master/full-v3.yml",
+        "glob": "",
+        "output": "./clever/v1",
+        "legacyDiscriminatorBehavior": false,
+        "templateDir": "./generators/typescript/v1",
         "additionalProperties": {
+          "npmName": "@openapi-generator-clients/clients/clever",
+          "disallowAdditionalPropertiesIfNotPresent": false,
           "legacyDiscriminatorBehavior": false,
+          "platform": "node",
           "supportsES6": true,
-          "usePromise": true,
-          "useRxJS6": true,
-          "withInterfaces": true
+          "useObjectParameters": true,
+          "useRxJS": false,
+          "useInversify": true
         }
       }
     }
