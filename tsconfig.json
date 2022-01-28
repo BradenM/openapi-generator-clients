@@ -5,10 +5,16 @@
     "skipLibCheck": true,
     "noEmit": false,
     "declaration": true,
+    "noLib": false,
+    "sourceMap": true,
+    /* Disable some checks for generated code */
+    "strictNullChecks": false,
     "suppressImplicitAnyIndexErrors": true,
     "noImplicitAny": false,
-    "noUnusedLocals": false,
-    "suppressExcessPropertyErrors": true
+    "noUnusedLocals": false /* Report errors on unused locals. */,
+    "noUnusedParameters": false /* Report errors on unused parameters. */,
+    "noImplicitReturns": true /* Report error when not all code paths in function return a value. */,
+    "noFallthroughCasesInSwitch": true /* Report errors for fallthrough cases in switch statement. */
   },
   "include": ["*.ts", "**/*"]
 }

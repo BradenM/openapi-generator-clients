@@ -1,12 +1,13 @@
 {
   "name": "openapi-generator-clients",
   "version": "0.1.0",
-  "type": "module",
   "repository": {
     "type": "git",
     "url": "https://github.com/BradenM/openapi-generator-clients",
     "directory": "packages/clients"
   },
+  "author": "Braden Mars <bradenmars@bradenmars.me>",
+  "type": "module",
   "publishConfig": {
     "registry": "https://npm.pkg.github.com",
     "access": "restricted"
@@ -33,13 +34,12 @@
       "types": "./dist/clever/v1/index.mjs"
     }
   },
-  "author": "Braden Mars <bradenmars@bradenmars.me>",
   "homepage": "https://github.com/BradenM/openapi-generator-clients/tree/main/packages/clients/README.md",
   "bugs": {
     "url": "https://github.com/BradenM/openapi-generator-clients/issues"
   },
   "scripts": {
-    "post-process:lint": "eslint_d --cache --ext ts --fix ./server/**/*",
+    "post-process:lint": "pushd ../../ && eslint_d --fix \"**/*.{json,ts?(x)}\" && popd",
     "post-process:format": "prettier --write --ignore-path ../../.prettierignore --config ../../.prettierrc ./**/*",
     "post-process": "nr post-process:lint && nr post-process:format",
     "generate:batch": "openapi-generator-cli batch --clean --root-dir ../viewmodels -v config.yaml",
@@ -48,12 +48,16 @@
     "build": "unbuild"
   },
   "peerDependencies": {
-    "reflect-metadata": "~0.1",
-    "whatwg-fetch": "~3"
+    "reflect-metadata": "~0.1"
   },
   "dependencies": {
     "@openapitools/openapi-generator-cli": "^2.4.25",
+    "btoa": "^1.2.1",
+    "form-data": "^4.0.0",
     "inversify": "^6.0.1",
-    "rxjs": "^7.5.2"
+    "node-fetch": "^3.2.0",
+    "rxjs": "^7.5.2",
+    "url-parse": "^1.5.4",
+    "whatwg-fetch": "~3.6.2"
   }
 }
