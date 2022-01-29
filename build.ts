@@ -10,6 +10,7 @@ import fse from 'fs-extra'
 import { execa } from 'execa'
 import boxen from 'boxen'
 import minimist from 'minimist'
+import chalk from 'chalk'
 import {
   DIR_ROOT,
   downloadGitDir,
@@ -190,6 +191,23 @@ const runGenerate = async (clientName: string) => {
     )
     await postProcessLint('clever')
     await postProcessFormat('clever')
+    const files = await fse.readdir(
+      newCfg['generator-cli'].generators[clientName].templateDir
+    )
+    const report = files
+      .map(
+        (f) =>
+          `${chalk.whiteBright('Used override:')} ${chalk.bold.cyanBright(f)}`
+      )
+      .join('\n')
+    consola.log(
+      boxen(report, {
+        title: chalk.bold.whiteBright(`Generated: ${clientName}`),
+        titleAlignment: 'left',
+        margin: 1,
+        padding: 1
+      })
+    )
   } finally {
     await updateConfig(origCfg)
   }
