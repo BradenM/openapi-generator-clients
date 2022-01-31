@@ -45,7 +45,8 @@
     "generate:batch": "openapi-generator-cli batch --clean --root-dir ../viewmodels -v config.yaml",
     "generate": "openapi-generator-cli generate",
     "build:clients": "nr generate -- && nr post-process && nr build",
-    "build": "unbuild"
+    "build": "unbuild",
+    "dev": "unbuild --stub"
   },
   "peerDependencies": {
     "reflect-metadata": "~0.1"
