@@ -27,7 +27,9 @@ export { {{#apiInfo}}{{#apis}}{{#operations}}Promise{{classname}} as {{classname
 
 {{#useInversify}}
 export * from "./services/index{{extensionForDeno}}";
+export * as apiServices from './services/ObjectParamAPI'
 {{#useObjectParameters}}
+export * as apis from "./types/ObjectParamAPI"
 export { {{#apiInfo}}{{#apis}}{{#operations}}AbstractObject{{classname}} as Abstract{{classname}}{{^-last}}, {{/-last}} {{/operations}}{{/apis}}{{/apiInfo}}} from './services/ObjectParamAPI';
 {{/useObjectParameters}}
 {{^useObjectParameters}}
