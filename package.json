@@ -57,7 +57,7 @@
     "form-data": "^4.0.0",
     "inversify": "^6.0.1",
     "node-fetch": "^3.2.0",
-    "rxjs": "^7.5.3",
+    "rxjs": "^7.5.4",
     "url-parse": "^1.5.4",
     "whatwg-fetch": "~3.6.2"
   }
