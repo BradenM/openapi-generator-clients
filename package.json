@@ -46,7 +46,8 @@
     "generate": "openapi-generator-cli generate",
     "build:clients": "nr generate -- && nr post-process && nr build",
     "build": "unbuild",
-    "dev": "unbuild --stub"
+    "dev": "unbuild --stub",
+    "dev:build": "pnpm run dev"
   },
   "peerDependencies": {
     "reflect-metadata": "~0.1"
