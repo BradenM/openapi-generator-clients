@@ -189,8 +189,9 @@ const runGenerate = async (clientName: string) => {
         windowsHide: false
       }
     )
-    await postProcessLint('clever')
-    await postProcessFormat('clever')
+    const clientNs = clientName.split('-', 2)[0]
+    await postProcessLint(clientNs)
+    await postProcessFormat(clientNs)
     const files = await fse.readdir(
       newCfg['generator-cli'].generators[clientName].templateDir
     )
@@ -228,4 +229,5 @@ export default (async function () {
   if (argv.pull) return await retrieveTemplates(argv.pull)
 
   await runGenerate('clever-v1')
+  await runGenerate('domain-v1')
 })()
