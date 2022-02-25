@@ -158,13 +158,26 @@ const postProcessLint = async (clientPath: string) => {
     onlyFiles: true,
     ignore: ['**/node_modules/**']
   })
+  const cfg = path.resolve(DIR_ROOT, '.eslintrc')
+  let proc
   try {
-    await execa('eslint_d', ['--fix', ...targets], {
-      stdio: 'inherit',
-      windowsHide: false,
-      preferLocal: true,
-      cwd: DIR_ROOT
-    })
+    proc = execa(
+      'eslint',
+      [
+        `--config=${cfg}`,
+        `--resolve-plugins-relative-to=${DIR_ROOT}`,
+        '--fix',
+        ...targets
+      ],
+      {
+        stdio: 'inherit',
+        preferLocal: true,
+        localDir: DIR_ROOT,
+        windowsHide: false,
+        cwd: DIR_ROOT
+      }
+    )
+    await proc
   } catch (e) {
     consola.log(e)
     consola.error(e)
@@ -182,6 +195,7 @@ const postProcessFormat = async (clientPath: string) => {
         stdio: 'inherit',
         windowsHide: false,
         preferLocal: true,
+        localDir: DIR_ROOT,
         cwd: DIR_ROOT
       }
     )
