@@ -40,6 +40,10 @@
     "clever": {
       "import": "./dist/clever/v1/index.mjs",
       "types": "./dist/clever/v1/index.d.ts"
+    },
+    "default": {
+      "import": "./dist/index.mjs",
+      "types": "./dist/index.d.ts"
     }
   },
   "homepage": "https://github.com/BradenM/openapi-generator-clients/tree/main/packages/clients/README.md",
@@ -64,6 +68,7 @@
     "@openapitools/openapi-generator-cli": "^2.4.26",
     "btoa": "^1.2.1",
     "form-data": "^4.0.0",
+    "immutable": "^4.0.0",
     "inversify": "^6.0.1",
     "node-fetch": "^3.2.0",
     "rxjs": "^7.5.4",

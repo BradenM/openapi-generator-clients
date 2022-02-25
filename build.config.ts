@@ -28,10 +28,15 @@ const CLIENTS = {
   clever: ['v1']
 }
 
+const clientEntries = Object.entries(CLIENTS)
+  .map(([name, versions]) => generatorEntry(name, ...versions))
+  .flat()
+
 export default defineBuildConfig({
-  entries: Object.entries(CLIENTS)
-    .map(([name, versions]) => generatorEntry(name, ...versions))
-    .flat(),
+  entries: ['src/index', ...clientEntries],
   declaration: true,
-  externals: [...Object.keys(pkg.dependencies)]
+  externals: [
+    ...Object.keys(pkg.dependencies),
+    ...Object.keys(pkg.peerDependencies)
+  ]
 })
