@@ -6,6 +6,11 @@ export type AbstractServiceMap = Record<
   abstract new (...args: any[]) => any
 >
 
+export type ServiceImplMap = Record<
+  `Object${string}Api`,
+  new (...args: any[]) => any
+>
+
 export type ResourceFromAbstractService<T> =
   T extends `AbstractObject${infer RT}Api`
     ? RT extends string
@@ -13,10 +18,22 @@ export type ResourceFromAbstractService<T> =
       : never
     : never
 
+export type ResourceFromServiceImpl<T> = T extends `Object${infer RT}Api`
+  ? RT extends string
+    ? RT
+    : never
+  : never
+
 export type ResourceToAbstractServiceMap<T> = {
   [Key in keyof T as Key extends keyof AbstractServiceMap
     ? ResourceFromAbstractService<Key>
     : never]: Key
+}
+
+export type ResourceToServiceImplMap<T> = {
+  [Key in keyof T as Key extends keyof ServiceImplMap
+    ? ResourceFromServiceImpl<Key>
+    : never]: T[Key]
 }
 
 export interface ApiServiceBinder {
@@ -65,5 +82,31 @@ export abstract class AbstractClientServiceBinder
       .flip()
       .toObject()
     return values as ResourceToAbstractServiceMap<T>
+  }
+
+  static createResourceToImplMap<ImplT extends ServiceImplMap>(
+    svcsMap: ImplT
+  ): ResourceToServiceImplMap<ImplT> {
+    if (!svcsMap) throw new TypeError(`Invalid Service Map: ${svcsMap}`)
+    // `fromJS` does not seem to like "Module" type objects.
+    const implMap = Object.fromEntries(Object.entries(svcsMap))
+    const values = (
+      fromJS(implMap) as Immutable.Map<keyof ImplT, ImplT[keyof ImplT]>
+    )
+      .toMap()
+      .toSeq()
+      .flip()
+      .filter(
+        (key) =>
+          (key as string).startsWith('Object') &&
+          (key as string).endsWith('Api')
+      )
+      .map(
+        (implName) =>
+          /Object(?<name>\w+)Api/g.exec(implName as string)!.groups!.name
+      )
+      .flip()
+      .toObject()
+    return values as ResourceToServiceImplMap<ImplT>
   }
 }
