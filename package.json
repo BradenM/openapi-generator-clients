@@ -17,6 +17,14 @@
     "dist"
   ],
   "exports": {
+    "domain": {
+      "import": "./dist/domain/v1/index.mjs",
+      "types": "./dist/domain/v1/index.mjs"
+    },
+    "domain/v1": {
+      "import": "./dist/domain/v1/index.mjs",
+      "types": "./dist/domain/v1/index.mjs"
+    },
     "server": {
       "import": "./dist/server/v1/index.mjs",
       "types": "./dist/server/v1/index.mjs"

@@ -1,37 +1,37 @@
-import { defineBuildConfig } from 'unbuild'
+import { BuildEntry, defineBuildConfig } from 'unbuild'
 import pkg from './package.json'
 
+const generatorEntry = (
+  name: string,
+  defaultVersion = 'v1',
+  ...versions: string[]
+): BuildEntry[] => [
+  ...[defaultVersion, ...versions].map((v) => ({
+    name: `${name}/${v}/index`,
+    outDir: `./dist/${name}/${v}`,
+    format: 'esm',
+    input: `./${name}/${v}/index`,
+    declaration: true
+  })),
+  {
+    name: `${name}/index`,
+    outDir: `./dist/${name}`,
+    format: 'esm',
+    input: `./${name}/${defaultVersion}/index`,
+    declaration: true
+  }
+]
+
+const CLIENTS = {
+  server: ['v1'],
+  domain: ['v1'],
+  clever: ['v1']
+}
+
 export default defineBuildConfig({
-  entries: [
-    {
-      name: 'server/v1/index',
-      outDir: './dist/server/v1',
-      format: 'esm',
-      input: './server/v1/index',
-      declaration: true
-    },
-    {
-      name: 'server/index',
-      outDir: './dist/server',
-      format: 'esm',
-      input: './server/v1/index',
-      declaration: true
-    },
-    {
-      name: 'clever/v1/index',
-      outDir: './dist/clever/v1',
-      format: 'esm',
-      input: './clever/v1/index',
-      declaration: true
-    },
-    {
-      name: 'clever/index',
-      outDir: './dist/clever',
-      format: 'esm',
-      input: './clever/v1/index',
-      declaration: true
-    }
-  ],
+  entries: Object.entries(CLIENTS)
+    .map(([name, versions]) => generatorEntry(name, ...versions))
+    .flat(),
   declaration: true,
   externals: [...Object.keys(pkg.dependencies)]
 })
