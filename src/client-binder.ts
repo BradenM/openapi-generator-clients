@@ -47,7 +47,10 @@ export abstract class AbstractClientServiceBinder
   static createResourceToServiceMap<T extends AbstractServiceMap>(
     servicesMap: T
   ): ResourceToAbstractServiceMap<T> {
-    const values = (fromJS(servicesMap) as Immutable.Map<keyof T, T[keyof T]>)
+    if (!servicesMap) throw new TypeError(`Invalid Service Map: ${servicesMap}`)
+    // `fromJS` does not seem to like "Module" type objects.
+    const _svcMap = Object.fromEntries(Object.entries(servicesMap))
+    const values = (fromJS(_svcMap) as Immutable.Map<keyof T, T[keyof T]>)
       .toMap()
       .toSeq()
       .filter((v) => v)
