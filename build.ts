@@ -11,6 +11,7 @@ import { execa } from 'execa'
 import boxen from 'boxen'
 import minimist from 'minimist'
 import chalk from 'chalk'
+import fglob from 'fast-glob'
 import {
   DIR_ROOT,
   downloadGitDir,
@@ -151,29 +152,43 @@ const updateConfig = async (cfg: ImRecord<PartialDeep<OASConfig>>) => {
 }
 
 const postProcessLint = async (clientPath: string) => {
-  await execa(
-    'eslint_d',
-    ['--fix', '--cache', '--', `packages/clients/${clientPath}/**/*.ts`],
-    {
+  consola.info(chalk.bold.blackBright('Linting with eslint...'))
+  const targets = await fglob(`packages/clients/${clientPath}/**/*.ts`, {
+    cwd: DIR_ROOT,
+    onlyFiles: true,
+    ignore: ['**/node_modules/**']
+  })
+  try {
+    await execa('eslint_d', ['--fix', ...targets], {
       stdio: 'inherit',
       windowsHide: false,
       preferLocal: true,
       cwd: DIR_ROOT
-    }
-  )
+    })
+  } catch (e) {
+    consola.log(e)
+    consola.error(e)
+    throw e
+  }
 }
 
 const postProcessFormat = async (clientPath: string) => {
-  await execa(
-    'prettier',
-    ['--write', `packages/clients/${clientPath}/**/*.ts`],
-    {
-      stdio: 'inherit',
-      windowsHide: false,
-      preferLocal: true,
-      cwd: DIR_ROOT
-    }
-  )
+  consola.info(chalk.bold.blackBright('Formatting with prettier...'))
+  try {
+    await execa(
+      'prettier',
+      ['--write', `packages/clients/${clientPath}/**/*.ts`],
+      {
+        stdio: 'inherit',
+        windowsHide: false,
+        preferLocal: true,
+        cwd: DIR_ROOT
+      }
+    )
+  } catch (e) {
+    consola.error(e)
+    throw e
+  }
 }
 
 const runGenerate = async (clientName: string) => {
