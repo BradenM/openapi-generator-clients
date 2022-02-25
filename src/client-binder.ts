@@ -59,7 +59,7 @@ export abstract class AbstractClientServiceBinder
       // AbstractObject[Entity]Api => Entity
       .map(
         (svcName) =>
-          (svcName as string).match(/AbstractObject(?<name>\w+)Api/g)!.groups!
+          /AbstractObject(?<name>\w+)Api/g.exec(svcName as string).groups!
             .name as ResourceFromAbstractService<typeof svcName>
       )
       .flip()
