@@ -19,27 +19,27 @@
   "exports": {
     "domain": {
       "import": "./dist/domain/v1/index.mjs",
-      "types": "./dist/domain/v1/index.mjs"
+      "types": "./dist/domain/v1/index.d.ts"
     },
     "domain/v1": {
       "import": "./dist/domain/v1/index.mjs",
-      "types": "./dist/domain/v1/index.mjs"
+      "types": "./dist/domain/v1/index.d.ts"
     },
     "server": {
       "import": "./dist/server/v1/index.mjs",
-      "types": "./dist/server/v1/index.mjs"
+      "types": "./dist/server/v1/index.d.ts"
     },
     "server/v1": {
       "import": "./dist/server/v1/index.mjs",
-      "types": "./dist/server/v1/index.mjs"
+      "types": "./dist/server/v1/index.d.ts"
     },
     "clever/v1": {
       "import": "./dist/clever/v1/index.mjs",
-      "types": "./dist/clever/v1/index.mjs"
+      "types": "./dist/clever/v1/index.d.ts"
     },
     "clever": {
       "import": "./dist/clever/v1/index.mjs",
-      "types": "./dist/clever/v1/index.mjs"
+      "types": "./dist/clever/v1/index.d.ts"
     }
   },
   "homepage": "https://github.com/BradenM/openapi-generator-clients/tree/main/packages/clients/README.md",
