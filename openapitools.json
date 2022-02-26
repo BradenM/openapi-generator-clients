@@ -50,6 +50,7 @@
         "glob": "../domain/swagger/swagger.json",
         "output": "./domain/v1",
         "legacyDiscriminatorBehavior": false,
+        "removeOperationIdPrefix": true,
         "templateDir": "./generators/typescript/v1",
         "additionalProperties": {
           "npmName": "@openapi-generator-clients/domain/clever",
