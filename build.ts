@@ -4,8 +4,7 @@ import path from 'node:path'
 import { Record as ImRecord } from 'immutable'
 import { PartialDeep } from 'type-fest'
 import consola from 'consola'
-import P from '@antfu/p'
-import { isDef } from '@antfu/utils'
+import { isDef, p } from '@antfu/utils'
 import fse from 'fs-extra'
 import { execa } from 'execa'
 import boxen from 'boxen'
@@ -130,7 +129,7 @@ const buildConfig = async () => {
   const cfg = await readConfig()
   const origCfg = OASRecord(cfg)
 
-  const generators = await P(
+  const generators = await p(
     Object.entries(cfg['generator-cli']?.generators || [])
   )
     .filter(([, gen]) => isDef(gen))
@@ -257,6 +256,10 @@ export default (async function () {
   const argv = minimist(process.argv.slice(2), { string: ['pull'] })
   if (argv.pull) return await retrieveTemplates(argv.pull)
 
-  await runGenerate('clever-v1')
-  await runGenerate('domain-v1')
+  const generatorTargets = ['clever-v1', 'domain-v1']
+
+  let targets = argv._ ?? generatorTargets
+  targets = targets.map((t) => generatorTargets.find((gt) => gt.match(t)))
+  consola.log('Generator Targets:', targets)
+  await p(targets, { concurrency: 1 }).map(runGenerate)
 })()
