@@ -1,4 +1,5 @@
-import { BuildEntry, defineBuildConfig } from 'unbuild'
+import type { BuildEntry } from 'unbuild'
+import { defineBuildConfig } from 'unbuild'
 import pkg from './package.json'
 
 const generatorEntry = (

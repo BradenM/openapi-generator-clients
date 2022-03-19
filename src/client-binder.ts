@@ -1,5 +1,6 @@
-import { interfaces as invInterfaces } from 'inversify'
-import Immutable, { fromJS } from 'immutable'
+import type { interfaces as invInterfaces } from 'inversify'
+import type Immutable from 'immutable'
+import { fromJS } from 'immutable'
 
 export type AbstractServiceMap = Record<
   `AbstractObject${string}Api`,

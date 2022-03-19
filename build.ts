@@ -2,7 +2,7 @@
 
 import path from 'node:path'
 import { Record as ImRecord } from 'immutable'
-import { PartialDeep } from 'type-fest'
+import type { PartialDeep } from 'type-fest'
 import consola from 'consola'
 import { isDef, p } from '@antfu/utils'
 import fse from 'fs-extra'
