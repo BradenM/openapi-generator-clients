@@ -1,5 +1,5 @@
 {
-  "extends": "../../tsconfig.json",
+  "extends": "../../tsconfig.build.json",
   "compilerOptions": {
     "outDir": "./dist",
     "skipLibCheck": true,
@@ -7,6 +7,7 @@
     "declaration": true,
     "noLib": false,
     "sourceMap": true,
+    "lib": ["ESNext", "DOM"],
     /* Disable some checks for generated code */
     "strictNullChecks": false,
     "suppressImplicitAnyIndexErrors": true,
