@@ -58,7 +58,7 @@
     "generate": "openapi-generator-cli generate",
     "build:clients": "esmo build.ts",
     "build": "unbuild",
-    "dev": "unbuild --stub",
+    "dev": "unbuild",
     "dev:build": "pnpm run dev"
   },
   "peerDependencies": {
