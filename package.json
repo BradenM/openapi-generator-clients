@@ -10,40 +10,71 @@
   },
   "publishConfig": {
     "registry": "https://npm.pkg.github.com",
-    "access": "restricted"
+    "access": "restricted",
+    "exports": {
+      ".": {
+        "import": "./dist/index.mjs",
+        "types": "./dist/index.d.ts"
+      },
+      "./server": {
+        "import": "./dist/server/v1/index.mjs",
+        "types": "./dist/server/v1/index.d.ts"
+      },
+      "./server/v1": {
+        "import": "./dist/server/v1/index.mjs",
+        "types": "./dist/server/v1/index.d.ts"
+      },
+      "./domain": {
+        "import": "./dist/domain/v1/index.mjs",
+        "types": "./dist/domain/v1/index.d.ts"
+      },
+      "./domain/v1": {
+        "import": "./dist/domain/v1/index.mjs",
+        "types": "./dist/domain/v1/index.d.ts"
+      },
+      "./clever": {
+        "import": "./dist/clever/v1/index.mjs",
+        "types": "./dist/clever/v1/index.d.ts"
+      },
+      "./clever/v1": {
+        "import": "./dist/clever/v1/index.mjs",
+        "types": "./dist/clever/v1/index.d.ts"
+      }
+    }
   },
   "exports": {
-    "domain": {
-      "import": "./dist/domain/v1/index.mjs",
-      "types": "./dist/domain/v1/index.d.ts"
+    ".": {
+      "import": "./src/index.ts",
+      "types": "./src/index.ts"
     },
-    "domain/v1": {
-      "import": "./dist/domain/v1/index.mjs",
-      "types": "./dist/domain/v1/index.d.ts"
+    "./server": {
+      "import": "./server/v1/index.ts",
+      "types": "./server/v1/index.ts"
     },
-    "server": {
-      "import": "./dist/server/v1/index.mjs",
-      "types": "./dist/server/v1/index.d.ts"
+    "./server/v1": {
+      "import": "./server/v1/index.ts",
+      "types": "./server/v1/index.ts"
     },
-    "server/v1": {
-      "import": "./dist/server/v1/index.mjs",
-      "types": "./dist/server/v1/index.d.ts"
+    "./domain": {
+      "import": "./domain/v1/index.ts",
+      "types": "./domain/v1/index.ts"
     },
-    "clever/v1": {
-      "import": "./dist/clever/v1/index.mjs",
-      "types": "./dist/clever/v1/index.d.ts"
+    "./domain/v1": {
+      "import": "./domain/v1/index.ts",
+      "types": "./domain/v1/index.ts"
     },
-    "clever": {
-      "import": "./dist/clever/v1/index.mjs",
-      "types": "./dist/clever/v1/index.d.ts"
+    "./clever": {
+      "import": "./clever/v1/index.ts",
+      "types": "./clever/v1/index.ts"
     },
-    "default": {
-      "import": "./dist/index.mjs",
-      "types": "./dist/index.d.ts"
+    "./clever/v1": {
+      "import": "./clever/v1/index.ts",
+      "types": "./clever/v1/index.ts"
     }
   },
   "files": [
-    "dist"
+    "dist",
+    "package.json"
   ],
   "sideEffects": false,
   "homepage": "https://github.com/BradenM/openapi-generator-clients/tree/main/packages/clients/README.md",
@@ -58,7 +89,7 @@
     "generate": "openapi-generator-cli generate",
     "build:clients": "esmo build.ts",
     "build": "unbuild",
-    "dev": "unbuild",
+    "dev": "unbuild --stub",
     "dev:build": "pnpm run dev"
   },
   "peerDependencies": {
