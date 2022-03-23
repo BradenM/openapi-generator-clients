@@ -17,6 +17,8 @@ import {
   getTempDir,
   prettyDiff,
   writeTargetJSON
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-ignore - not in root dir (its not transpiled, so ignore).
 } from '../../scripts/utils'
 
 interface GitConfig {
