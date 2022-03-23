@@ -1,21 +1,9 @@
 {
-  "extends": "../../tsconfig.build.json",
+  "extends": "./tsconfig.build.json",
   "compilerOptions": {
-    "outDir": "./dist",
-    "skipLibCheck": true,
-    "noEmit": false,
-    "declaration": true,
-    "noLib": false,
-    "sourceMap": true,
     "lib": ["ESNext", "DOM"],
-    /* Disable some checks for generated code */
-    "strictNullChecks": false,
-    "suppressImplicitAnyIndexErrors": true,
-    "noImplicitAny": false,
-    "noUnusedLocals": false /* Report errors on unused locals. */,
-    "noUnusedParameters": false /* Report errors on unused parameters. */,
-    "noImplicitReturns": true /* Report error when not all code paths in function return a value. */,
-    "noFallthroughCasesInSwitch": true /* Report errors for fallthrough cases in switch statement. */
+    "composite": false,
+    "rootDir": "."
   },
-  "include": ["*.ts", "**/*"]
+  "include": ["*.ts", "src", "typings"]
 }
