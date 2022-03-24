@@ -20,5 +20,12 @@
     "noFallthroughCasesInSwitch": true
   },
   "include": ["src", "typings"],
-  "references": []
+  "references": [
+    {
+      "path": "./domain/tsconfig.build.json"
+    },
+    {
+      "path": "./clever/tsconfig.build.json"
+    }
+  ]
 }

@@ -5,5 +5,13 @@
     "composite": false,
     "rootDir": "."
   },
-  "include": ["*.ts", "src", "typings"]
+  "include": ["*.ts", "src", "typings"],
+  "references": [
+    {
+      "path": "./domain/tsconfig.build.json"
+    },
+    {
+      "path": "./clever/tsconfig.build.json"
+    }
+  ]
 }
