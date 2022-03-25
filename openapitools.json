@@ -9,7 +9,7 @@
         "templateDir": "./generators/ts-inversify/v1",
         "config": "./generators/ts-inversify/v1/config.json",
         "output": "./server/v1",
-        "glob": "../server/swagger/swagger.json",
+        "glob": "../server/swagger/src/swagger.json",
         "additionalProperties": {
           "useRxJS6": true,
           "usePromise": true,
