@@ -47,7 +47,7 @@
         "gitRepoId": "openapi-generator-clients",
         "gitUserId": "BradenM",
         "gitHost": "github.com",
-        "glob": "../domain/swagger/swagger.json",
+        "glob": "../domain/swagger/src/swagger.json",
         "output": "./domain/v1",
         "legacyDiscriminatorBehavior": false,
         "removeOperationIdPrefix": true,
