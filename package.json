@@ -8,9 +8,13 @@
     "url": "https://github.com/BradenM/openapi-generator-clients",
     "directory": "packages/clients"
   },
+  "module": "./src/index.ts",
+  "types": "./src/index.ts",
   "publishConfig": {
     "registry": "https://npm.pkg.github.com",
     "access": "restricted",
+    "module": "./dist/index.mjs",
+    "types": "./dist/index.d.ts",
     "exports": {
       ".": {
         "import": "./dist/index.mjs",
@@ -89,7 +93,7 @@
     "generate": "openapi-generator-cli generate",
     "build:clients": "esmo build.ts",
     "build": "unbuild",
-    "dev": "unbuild --stub",
+    "dev": "tsc -b tsconfig.build.json",
     "dev:build": "pnpm run dev"
   },
   "peerDependencies": {
