@@ -92,7 +92,7 @@
     "generate:batch": "openapi-generator-cli batch --clean --root-dir ../viewmodels -v config.yaml",
     "generate": "openapi-generator-cli generate",
     "build:clients": "esmo build.ts",
-    "build": "unbuild",
+    "build": "tsc -b tsconfig.build.json",
     "dev": "tsc -b tsconfig.build.json",
     "dev:build": "pnpm run dev"
   },
