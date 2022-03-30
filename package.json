@@ -1,7 +1,7 @@
 {
   "name": "openapi-generator-clients",
   "type": "module",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "author": "Braden Mars <bradenmars@bradenmars.me>",
   "repository": {
     "type": "git",
