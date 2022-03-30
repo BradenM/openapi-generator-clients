@@ -159,7 +159,7 @@ const postProcessLint = async (clientPath: string) => {
     onlyFiles: true,
     ignore: ['**/node_modules/**']
   })
-  const cfg = path.resolve(DIR_ROOT, '.eslintrc.js')
+  const cfg = path.resolve(DIR_ROOT, '.eslintrc.cjs')
   let proc
   try {
     proc = execa(
