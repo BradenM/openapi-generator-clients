@@ -2,6 +2,7 @@ export * from "./http/http{{extensionForDeno}}";
 export * from "./auth/auth{{extensionForDeno}}";
 export * from "./models/all{{extensionForDeno}}";
 export * as models from "./models/all{{extensionForDeno}}";
+export { ObjectSerializer } from './models/ObjectSerializer';
 export { createConfiguration } from "./configuration{{extensionForDeno}}"
 export type{{#platforms}}{{#deno}} type{{/deno}}{{/platforms}} { Configuration } from "./configuration{{extensionForDeno}}"
 export * from "./apis/exception{{extensionForDeno}}";
