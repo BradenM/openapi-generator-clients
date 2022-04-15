@@ -112,7 +112,7 @@ export type RequestBody = undefined | string | FormData | URLSearchParams;
 export class RequestContext {
     private headers: { [key: string]: string } = {};
     private body: RequestBody = undefined;
-    private url: URLParse<string>;
+    private url: URLParse<Record<string,string>>;
     {{#platforms}}
     {{#node}}
     private agent: http.Agent | https.Agent | undefined = undefined;
