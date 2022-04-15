@@ -26,6 +26,9 @@
     },
     {
       "path": "./clever/tsconfig.build.json"
+    },
+    {
+      "path": "./server/tsconfig.build.json"
     }
   ]
 }
