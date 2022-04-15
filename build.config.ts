@@ -93,7 +93,6 @@ const newManifest = {
   publishConfig: {
     ...pkg.publishConfig,
     exports: {
-      // @ts-expect-error - pnpm field
       ...(pkg.publishConfig?.exports ?? {}),
       ...publishExports
     }

@@ -260,7 +260,7 @@ export default (async function () {
   const argv = minimist(process.argv.slice(2), { string: ['pull'] })
   if (argv.pull) return await retrieveTemplates(argv.pull)
 
-  const generatorTargets = ['clever-v1', 'domain-v1']
+  const generatorTargets = ['clever-v1', 'domain-v1', 'server-v1']
 
   let targets = argv._ ?? generatorTargets
   targets = targets.map((t) => generatorTargets.find((gt) => gt.match(t)))
