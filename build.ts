@@ -59,7 +59,7 @@ interface TemplatesConfig {
   extends: string
 }
 
-const OAS_GENERATOR_VERSION = '5.3.1'
+const OAS_GENERATOR_VERSION = '6.0.0-beta'
 
 const GeneratorRecord = ImRecord<GeneratorConfig>({
   gitRepoId: 'openapi-generator-clients',
