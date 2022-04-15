@@ -5,21 +5,25 @@
     "version": "6.0.0-beta",
     "generators": {
       "server-v1": {
-        "generatorName": "typescript-inversify",
-        "templateDir": "./generators/ts-inversify/v1",
-        "config": "./generators/ts-inversify/v1/config.json",
-        "output": "./server/v1",
-        "glob": "../server/swagger/src/swagger.json",
-        "additionalProperties": {
-          "useRxJS6": true,
-          "usePromise": true,
-          "supportsES6": true,
-          "withInterfaces": true
-        },
+        "generatorName": "typescript",
         "gitRepoId": "openapi-generator-clients",
         "gitUserId": "BradenM",
         "gitHost": "github.com",
-        "packageName": "openapi-generator-clients"
+        "glob": "../server/src/swagger/swagger.json",
+        "output": "./server/v1",
+        "legacyDiscriminatorBehavior": false,
+        "removeOperationIdPrefix": true,
+        "templateDir": "./generators/typescript/v1",
+        "additionalProperties": {
+          "npmName": "@openapi-generator-clients/clients/server",
+          "disallowAdditionalPropertiesIfNotPresent": false,
+          "legacyDiscriminatorBehavior": false,
+          "platform": "node",
+          "supportsES6": true,
+          "useObjectParameters": true,
+          "useRxJS": false,
+          "useInversify": true
+        }
       },
       "clever-v1": {
         "generatorName": "typescript",
@@ -53,7 +57,7 @@
         "removeOperationIdPrefix": true,
         "templateDir": "./generators/typescript/v1",
         "additionalProperties": {
-          "npmName": "@openapi-generator-clients/domain/clever",
+          "npmName": "@openapi-generator-clients/clients/domain",
           "disallowAdditionalPropertiesIfNotPresent": false,
           "legacyDiscriminatorBehavior": false,
           "platform": "node",
