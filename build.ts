@@ -245,11 +245,13 @@ const runGenerate = async (clientName: string) => {
 }
 
 const retrieveTemplates = async (targetPath: string) => {
+  // See:
+  // https://github.com/OpenAPITools/openapi-generator/tree/master/modules/openapi-generator/src/main/resources/typescript
   await downloadGitDir(
     'OpenAPITools',
     'openapi-generator',
     'modules/openapi-generator/src/main/resources/typescript',
-    '28cc28626531158ce0517dcaabb160208d62aba3',
+    '8c57b66da90bdf1d5a9a7d3588458731f0dec078',
     targetPath
   )
 }
