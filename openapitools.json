@@ -2,7 +2,7 @@
   "$schema": "node_modules/@openapitools/openapi-generator-cli/config.schema.json",
   "spaces": 2,
   "generator-cli": {
-    "version": "5.3.1",
+    "version": "6.0.0-beta",
     "generators": {
       "server-v1": {
         "generatorName": "typescript-inversify",
