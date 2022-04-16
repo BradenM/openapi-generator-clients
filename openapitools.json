@@ -18,7 +18,7 @@
           "npmName": "@openapi-generator-clients/clients/server",
           "disallowAdditionalPropertiesIfNotPresent": false,
           "legacyDiscriminatorBehavior": false,
-          "platform": "node",
+          "platform": "browser",
           "supportsES6": true,
           "useObjectParameters": true,
           "useRxJS": false,
