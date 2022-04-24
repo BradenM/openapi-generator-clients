@@ -88,7 +88,8 @@ const newManifest = {
   ...pkg,
   exports: {
     ...pkg.exports,
-    ...devExports
+    ...publishExports
+    // ...devExports
   },
   publishConfig: {
     ...pkg.publishConfig,
