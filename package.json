@@ -91,8 +91,8 @@
     "post-process": "nr post-process:lint && nr post-process:format",
     "generate:batch": "openapi-generator-cli batch --clean --root-dir ../viewmodels -v config.yaml",
     "generate": "openapi-generator-cli generate",
-    "build:clients": "esmo build.ts",
-    "build": "tsc -b tsconfig.build.json",
+    "build:clients": "esmo generate.ts",
+    "build": "unbuild && tsc -b tsconfig.build.json",
     "dev": "tsc -b tsconfig.build.json",
     "dev:build": "pnpm run dev"
   },
