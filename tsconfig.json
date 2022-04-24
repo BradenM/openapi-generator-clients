@@ -1,26 +1,13 @@
 {
-  "extends": "../../tsconfig.json",
+  "extends": "../../tsconfig.root.json",
   "compilerOptions": {
     "composite": false,
     "rootDir": ".",
     "emitDeclarationOnly": false,
     "lib": ["ESNext", "DOM"],
-    "paths": {
-      "@openapi-generator-clients/shared": ["../shared/src"],
-      "@openapi-generator-clients/viewmodels": ["../viewmodels/src"],
-      "@openapi-generator-clients/dataaccess": ["../dataaccess/src"],
-      "@openapi-generator-clients/mongodb-primary": ["../mongodb-primary/src"],
-      "@openapi-generator-clients/models": ["../models/src"],
-      "@openapi-generator-clients/schemas": ["../schemas/src"],
-      "@openapi-generator-clients/api-lib": ["../api-lib/src"],
-      "@openapi-generator-clients/api-lib/dist/*": ["../api-lib/src/*"],
-      "@openapi-generator-clients/clients/clever": ["../clients/clever/src"],
-      "@openapi-generator-clients/clients/domain": ["../clients/domain/src"],
-      "@openapi-generator-clients/clients": ["../clients/src"],
-      "@openapi-generator-clients/web": ["../web/src"],
-      "@openapi-generator-clients/server": ["../server/src"],
-      "@openapi-generator-clients/domain": ["../domain/src"]
-    }
+    "noEmit": true
   },
-  "exclude": ["node_modules", "dist"]
+  "exclude": ["**/dist", "**/node_modules", "../../cloud", "**/packages"],
+  "references": [],
+  "include": ["src", "typings", "*.ts", "test"]
 }
