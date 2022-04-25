@@ -10,47 +10,11 @@
   },
   "publishConfig": {
     "registry": "https://npm.pkg.github.com",
-    "access": "restricted",
-    "module": "./dist/index.mjs",
-    "types": "./dist/index.d.ts",
-    "exports": {
-      ".": {
-        "import": "./dist/index.mjs",
-        "types": "./dist/index.d.ts"
-      },
-      "./server": {
-        "import": "./dist/server/v1/index.mjs",
-        "types": "./dist/server/v1/index.d.ts"
-      },
-      "./server/v1": {
-        "import": "./dist/server/v1/index.mjs",
-        "types": "./dist/server/v1/index.d.ts"
-      },
-      "./domain": {
-        "import": "./dist/domain/v1/index.mjs",
-        "types": "./dist/domain/v1/index.d.ts"
-      },
-      "./domain/v1": {
-        "import": "./dist/domain/v1/index.mjs",
-        "types": "./dist/domain/v1/index.d.ts"
-      },
-      "./clever": {
-        "import": "./dist/clever/v1/index.mjs",
-        "types": "./dist/clever/v1/index.d.ts"
-      },
-      "./clever/v1": {
-        "import": "./dist/clever/v1/index.mjs",
-        "types": "./dist/clever/v1/index.d.ts"
-      }
-    }
+    "access": "restricted"
   },
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
   "exports": {
-    ".": {
-      "import": "./dist/index.mjs",
-      "types": "./dist/index.d.ts"
-    },
     "./server": {
       "import": "./dist/server/v1/index.mjs",
       "types": "./dist/server/v1/index.d.ts"
@@ -63,7 +27,7 @@
       "import": "./dist/domain/v1/index.mjs",
       "types": "./dist/domain/v1/index.d.ts"
     },
-    "./domain/v1": {
+    "./domain/*": {
       "import": "./dist/domain/v1/index.mjs",
       "types": "./dist/domain/v1/index.d.ts"
     },
@@ -74,6 +38,14 @@
     "./clever/v1": {
       "import": "./dist/clever/v1/index.mjs",
       "types": "./dist/clever/v1/index.d.ts"
+    },
+    "./domain/v1": {
+      "import": "./dist/domain/v1/index.mjs",
+      "types": "./dist/domain/v1/index.d.ts"
+    },
+    ".": {
+      "import": "./dist/index.mjs",
+      "types": "./dist/index.d.ts"
     }
   },
   "files": [
