@@ -100,12 +100,13 @@ const newManifest = {
   }
 }
 
-;(async function () {
-  await writeTargetJSON(
-    fileURLToPath(new URL('./package.json', import.meta.url)),
-    newManifest
-  )
-})()
+// TODO: revisit and use new builder
+// ;(async function () {
+// await writeTargetJSON(
+// fileURLToPath(new URL('./package.json', import.meta.url)),
+// newManifest
+// )
+// })()
 
 export default defineBuildConfig({
   entries: ['src/index', ...clientEntries],
