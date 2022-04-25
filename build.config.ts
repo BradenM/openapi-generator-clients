@@ -112,6 +112,7 @@ export default defineBuildConfig({
   declaration: true,
   rollup: {
     esbuild: {
+      keepNames: true,
       tsconfig: fileURLToPath(new URL('./tsconfig.build.json', import.meta.url))
     }
   },
