@@ -66,7 +66,7 @@
     "build:clients": "esmo generate.ts",
     "build": "unbuild && tsc -b tsconfig.build.json",
     "dev": "tsc -b tsconfig.build.json",
-    "dev:build": "pnpm run dev"
+    "dev:build": "unbuild"
   },
   "peerDependencies": {
     "reflect-metadata": "~0.1"
