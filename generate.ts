@@ -20,6 +20,9 @@ import {
   // eslint-disable-next-line @typescript-eslint/ban-ts-comment
   // @ts-ignore - not in root dir (its not transpiled, so ignore).
 } from '../../scripts/utils'
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore - not in root dir (its not transpiled, so ignore).
+import { doLintAndFormat } from '../../scripts/format'
 
 interface GitConfig {
   gitHost: string
@@ -152,60 +155,6 @@ const updateConfig = async (cfg: ImRecord<PartialDeep<OASConfig>>) => {
   await writeTargetJSON('./openapitools.json', cfg.toJSON())
 }
 
-const postProcessLint = async (clientPath: string) => {
-  consola.info(chalk.bold.blackBright('Linting with eslint...'))
-  const targets = await fglob(`packages/clients/${clientPath}/**/*.ts`, {
-    cwd: DIR_ROOT,
-    onlyFiles: true,
-    ignore: ['**/node_modules/**']
-  })
-  const cfg = path.resolve(DIR_ROOT, '.eslintrc.cjs')
-  let proc
-  try {
-    proc = execa(
-      'eslint',
-      [
-        `--config=${cfg}`,
-        `--resolve-plugins-relative-to=${DIR_ROOT}`,
-        '--fix',
-        ...targets
-      ],
-      {
-        stdio: 'inherit',
-        preferLocal: true,
-        localDir: DIR_ROOT,
-        windowsHide: false,
-        cwd: DIR_ROOT
-      }
-    )
-    await proc
-  } catch (e) {
-    consola.log(e)
-    consola.error(e)
-    throw e
-  }
-}
-
-const postProcessFormat = async (clientPath: string) => {
-  consola.info(chalk.bold.blackBright('Formatting with prettier...'))
-  try {
-    await execa(
-      'prettier',
-      ['--write', `packages/clients/${clientPath}/**/*.ts`],
-      {
-        stdio: 'inherit',
-        windowsHide: false,
-        preferLocal: true,
-        localDir: DIR_ROOT,
-        cwd: DIR_ROOT
-      }
-    )
-  } catch (e) {
-    consola.error(e)
-    throw e
-  }
-}
-
 const runGenerate = async (clientName: string) => {
   const [origCfg, newCfg] = await buildConfig()
   await updateConfig(newCfg)
@@ -220,8 +169,7 @@ const runGenerate = async (clientName: string) => {
       }
     )
     const clientNs = clientName.split('-', 2)[0]
-    await postProcessLint(clientNs)
-    await postProcessFormat(clientNs)
+    await doLintAndFormat(`packages/clients/${clientNs}/{*,**/*}.ts`)
     const files = await fse.readdir(
       newCfg['generator-cli'].generators[clientName].templateDir
     )
