@@ -1,5 +1,4 @@
 import type tsup from 'tsup'
-import browserslist from 'browserslist'
 import { builder } from '../../scripts/compile/build-config'
 import type { BuildOptions } from '../../scripts/compile/build-config'
 
