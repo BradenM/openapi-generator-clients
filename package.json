@@ -14,13 +14,16 @@
   },
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
+  "browser": "./dist/browser.mjs",
   "exports": {
     "./server": {
-      "import": "./dist/server/v1/index.mjs",
-      "types": "./dist/server/v1/index.d.ts"
+      "import": "./dist/server/index.mjs",
+      "browser": "./dist/server/index.mjs",
+      "types": "./dist/server/index.d.ts"
     },
     "./server/v1": {
       "import": "./dist/server/v1/index.mjs",
+      "browser": "./dist/server/v1/index.mjs",
       "types": "./dist/server/v1/index.d.ts"
     },
     "./domain": {
@@ -45,6 +48,7 @@
     },
     ".": {
       "import": "./dist/index.mjs",
+      "browser": "./dist/browser.mjs",
       "types": "./dist/index.d.ts"
     }
   },
@@ -64,9 +68,9 @@
     "generate:batch": "openapi-generator-cli batch --clean --root-dir ../viewmodels -v config.yaml",
     "generate": "openapi-generator-cli generate",
     "build:clients": "esmo generate.ts",
-    "build": "unbuild && tsc -b tsconfig.build.json",
-    "dev": "tsc -b tsconfig.build.json",
-    "dev:build": "unbuild"
+    "build": "esmo build.ts",
+    "dev": "cross-env DEV=1 WATCH=1 esmo build.ts",
+    "dev:build": "cross-env DEV=1 esmo build.ts"
   },
   "peerDependencies": {
     "reflect-metadata": "~0.1"
