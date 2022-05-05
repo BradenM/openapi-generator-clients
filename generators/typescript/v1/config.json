@@ -1,3 +1,4 @@
 {
-  "extends": "../base"
+  "extends": "../base",
+  "drop": ["package.json", "tsconfig.json"]
 }
