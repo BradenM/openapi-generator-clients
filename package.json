@@ -12,44 +12,43 @@
     "registry": "https://npm.pkg.github.com",
     "access": "restricted"
   },
-  "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
   "browser": "./dist/browser.mjs",
   "exports": {
     "./server": {
-      "import": "./dist/server/index.mjs",
+      "types": "./dist/server/index.d.ts",
       "browser": "./dist/server/index.mjs",
-      "types": "./dist/server/index.d.ts"
+      "import": "./dist/server/index.mjs"
     },
     "./server/v1": {
-      "import": "./dist/server/v1/index.mjs",
+      "types": "./dist/server/v1/index.d.ts",
       "browser": "./dist/server/v1/index.mjs",
-      "types": "./dist/server/v1/index.d.ts"
+      "import": "./dist/server/v1/index.mjs"
     },
     "./domain": {
-      "import": "./dist/domain/v1/index.mjs",
-      "types": "./dist/domain/v1/index.d.ts"
+      "types": "./dist/domain/v1/index.d.ts",
+      "import": "./dist/domain/v1/index.mjs"
     },
     "./domain/*": {
-      "import": "./dist/domain/v1/index.mjs",
-      "types": "./dist/domain/v1/index.d.ts"
+      "types": "./dist/domain/v1/index.d.ts",
+      "import": "./dist/domain/v1/index.mjs"
     },
     "./clever": {
-      "import": "./dist/clever/v1/index.mjs",
-      "types": "./dist/clever/v1/index.d.ts"
+      "types": "./dist/clever/v1/index.d.ts",
+      "import": "./dist/clever/v1/index.mjs"
     },
     "./clever/v1": {
-      "import": "./dist/clever/v1/index.mjs",
-      "types": "./dist/clever/v1/index.d.ts"
+      "types": "./dist/clever/v1/index.d.ts",
+      "import": "./dist/clever/v1/index.mjs"
     },
     "./domain/v1": {
-      "import": "./dist/domain/v1/index.mjs",
-      "types": "./dist/domain/v1/index.d.ts"
+      "types": "./dist/domain/v1/index.d.ts",
+      "import": "./dist/domain/v1/index.mjs"
     },
     ".": {
-      "import": "./dist/index.mjs",
+      "types": "./dist/index.d.ts",
       "browser": "./dist/browser.mjs",
-      "types": "./dist/index.d.ts"
+      "import": "./dist/index.mjs"
     }
   },
   "files": [
