@@ -41,12 +41,14 @@ builder([
     tsconfig: './tsconfig.build.json',
     entryPoints: { browser: './src/index.ts' },
     platform: 'browser',
-    skipNodeModulesBundle: false
+    skipNodeModulesBundle: false,
+    minify: true
   } as tsup.Options,
   {
     ...buildClientEntry(CLIENTS.SERVER),
     platform: 'browser',
-    skipNodeModulesBundle: false
+    skipNodeModulesBundle: false,
+    minify: true
   } as tsup.Options,
   buildClientEntry(CLIENTS.DOMAIN),
   buildClientEntry(CLIENTS.CLEVER)
