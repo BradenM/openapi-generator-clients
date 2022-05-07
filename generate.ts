@@ -13,7 +13,7 @@ import fglob from 'fast-glob'
 import fse from 'fs-extra'
 import type { RecordOf } from 'immutable'
 import { Record as ImRecord } from 'immutable'
-import { debounce } from 'lodash-es'
+import { debounce, trim } from 'lodash-es'
 import minimist from 'minimist'
 import * as R from 'rambdax'
 import type { PartialDeep } from 'type-fest'
@@ -287,7 +287,14 @@ const runBatchGenerate = async (
   }
   const ignorePath = path.resolve(genRoot, '.openapi-generator-ignore')
   const ignoreContents = await fse.readFile(ignorePath)
-  await fse.writeFile(ignorePath, [ignoreContents, ...genDrops].join('\n'))
+  const ignores = ignoreContents
+    .toString()
+    .split('\n')
+    .map((ln) => trim(ln))
+  const newIgnores = genDrops.filter((drop) => !ignores.includes(drop))
+  if (newIgnores.length) {
+    await fse.writeFile(ignorePath, [ignoreContents, ...newIgnores].join('\n'))
+  }
   const files = await fglob(path.join(genRoot, '{*,**/*}'), {
     onlyFiles: true,
     unique: true
