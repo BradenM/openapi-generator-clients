@@ -21,6 +21,7 @@ const buildClientEntry = (name: Client): BuildOptions => {
   return {
     bundle: true,
     tsconfig: `./${name}/tsconfig.build.json`,
+    ignoreWatch: Object.values(CLIENTS).filter((k) => k !== name),
     entryPoints: [
       `./${name}/index.ts`,
       ...versions.map((v) => `./${name}/${v}/index.ts`)
@@ -34,7 +35,8 @@ builder([
     bundle: true,
     tsconfig: './tsconfig.build.json',
     entryPoints: ['./src/index.ts'],
-    outDir: 'dist'
+    outDir: 'dist',
+    ignoreWatch: Object.values(CLIENTS)
   },
   {
     bundle: true,
@@ -42,7 +44,9 @@ builder([
     entryPoints: { browser: './src/index.ts' },
     platform: 'browser',
     skipNodeModulesBundle: false,
-    minify: true
+    minify: true,
+    onSuccess: undefined,
+    ignoreWatch: Object.values(CLIENTS)
   } as tsup.Options,
   {
     ...buildClientEntry(CLIENTS.SERVER),
