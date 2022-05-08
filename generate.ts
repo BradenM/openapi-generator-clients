@@ -25,7 +25,7 @@ import {
   downloadGitDir,
   getTempDir,
   prettyDiff,
-  writeTargetJSON
+  simpleJsonStore
 } from '../../scripts/utils'
 
 interface GitConfig {
@@ -228,22 +228,39 @@ const buildConfig = async ({
   return [origCfg, newConfig, newGenerators]
 }
 
-const updateConfig = async (cfg: ImRecord<PartialDeep<OASConfig>>) => {
-  consola.log('Writing config:', cfg.toJSON())
-  await writeTargetJSON('./openapitools.json', cfg.toJSON())
+const updateIgnores = async (outputRoot: string, extraIgnores: string[]) => {
+  const ignorePath = path.resolve(outputRoot, '.openapi-generator-ignore')
+  const ignoreContents = await fse.readFile(ignorePath)
+  const ignores = ignoreContents
+    .toString()
+    .split('\n')
+    .map((ln) => trim(ln))
+  const newIgnores = extraIgnores.filter((drop) => !ignores.includes(drop))
+  if (newIgnores.length) {
+    await fse.writeFile(ignorePath, [ignoreContents, ...newIgnores].join('\n'))
+  }
+}
+
+const collectHashes = async (
+  outputDir: string
+): Promise<Map<string, string>> => {
+  const files = await fglob(path.join(outputDir, '{*,**/*}'), {
+    onlyFiles: true,
+    unique: true
+  })
+
+  const hashesMap = new Map()
+  await R.mapFastAsync<string, void>(async (fpath) => {
+    const relPath = path.relative(outputDir, fpath)
+    const xsum = await createFileChecksum(fpath)
+    hashesMap.set(relPath, xsum)
+  })(files)
+  return hashesMap
 }
 
 const runBatchGenerate = async (
-  clientName: string,
-  options?: Pick<GenerateOptions, 'additionalArgs' | 'overwrite'>
+  genTarget: RecordOf<ExtendedGeneratorConfig>
 ): Promise<[RecordOf<ExtendedGeneratorConfig>, Map<string, string>]> => {
-  const [origCfg, _, newGenerators] = await buildConfig({
-    clients: [clientName],
-    ...(options ?? {})
-  })
-  const genTarget = newGenerators[
-    clientName
-  ] as RecordOf<ExtendedGeneratorConfig>
   const genTempsDir = genTarget.get('templateDir') as string
   const genConfig = path.resolve(
     genTarget.get('workspace') as string,
@@ -269,71 +286,87 @@ const runBatchGenerate = async (
       windowsHide: false
     }
   )
+
   try {
     await proc
+
     await R.mapFastAsync<string, void>(async (fileDrop) => {
       consola.info(`dropping file: ${fileDrop}`)
       const fullPath = path.resolve(genRoot, fileDrop)
       try {
         await fse.rm(fullPath)
       } catch (e) {
-        consola.error(e)
+        consola.warn(e)
       }
     })(genDrops)
   } catch (e) {
     consola.error(e)
-  } finally {
-    await updateConfig(origCfg)
   }
-  const ignorePath = path.resolve(genRoot, '.openapi-generator-ignore')
-  const ignoreContents = await fse.readFile(ignorePath)
-  const ignores = ignoreContents
-    .toString()
-    .split('\n')
-    .map((ln) => trim(ln))
-  const newIgnores = genDrops.filter((drop) => !ignores.includes(drop))
-  if (newIgnores.length) {
-    await fse.writeFile(ignorePath, [ignoreContents, ...newIgnores].join('\n'))
-  }
-  const files = await fglob(path.join(genRoot, '{*,**/*}'), {
-    onlyFiles: true,
-    unique: true
-  })
-  const hashesMap = new Map()
-  await R.mapFastAsync<string, void>(async (fpath) => {
-    const relPath = path.relative(genRoot, fpath)
-    const xsum = await createFileChecksum(fpath)
-    hashesMap.set(relPath, xsum)
-  })(files)
-  return [genTarget, hashesMap]
+  await updateIgnores(genRoot, genDrops)
+  return [genTarget, await collectHashes(genRoot)]
 }
 
-const watchGenerate = async (clientName: string) => {
-  const cfg = await readConfig()
-  const oasCfg = OASRecord(cfg)
+interface GenerateStore {
+  inputSpecHash: string
+  fileHashes: [string, string][]
+}
+
+const doGenerate = async (clientName: string, watch = false) => {
+  const [oasCfg, newCfg, origNewGenerators] = await buildConfig({
+    clients: [clientName]
+  })
 
   const origGens = oasCfg.getIn(['generator-cli', 'generators']) as Record<
     string,
     GeneratorConfig
   >
 
-  let [baseTarget, baseHashes] = await runBatchGenerate(clientName, {
-    // run full generate first time only.
-    overwrite: true,
-    additionalArgs: ['--clean']
-  })
-  const clientNs = clientName.split('-', 2)[0]
-  await doLintAndFormat(`packages/clients/${clientNs}/{*,**/*}.ts`)
+  consola.log('Original gen config:', origGens)
 
+  const origBaseTarget = GeneratorRecord(
+    origGens[clientName]
+  ) as RecordOf<ExtendedGeneratorConfig>
+
+  const genStore = await simpleJsonStore<GenerateStore>(
+    `pda-clients-generate-${clientName}`
+  )
+
+  let baseTarget = origNewGenerators[clientName]
   const inputSpec = baseTarget.get('inputSpec') as string
 
-  let specHash = await createFileChecksum(inputSpec)
+  let baseHashes: Map<string, string>
+  if (
+    watch &&
+    genStore.data &&
+    genStore?.data?.inputSpecHash === (await createFileChecksum(inputSpec))
+  ) {
+    consola.success(`Loaded cached file hashes for: ${clientName}`)
+    baseHashes = new Map<string, string>(genStore?.data?.fileHashes)
+  } else {
+    baseHashes = await collectHashes(origBaseTarget.get('output') as string)
+    await genStore.flush()
+  }
 
-  const watcher = chokidar.watch(inputSpec, {
-    awaitWriteFinish: true,
-    atomic: true,
-    useFsEvents: true
-  })
+  let specHash: string | undefined
+
+  // initial report.
+  const files = await fse.readdir(
+    newCfg['generator-cli'].generators[clientName].templateDir
+  )
+  const report = files
+    .map(
+      (f) =>
+        `${chalk.whiteBright('Using override:')} ${chalk.bold.cyanBright(f)}`
+    )
+    .join('\n')
+  consola.log(
+    boxen(report, {
+      title: chalk.bold.whiteBright(`Client: ${clientName}`),
+      titleAlignment: 'left',
+      margin: 1,
+      padding: 1
+    })
+  )
 
   const handleChange = async () => {
     const newSpecHash = await createFileChecksum(inputSpec)
@@ -342,31 +375,55 @@ const watchGenerate = async (clientName: string) => {
       return
     }
     specHash = newSpecHash
-    const [newTarget, newHashes] = await runBatchGenerate(clientName, {
+    const [, , newGenerators] = await buildConfig({
+      clients: [clientName],
       overwrite: false
     })
-
-    const changedHashes = Array.from(newHashes.entries()).filter(
-      ([filePath, newHash]) => {
-        if (!baseHashes.has(filePath)) return true
-        return baseHashes.get(filePath) !== newHash
-      }
+    const [newTarget, newHashes] = await runBatchGenerate(
+      newGenerators[clientName]
     )
-    consola.log('changed hashes:', changedHashes)
+
+    const newHashList = Array.from(newHashes.entries())
+
+    const changedHashes = newHashList.filter(([filePath, newHash]) => {
+      if (!baseHashes.has(filePath)) return true
+      return baseHashes.get(filePath) !== newHash
+    })
+
+    const removedHashes = R.difference<string>(
+      Array.from(baseHashes.keys()),
+      Array.from(newHashes.keys())
+    )
+
+    const resolvePathToClient = (relPath: string) =>
+      path.resolve(
+        fileURLToPath(new URL(origGens[clientName].output, import.meta.url)),
+        relPath
+      )
 
     const newFilePaths = await R.mapFastAsync<[string, string], string>(
       async ([relFilePath, newHash]) => {
         const newRoot = newTarget.get('output')
         const newFilePath = path.resolve(newRoot, relFilePath)
-        const destFilePath = path.resolve(
-          fileURLToPath(new URL(origGens[clientName].output, import.meta.url)),
-          relFilePath
+        const destFilePath = resolvePathToClient(relFilePath)
+        consola.log(
+          `${chalk.bold.yellowBright('Updating:')} ${chalk.blackBright(
+            relFilePath
+          )}`
         )
-        consola.info(`Updating: ${newFilePath} -> ${destFilePath}`)
         await fse.copyFile(newFilePath, destFilePath)
         return destFilePath
       }
     )(changedHashes)
+
+    // remove any deleted files.
+    await R.mapFastAsync(async (filePath: string) => {
+      const clientPath = resolvePathToClient(filePath)
+      consola.log(
+        `${chalk.bold.redBright('Removing:')} ${chalk.blackBright(filePath)}`
+      )
+      await R.tryCatchAsync((fp: string) => fse.rm(fp), undefined)(clientPath)
+    })(removedHashes)
 
     await doLintAndFormat(
       ...newFilePaths.filter(
@@ -386,45 +443,22 @@ const watchGenerate = async (clientName: string) => {
 
     baseTarget = newTarget
     baseHashes = newHashes
+    await genStore.save({
+      inputSpecHash: specHash,
+      fileHashes: Array.from(baseHashes.entries())
+    })
   }
 
-  watcher.on('change', debounce(handleChange, 10))
-}
-
-const runGenerate = async (clientName: string) => {
-  const [origCfg, newCfg, newGenerators] = await buildConfig()
-  await updateConfig(newCfg)
-  try {
-    await execa(
-      'openapi-generator-cli',
-      ['generate', `--generator-key=${clientName}`],
-      {
-        stdio: 'inherit',
-        preferLocal: true,
-        windowsHide: false
-      }
-    )
-    const clientNs = clientName.split('-', 2)[0]
-    await doLintAndFormat(`packages/clients/${clientNs}/{*,**/*}.ts`)
-    const files = await fse.readdir(
-      newCfg['generator-cli'].generators[clientName].templateDir
-    )
-    const report = files
-      .map(
-        (f) =>
-          `${chalk.whiteBright('Used override:')} ${chalk.bold.cyanBright(f)}`
-      )
-      .join('\n')
-    consola.log(
-      boxen(report, {
-        title: chalk.bold.whiteBright(`Generated: ${clientName}`),
-        titleAlignment: 'left',
-        margin: 1,
-        padding: 1
-      })
-    )
-  } finally {
-    await updateConfig(origCfg)
+  // initial generation / sync.
+  await handleChange()
+  // watch if asked too.
+  if (watch) {
+    const watcher = chokidar.watch(inputSpec, {
+      awaitWriteFinish: true,
+      atomic: true,
+      useFsEvents: true
+    })
+    watcher.on('change', debounce(handleChange, 10))
   }
 }
 
@@ -450,19 +484,9 @@ export default (async function () {
 
   const generatorTargets = ['clever-v1', 'domain-v1', 'server-v1']
 
-  let targets = argv._ ?? generatorTargets
-  targets = targets.map((t) => generatorTargets.find((gt) => gt.match(t)))
+  const targets = (argv._ ?? generatorTargets)?.map((t) =>
+    generatorTargets.find((gt) => gt.match(t))
+  ) as string[]
   consola.log('Generator Targets:', targets)
-  if (argv.watch) {
-    await p(targets).map(watchGenerate)
-  } else {
-    await p(targets, { concurrency: 1 }).map((t) =>
-      runBatchGenerate(t, { overwrite: true, additionalArgs: ['--clean'] })
-    )
-    await doLintAndFormat(
-      ...targets.map(
-        (t) => `packages/clients/${t.split('-', 2)[0]}/{*,**/*}.ts`
-      )
-    )
-  }
+  await p(targets).map((name) => doGenerate(name, argv.watch))
 })()
