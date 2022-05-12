@@ -6,8 +6,6 @@
     "outDir": "./dist",
     "rootDir": "./src",
     "emitDeclarationOnly": true,
-    "disableSolutionSearching": true,
-    "disableSourceOfProjectReferenceRedirect": true,
     /* Disable some checks for generated code */
     "strictNullChecks": false,
     "suppressImplicitAnyIndexErrors": true,
