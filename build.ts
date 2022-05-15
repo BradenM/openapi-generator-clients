@@ -19,24 +19,24 @@ const CLIENT_VERSIONS = {
 const buildClientEntry = (name: Client): BuildOptions => {
   const versions = CLIENT_VERSIONS[name]
   return {
+    builder: 'esbuild',
     bundle: true,
     tsconfig: `./${name}/tsconfig.build.json`,
-    ignoreWatch: Object.values(CLIENTS).filter((k) => k !== name),
     entryPoints: [
       `./${name}/index.ts`,
       ...versions.map((v) => `./${name}/${v}/index.ts`)
     ],
-    outDir: `dist/${name}`
+    outdir: `dist/${name}`
   }
 }
 
 builder([
   {
+    builder: 'esbuild',
     bundle: true,
     tsconfig: './tsconfig.build.json',
     entryPoints: ['./src/index.ts'],
-    outDir: 'dist',
-    ignoreWatch: Object.values(CLIENTS)
+    outdir: './dist'
   },
   {
     bundle: true,
@@ -47,13 +47,13 @@ builder([
     minify: true,
     onSuccess: undefined,
     ignoreWatch: Object.values(CLIENTS)
-  } as tsup.Options,
+  },
   {
     ...buildClientEntry(CLIENTS.SERVER),
+    builder: 'esbuild',
     platform: 'browser',
-    skipNodeModulesBundle: false,
     minify: true
-  } as tsup.Options,
+  },
   buildClientEntry(CLIENTS.DOMAIN),
   buildClientEntry(CLIENTS.CLEVER)
 ])

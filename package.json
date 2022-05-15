@@ -77,6 +77,8 @@
   },
   "dependencies": {
     "@openapitools/openapi-generator-cli": "^2.5.1",
+    "@swc/core": "^1.2.181",
+    "@swc/helpers": "^0.3.13",
     "btoa": "^1.2.1",
     "form-data": "^4.0.0",
     "immutable": "^4.0.0",
