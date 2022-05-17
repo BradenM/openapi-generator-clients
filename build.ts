@@ -1,4 +1,3 @@
-import type tsup from 'tsup'
 import { builder } from '../../scripts/compile/build-config'
 import type { BuildOptions } from '../../scripts/compile/build-config'
 
@@ -21,6 +20,7 @@ const buildClientEntry = (name: Client): BuildOptions => {
   return {
     builder: 'esbuild',
     bundle: true,
+    name,
     tsconfig: `./${name}/tsconfig.build.json`,
     entryPoints: [
       `./${name}/index.ts`,
