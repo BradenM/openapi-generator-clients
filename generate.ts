@@ -224,7 +224,7 @@ const buildConfig = async ({
     ['generator-cli', 'generators'],
     newGenerators
   )
-  consola.log(newConfig)
+  consola.log(newConfig.toJS())
   return [origCfg, newConfig, newGenerators]
 }
 
