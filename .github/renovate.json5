@@ -1,0 +1,38 @@
+{
+    $schema: "https://docs.renovatebot.com/renovate-schema.json",
+    extends: [
+        "config:base",
+        "group:recommended",
+        "group:linters",
+        "group:monorepos",
+        "helpers:disableTypesNodeMajor",
+        ":rebaseStalePrs",
+        ":prConcurrentLimit20",
+        ":prHourlyLimitNone",
+        ":automergeMinor",
+        ":automergeDigest",
+    ],
+    addLabels: ["dependencies"],
+    major: {
+        automerge: false,
+    },
+    /* ignorePaths: [], */
+    rangeStrategy: "bump",
+    lockFileMaintenance: {
+        enabled: true
+    },
+    dependencyDashboard: true,
+    packageRules: [
+        {
+            matchDepTypes: ["devDependencies"],
+            matchUpdateTypes: ["minor", "patch"],
+            automerge: true,
+            groupName: "devDependencies (non-major)"
+        },
+        {
+            matchDepTypes: ["devDependencies"],
+            matchUpdateTypes:  ["major"],
+            automerge: true
+        }
+    ],
+}
