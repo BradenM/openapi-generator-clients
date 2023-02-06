@@ -1,91 +1,70 @@
 {
   "name": "openapi-generator-clients",
   "type": "module",
-  "version": "0.3.0",
+  "version": "0.1.0",
   "author": "Braden Mars <bradenmars@bradenmars.me>",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/BradenM/openapi-generator-clients",
-    "directory": "packages/clients"
-  },
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com",
-    "access": "restricted"
-  },
-  "types": "./dist/index.d.ts",
-  "browser": "./dist/browser.mjs",
-  "exports": {
-    "./server": {
-      "types": "./dist/server/index.d.ts",
-      "browser": "./dist/server/index.mjs",
-      "import": "./dist/server/index.mjs"
-    },
-    "./server/v1": {
-      "types": "./dist/server/v1/index.d.ts",
-      "browser": "./dist/server/v1/index.mjs",
-      "import": "./dist/server/v1/index.mjs"
-    },
-    "./domain": {
-      "types": "./dist/domain/v1/index.d.ts",
-      "import": "./dist/domain/v1/index.mjs"
-    },
-    "./domain/*": {
-      "types": "./dist/domain/v1/index.d.ts",
-      "import": "./dist/domain/v1/index.mjs"
-    },
-    "./clever": {
-      "types": "./dist/clever/v1/index.d.ts",
-      "import": "./dist/clever/v1/index.mjs"
-    },
-    "./clever/v1": {
-      "types": "./dist/clever/v1/index.d.ts",
-      "import": "./dist/clever/v1/index.mjs"
-    },
-    "./domain/v1": {
-      "types": "./dist/domain/v1/index.d.ts",
-      "import": "./dist/domain/v1/index.mjs"
-    },
-    ".": {
-      "types": "./dist/index.d.ts",
-      "browser": "./dist/browser.mjs",
-      "import": "./dist/index.mjs"
-    }
-  },
-  "files": [
-    "dist",
-    "package.json"
-  ],
-  "sideEffects": false,
-  "homepage": "https://github.com/BradenM/openapi-generator-clients/tree/main/packages/clients/README.md",
-  "bugs": {
-    "url": "https://github.com/BradenM/openapi-generator-clients/issues"
+  "private": true,
+  "packageManager": "pnpm@7.26.3",
+  "engines": {
+    "node": ">=16"
   },
   "scripts": {
-    "post-process:lint": "pushd ../../ && eslint_d --fix \"**/*.{json,ts?(x)}\" && popd",
-    "post-process:format": "prettier --write --ignore-path ../../.prettierignore --config ../../.prettierrc ./**/*",
-    "post-process": "nr post-process:lint && nr post-process:format",
-    "generate": "openapi-generator-cli generate",
-    "build:clients": "esmo generate.ts",
-    "build:clients:watch": "esmo generate.ts --watch server domain",
-    "build": "esmo build.ts",
-    "dev": "concurrently -r 'pnpm:dev:watch' 'pnpm:build:clients:watch'",
-    "dev:watch": "cross-env DEV=1 WATCH=1 esmo build.ts",
-    "dev:build": "cross-env DEV=1 esmo build.ts"
+    "pnpm:devPreinstall": "is-ci || pnpm exec simple-git-hooks || pnpm dlx simple-git-hooks",
+    "build": "pnpm -r -F packages/* run build",
+    "dev": "pnpm -r -F packages/* --parallel run dev",
+    "lint": "xo .",
+    "lint:fix": "xo --fix .",
+    "prepublishOnly": "nr build",
+    "release": "bumpp && npm publish",
+    "start": "esno src/index.ts",
+    "test": "vitest",
+    "typecheck": "tsc --noEmit"
   },
-  "peerDependencies": {
-    "reflect-metadata": "~0.1"
+  "devDependencies": {
+    "@antfu/ni": "^0.19.0",
+    "@atao60/fse-cli": "^0.1.7",
+    "@tsconfig/node-lts-strictest-esm": "^18.12.1",
+    "@types/node": "^18.11.19",
+    "fs-extra": "^11.1.0",
+    "is-ci": "^3.0.1",
+    "lint-staged": "^13.1.0",
+    "pnpm": "7.27.0-0",
+    "prettier": "^2.8.3",
+    "rimraf": "^4.1.2",
+    "simple-git-hooks": "^2.8.1",
+    "tsx": "^3.12.3",
+    "typescript": "^4.9.5",
+    "unbuild": "^1.1.1",
+    "vitest": "^0.28.4",
+    "webpack": ">=1.11.0",
+    "xo": "^0.53.1"
   },
-  "dependencies": {
-    "@openapitools/openapi-generator-cli": "^2.5.1",
-    "@swc/core": "^1.2.181",
-    "@swc/helpers": "^0.3.13",
-    "btoa": "^1.2.1",
-    "form-data": "^4.0.0",
-    "immutable": "^4.1.0",
-    "inversify": "^6.0.1",
-    "node-fetch": "^3.2.4",
-    "rxjs": "^7.5.5",
-    "url-parse": "^1.5.10",
-    "whatwg-fetch": "~3.6.2"
+  "xo": {
+    "prettier": true,
+    "envs": [
+      "node",
+      "es2022"
+    ],
+    "semicolon": false,
+    "rules": {
+      "@typescript-eslint/consistent-type-definitions": [
+        "error",
+        "interface"
+      ],
+      "@typescript-eslint/naming-convention": "warn",
+      "import/extensions": "off",
+      "n/prefer-global/process": "off",
+      "no-template-curly-in-string": "warn",
+      "@typescript-eslint/no-redeclare": "warn",
+      "unicorn/no-await-expression-member": "warn"
+    }
+  },
+  "simple-git-hooks": {
+    "pre-commit": "lint-staged"
+  },
+  "lint-staged": {
+    "*.{json,ts}": [
+      "xo --fix"
+    ]
   }
 }
