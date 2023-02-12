@@ -13,9 +13,8 @@ async function main() {
 	})
 }
 
-try {
-	await main()
-} catch (error: unknown) {
+// eslint-disable-next-line unicorn/prefer-top-level-await
+main().catch((error: unknown) => {
 	consola.error(error)
 	process.exit(1)
-}
+})
