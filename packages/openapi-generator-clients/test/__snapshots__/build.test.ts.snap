@@ -1,0 +1,132 @@
+// Vitest Snapshot v1
+
+exports[`buildClient > creates expected oas config. > oas config 1`] = `
+{
+  "$schema": "node_modules/@openapitools/openapi-generator-cli/config.schema.json",
+  "generator-cli": {
+    "generators": {
+      "test": {
+        "additionalProperties": {
+          "disallowAdditionalPropertiesIfNotPresent": undefined,
+          "legacyDiscriminatorBehavior": false,
+          "npmName": undefined,
+          "platform": undefined,
+          "supportsES6": true,
+          "useInversify": undefined,
+          "useObjectParameters": undefined,
+          "usePromise": true,
+          "useRxJS6": true,
+          "withInterfaces": true,
+        },
+        "generatorName": "test-generator",
+        "gitHost": "github.com",
+        "gitRepoId": "",
+        "gitUserId": "",
+        "glob": undefined,
+        "inputSpec": undefined,
+        "legacyDiscriminatorBehavior": false,
+        "output": "test-output",
+        "removeOperationIdPrefix": true,
+        "templateDir": "test-templates",
+      },
+    },
+  },
+  "spaces": 2,
+}
+`;
+
+exports[`buildClient > creates expected work client. > work client 1`] = `
+{
+  "generator": {
+    "additionalArgs": [],
+    "additionalProperties": {
+      "disallowAdditionalPropertiesIfNotPresent": undefined,
+      "legacyDiscriminatorBehavior": false,
+      "npmName": undefined,
+      "platform": undefined,
+      "supportsES6": true,
+      "useInversify": undefined,
+      "useObjectParameters": undefined,
+      "usePromise": true,
+      "useRxJS6": true,
+      "withInterfaces": true,
+    },
+    "drop": [],
+    "generatorName": "test-generator",
+    "generatorVersion": "v0",
+    "gitHost": "github.com",
+    "gitRepoId": "",
+    "gitUserId": "",
+    "glob": undefined,
+    "inputSpec": undefined,
+    "legacyDiscriminatorBehavior": false,
+    "output": "test-output",
+    "removeOperationIdPrefix": true,
+    "templateDir": "test-templates",
+  },
+  "name": "test",
+  "template": {
+    "name": "test-template",
+    "root": "path",
+  },
+  "templateConfig": {
+    "additionalArgs": [],
+    "drop": [],
+    "generatorVersion": "v0",
+  },
+  "templateVersion": {
+    "config": {
+      "additionalArgs": [],
+      "drop": [],
+      "generatorVersion": "v0",
+    },
+    "path": "test-generator",
+    "version": "v0",
+  },
+  "workspace": {
+    "configPath": "test.config.json",
+    "outputPath": "test-output",
+    "rootPath": "some-root",
+    "templatesPath": "test-templates",
+  },
+}
+`;
+
+exports[`buildClient > writes expected oas config to workspace config. > workspace oas config. 1`] = `
+[
+  [
+    {
+      "$schema": "node_modules/@openapitools/openapi-generator-cli/config.schema.json",
+      "generator-cli": {
+        "generators": {
+          "test": {
+            "additionalProperties": {
+              "disallowAdditionalPropertiesIfNotPresent": undefined,
+              "legacyDiscriminatorBehavior": false,
+              "npmName": undefined,
+              "platform": undefined,
+              "supportsES6": true,
+              "useInversify": undefined,
+              "useObjectParameters": undefined,
+              "usePromise": true,
+              "useRxJS6": true,
+              "withInterfaces": true,
+            },
+            "generatorName": "test-generator",
+            "gitHost": "github.com",
+            "gitRepoId": "",
+            "gitUserId": "",
+            "glob": undefined,
+            "inputSpec": undefined,
+            "legacyDiscriminatorBehavior": false,
+            "output": "test-output",
+            "removeOperationIdPrefix": true,
+            "templateDir": "test-templates",
+          },
+        },
+      },
+      "spaces": 2,
+    },
+  ],
+]
+`;
