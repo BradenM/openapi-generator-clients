@@ -71,7 +71,17 @@
       "unicorn/no-await-expression-member": "warn",
       "@typescript-eslint/no-unsafe-declaration-merging": "warn",
       "new-cap": "warn"
-    }
+    },
+    "overrides": [
+      {
+        "files": "**/*.test.ts",
+        "rules": {
+          "import/no-extraneous-dependencies": "warn",
+          "@typescript-eslint/no-unsafe-assignment": "warn",
+          "@typescript-eslint/no-unsafe-call": "warn"
+        }
+      }
+    ]
   },
   "simple-git-hooks": {
     "pre-commit": "lint-staged"
