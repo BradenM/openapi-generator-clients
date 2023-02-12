@@ -6,7 +6,7 @@ import type {
 import {Record as ImRecord, type RecordOf} from 'immutable'
 import {getTempDir} from '@openapi-generator-clients/utils'
 import path from 'pathe'
-import {partial} from 'rambdax/immutable.js'
+import R from 'rambdax'
 import fse from 'fs-extra'
 
 export const WorkspaceRecord = ImRecord<Workspace>({
@@ -21,7 +21,7 @@ export const temporaryWorkspaceProvider: WorkspaceProvider<WorkspaceRecord> = {
 	workspace: WorkspaceRecord(),
 	async create(outputDir: string, overwrite = false) {
 		const root = getTempDir()
-		const resolve = partial(path.resolve, [root])
+		const resolve = R.partial(path.resolve, [root])
 		this.workspace = WorkspaceRecord({
 			rootPath: root,
 			templatesPath: resolve('./templates'),

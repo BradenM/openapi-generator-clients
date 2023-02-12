@@ -22,7 +22,7 @@ import fse from 'fs-extra'
 import {downloadGitDir} from '@openapi-generator-clients/utils'
 import consola from 'consola'
 import {execa} from 'execa'
-import R from 'rambdax/immutable.js'
+import R from 'rambdax'
 import {temporaryWorkspaceProvider} from './workspace'
 
 export const buildTemplate = async (
@@ -188,15 +188,15 @@ export const build = async (rootDir: string, config?: BuildOptions) => {
 	config ??= (await import(configPath))?.default as BuildOptions
 	consola.info('Loaded config: ', config)
 
-	const {
-		templates,
-		generators,
-		templatesRoot = path.resolve(rootDir, './generators'),
-	} = config
+	const {templates, generators} = config
 
 	const buildTemplates = await Promise.all(
 		objectEntries(templates).map(async ([name, template]) =>
-			buildTemplate(templatesRoot, name, template),
+			buildTemplate(
+				template.rootDir ?? path.resolve(rootDir, './generators'),
+				name,
+				template,
+			),
 		),
 	)
 

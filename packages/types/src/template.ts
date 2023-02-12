@@ -6,4 +6,5 @@ export interface Template {
 	baseRef: string
 	versions: Record<string, PartialOnUndefinedDeep<TemplateConfig>>
 	latest: string
+	rootDir?: string
 }

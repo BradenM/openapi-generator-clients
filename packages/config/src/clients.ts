@@ -16,7 +16,6 @@ import {
 
 export interface BuildOptions {
 	templates: Record<string, Template>
-	templatesRoot?: string
 	generators: Record<string, PartialOnUndefinedDeep<ExtendedGeneratorConfig>>
 }
 
