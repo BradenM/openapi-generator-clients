@@ -23,7 +23,7 @@
   },
   "dependencies": {
     "whatwg-fetch": "^3.0.0",
-    "es6-promise": "^4.2.4",
+    "es6-promise": "^4.2.8",
     "url-parse": "^1.4.3"
   },
   "devDependencies": {
