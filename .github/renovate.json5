@@ -16,7 +16,9 @@
     major: {
         automerge: false,
     },
-    /* ignorePaths: [], */
+    ignorePaths: [
+        "example/"
+    ],
     rangeStrategy: "bump",
     lockFileMaintenance: {
         enabled: true
