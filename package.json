@@ -68,7 +68,8 @@
       "n/file-extension-in-import": "off",
       "no-template-curly-in-string": "warn",
       "@typescript-eslint/no-redeclare": "warn",
-      "unicorn/no-await-expression-member": "warn"
+      "unicorn/no-await-expression-member": "warn",
+      "new-cap": "warn"
     }
   },
   "simple-git-hooks": {
