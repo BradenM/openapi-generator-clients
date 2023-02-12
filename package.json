@@ -56,6 +56,9 @@
       "node",
       "es2022"
     ],
+    "ignores": [
+      "example/clients-example/clients/**"
+    ],
     "semicolon": false,
     "rules": {
       "@typescript-eslint/consistent-type-definitions": [

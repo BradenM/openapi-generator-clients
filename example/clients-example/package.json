@@ -1,0 +1,16 @@
+{
+  "name": "clients-example",
+  "version": "1.0.0",
+  "description": "Clients Example",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:clients": "openapi-generator-clients"
+  },
+  "keywords": [],
+  "dependencies": {
+    "@openapi-generator-clients/ts-generator": "workspace:*",
+    "openapi-generator-clients": "workspace:*"
+  }
+}
