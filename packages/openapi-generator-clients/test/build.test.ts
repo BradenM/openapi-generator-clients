@@ -29,8 +29,6 @@ describe('buildClient', () => {
 		templatesPath: 'test-templates',
 	}
 
-	const itx = it<Context>
-
 	beforeEach<Context>(async (ctx) => {
 		ctx.workspaceProvider = {
 			workspace: {...testWorkspace},
@@ -73,21 +71,21 @@ describe('buildClient', () => {
 		})
 	})
 
-	itx('creates expected workspace.', async (ctx) => {
+	it<Context>('creates expected workspace.', async (ctx) => {
 		expect(ctx.workClient.toJS()).toMatchObject({
 			workspace: testWorkspace,
 		})
 	})
 
-	itx('creates expected work client.', async (ctx) => {
+	it<Context>('creates expected work client.', async (ctx) => {
 		expect(ctx.workClient.toJS()).toMatchSnapshot('work client')
 	})
 
-	itx('creates expected oas config.', async (ctx) => {
+	it<Context>('creates expected oas config.', async (ctx) => {
 		expect(ctx.workClient.oasConfig.toJS()).toMatchSnapshot('oas config')
 	})
 
-	itx('creates workspace and adds template paths.', async (ctx) => {
+	it<Context>('creates workspace and adds template paths.', async (ctx) => {
 		expect(ctx.providerSpy.create).toHaveBeenCalledTimes(1)
 		expect(ctx.providerSpy.addTemplatePath).toHaveBeenCalledTimes(2)
 		expect(ctx.providerSpy.create.mock.lastCall).toStrictEqual([
@@ -99,7 +97,7 @@ describe('buildClient', () => {
 		])
 	})
 
-	itx('writes expected oas config to workspace config.', async (ctx) => {
+	it<Context>('writes expected oas config to workspace config.', async (ctx) => {
 		expect(ctx.providerSpy.setConfig).toHaveBeenCalledTimes(1)
 		expect(ctx.providerSpy.setConfig.mock.calls).toMatchSnapshot(
 			'workspace oas config.',
