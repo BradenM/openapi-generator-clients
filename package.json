@@ -69,6 +69,7 @@
       "no-template-curly-in-string": "warn",
       "@typescript-eslint/no-redeclare": "warn",
       "unicorn/no-await-expression-member": "warn",
+      "@typescript-eslint/no-unsafe-declaration-merging": "warn",
       "new-cap": "warn"
     }
   },
