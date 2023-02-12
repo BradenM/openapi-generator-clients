@@ -65,6 +65,7 @@
       "@typescript-eslint/naming-convention": "warn",
       "import/extensions": "off",
       "n/prefer-global/process": "off",
+      "n/file-extension-in-import": "off",
       "no-template-curly-in-string": "warn",
       "@typescript-eslint/no-redeclare": "warn",
       "unicorn/no-await-expression-member": "warn"
