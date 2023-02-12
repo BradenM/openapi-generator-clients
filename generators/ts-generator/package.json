@@ -1,62 +1,62 @@
 {
-  "name": "@openapi-generator-clients/ts-generator",
-  "type": "module",
-  "version": "0.0.0",
-  "description": "Generator Package for ts-generator.",
-  "author": "Braden Mars <bradenmars@bradenmars.me>",
-  "license": "MIT",
-  "homepage": "https://github.com/BradenM/openapi-generator-clients#readme",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/BradenM/openapi-generator-clients.git",
-    "directory": "generators/ts-generator"
-  },
-  "bugs": "https://github.com/BradenM/openapi-generator-clients/issues",
-  "keywords": [],
-  "sideEffects": false,
-  "exports": {
-    ".": {
-      "types": "./dist/index.d.ts",
-      "require": "./dist/index.cjs",
-      "import": "./dist/index.mjs"
-    }
-  },
-  "main": "./dist/index.mjs",
-  "module": "./dist/index.mjs",
-  "types": "./dist/index.d.ts",
-  "typesVersions": {
-    "*": {
-      "*": [
-        "./dist/*",
-        "./dist/index.d.ts"
-      ]
-    }
-  },
-  "files": [
-    "dist",
-    "generators"
-  ],
-  "engines": {
-    "node": ">=16"
-  },
-  "scripts": {
-    "build": "unbuild",
-    "dev": "unbuild --stub",
-    "prepublishOnly": "nr build",
-    "start": "tsx src/index.ts",
-    "test": "vitest",
-    "typecheck": "tsc --noEmit"
-  },
-  "peerDependencies": {
-    "openapi-generator-clients": "workspace:*",
-    "@openapi-generator-clients/config": "workspace:*",
-    "@openapi-generator-clients/types": "workspace:*",
-    "immutable": "^4.2.4",
-    "type-fest": "^3.5.7"
-  },
-  "devDependencies": {
-    "openapi-generator-clients": "workspace:*",
-    "immutable": "^4.2.4",
-    "type-fest": "^3.5.7"
-  }
+	"name": "@openapi-generator-clients/ts-generator",
+	"type": "module",
+	"version": "0.0.0",
+	"description": "Generator Package for ts-generator.",
+	"author": "Braden Mars <bradenmars@bradenmars.me>",
+	"license": "MIT",
+	"homepage": "https://github.com/BradenM/openapi-generator-clients#readme",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/BradenM/openapi-generator-clients.git",
+		"directory": "generators/ts-generator"
+	},
+	"bugs": "https://github.com/BradenM/openapi-generator-clients/issues",
+	"keywords": [],
+	"sideEffects": false,
+	"exports": {
+		".": {
+			"types": "./dist/index.d.ts",
+			"require": "./dist/index.cjs",
+			"import": "./dist/index.mjs"
+		}
+	},
+	"main": "./dist/index.mjs",
+	"module": "./dist/index.mjs",
+	"types": "./dist/index.d.ts",
+	"typesVersions": {
+		"*": {
+			"*": [
+				"./dist/*",
+				"./dist/index.d.ts"
+			]
+		}
+	},
+	"files": [
+		"dist",
+		"generators"
+	],
+	"engines": {
+		"node": ">=16"
+	},
+	"scripts": {
+		"build": "unbuild",
+		"dev": "unbuild --stub",
+		"prepublishOnly": "nr build",
+		"start": "tsx src/index.ts",
+		"test": "vitest",
+		"typecheck": "tsc --noEmit"
+	},
+	"peerDependencies": {
+		"openapi-generator-clients": "workspace:*",
+		"@openapi-generator-clients/config": "workspace:*",
+		"@openapi-generator-clients/types": "workspace:*",
+		"immutable": "^4.2.4",
+		"type-fest": "^3.5.7"
+	},
+	"devDependencies": {
+		"openapi-generator-clients": "workspace:*",
+		"immutable": "^4.2.4",
+		"type-fest": "^3.5.7"
+	}
 }

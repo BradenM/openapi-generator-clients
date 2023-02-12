@@ -1,41 +1,41 @@
 {
-  "name": "@openapi-generator-clients/types",
-  "type": "module",
-  "version": "0.0.0",
-  "description": "Shared type definitions.",
-  "author": "Braden Mars <bradenmars@bradenmars.me>",
-  "license": "MIT",
-  "homepage": "https://github.com/BradenM/openapi-generator-clients#readme",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/BradenM/openapi-generator-clients.git",
-    "directory": "packages/types"
-  },
-  "bugs": "https://github.com/BradenM/openapi-generator-clients/issues",
-  "keywords": [],
-  "sideEffects": false,
-  "exports": {
-    ".": {
-      "types": "./dist/index.d.ts",
-      "require": "./dist/index.cjs",
-      "import": "./dist/index.mjs"
-    }
-  },
-  "files": [
-    "dist"
-  ],
-  "engines": {
-    "node": ">=16"
-  },
-  "scripts": {
-    "build": "unbuild",
-    "dev": "unbuild --stub",
-    "prepublishOnly": "nr build",
-    "start": "tsx src/index.ts",
-    "test": "vitest",
-    "typecheck": "tsc --noEmit"
-  },
-  "dependencies": {
-    "type-fest": "^3.5.7"
-  }
+	"name": "@openapi-generator-clients/types",
+	"type": "module",
+	"version": "0.0.0",
+	"description": "Shared type definitions.",
+	"author": "Braden Mars <bradenmars@bradenmars.me>",
+	"license": "MIT",
+	"homepage": "https://github.com/BradenM/openapi-generator-clients#readme",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/BradenM/openapi-generator-clients.git",
+		"directory": "packages/types"
+	},
+	"bugs": "https://github.com/BradenM/openapi-generator-clients/issues",
+	"keywords": [],
+	"sideEffects": false,
+	"exports": {
+		".": {
+			"types": "./dist/index.d.ts",
+			"require": "./dist/index.cjs",
+			"import": "./dist/index.mjs"
+		}
+	},
+	"files": [
+		"dist"
+	],
+	"engines": {
+		"node": ">=16"
+	},
+	"scripts": {
+		"build": "unbuild",
+		"dev": "unbuild --stub",
+		"prepublishOnly": "nr build",
+		"start": "tsx src/index.ts",
+		"test": "vitest",
+		"typecheck": "tsc --noEmit"
+	},
+	"dependencies": {
+		"type-fest": "^3.5.7"
+	}
 }

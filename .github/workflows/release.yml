@@ -1,4 +1,3 @@
-
 name: Release
 
 on:
@@ -15,5 +14,3 @@ jobs:
         with:
           token: ${{ secrets.GH_PAT }}
           command: manifest
-            
-
