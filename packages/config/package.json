@@ -1,0 +1,55 @@
+{
+  "name": "@openapi-generator-clients/config",
+  "type": "module",
+  "version": "0.0.0",
+  "description": "OpenApi Generator Clients Config",
+  "author": "Braden Mars <bradenmars@bradenmars.me>",
+  "license": "MIT",
+  "homepage": "https://github.com/BradenM/openapi-generator-clients#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BradenM/openapi-generator-clients.git",
+    "directory": "packages/config"
+  },
+  "bugs": "https://github.com/BradenM/openapi-generator-clients/issues",
+  "keywords": [],
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.mjs"
+    }
+  },
+  "main": "./dist/index.mjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "typesVersions": {
+    "*": {
+      "*": [
+        "./dist/*",
+        "./dist/index.d.ts"
+      ]
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "engines": {
+    "node": ">=16"
+  },
+  "scripts": {
+    "build": "unbuild",
+    "dev": "unbuild --stub",
+    "prepublishOnly": "nr build",
+    "start": "tsx src/index.ts",
+    "test": "vitest",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@antfu/utils": "^0.7.2",
+    "@openapi-generator-clients/types": "workspace:*",
+    "immutable": "^4.2.4",
+    "type-fest": "^3.5.7"
+  }
+}
