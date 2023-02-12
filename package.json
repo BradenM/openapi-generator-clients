@@ -70,7 +70,8 @@
       "@typescript-eslint/no-redeclare": "warn",
       "unicorn/no-await-expression-member": "warn",
       "@typescript-eslint/no-unsafe-declaration-merging": "warn",
-      "new-cap": "warn"
+      "new-cap": "warn",
+      "unicorn/no-array-callback-reference": "warn"
     },
     "overrides": [
       {
