@@ -6,7 +6,7 @@
   "private": true,
   "packageManager": "pnpm@7.27.0",
   "engines": {
-    "node": ">=16"
+    "node": ">=v16.19.0"
   },
   "scripts": {
     "prepare": "is-ci || pnpm exec simple-git-hooks || pnpm dlx simple-git-hooks",
