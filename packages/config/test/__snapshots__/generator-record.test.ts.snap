@@ -1,0 +1,77 @@
+// Vitest Snapshot v1
+
+exports[`'GeneratorRecord' inits with defaults > GeneratorRecord 1`] = `
+{
+  "additionalArgs": [],
+  "additionalProperties": {
+    "disallowAdditionalPropertiesIfNotPresent": undefined,
+    "legacyDiscriminatorBehavior": false,
+    "npmName": undefined,
+    "platform": undefined,
+    "supportsES6": true,
+    "useInversify": undefined,
+    "useObjectParameters": undefined,
+    "usePromise": true,
+    "useRxJS6": true,
+    "withInterfaces": true,
+  },
+  "drop": [],
+  "generatorName": "",
+  "generatorVersion": "",
+  "gitHost": "github.com",
+  "gitRepoId": "",
+  "gitUserId": "",
+  "glob": undefined,
+  "inputSpec": undefined,
+  "legacyDiscriminatorBehavior": false,
+  "output": "",
+  "removeOperationIdPrefix": true,
+  "templateDir": "",
+}
+`;
+
+exports[`'OASGeneratorRecord' inits with defaults > OASGeneratorRecord 1`] = `
+{
+  "additionalProperties": {
+    "disallowAdditionalPropertiesIfNotPresent": undefined,
+    "legacyDiscriminatorBehavior": false,
+    "npmName": undefined,
+    "platform": undefined,
+    "supportsES6": true,
+    "useInversify": undefined,
+    "useObjectParameters": undefined,
+    "usePromise": true,
+    "useRxJS6": true,
+    "withInterfaces": true,
+  },
+  "generatorName": "",
+  "gitHost": "github.com",
+  "gitRepoId": "",
+  "gitUserId": "",
+  "glob": undefined,
+  "inputSpec": undefined,
+  "legacyDiscriminatorBehavior": false,
+  "output": "",
+  "removeOperationIdPrefix": true,
+  "templateDir": "",
+}
+`;
+
+exports[`'OASRecord' inits with defaults > OASRecord 1`] = `
+{
+  "$schema": "node_modules/@openapitools/openapi-generator-cli/config.schema.json",
+  "generator-cli": {
+    "generators": {},
+    "version": "6.0.0-beta",
+  },
+  "spaces": 2,
+}
+`;
+
+exports[`'TemplateConfigRecord' inits with defaults > TemplateConfigRecord 1`] = `
+{
+  "additionalArgs": [],
+  "drop": [],
+  "generatorVersion": "",
+}
+`;
