@@ -66,6 +66,10 @@
         }
     ],
     "packages": {
-        ".": {}
+        "./packages/types": {},
+        "./packages/utils": {},
+        "./packages/config": {},
+        "./packages/openapi-generator-clients": {},
+        "./generators/ts-generator": {}
     }
 }
