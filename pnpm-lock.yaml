@@ -56,6 +56,16 @@ importers:
       webpack: 5.75.0
       xo: 0.53.1_webpack@5.75.0
 
+  generators/ts-generator:
+    specifiers:
+      immutable: ^4.2.4
+      openapi-generator-clients: workspace:*
+      type-fest: ^3.5.7
+    devDependencies:
+      immutable: 4.2.4
+      openapi-generator-clients: link:../../packages/openapi-generator-clients
+      type-fest: 3.5.7
+
   packages/config:
     specifiers:
       '@antfu/utils': ^0.7.2
@@ -83,6 +93,7 @@ importers:
       minimist: ^1.2.8
       pathe: ^1.1.0
       rambdax: ^9.0.0
+      type-fest: ^3.5.7
     dependencies:
       '@antfu/utils': 0.7.2
       '@openapi-generator-clients/config': link:../config
@@ -97,6 +108,7 @@ importers:
       minimist: 1.2.8
       pathe: 1.1.0
       rambdax: 9.0.0
+      type-fest: 3.5.7
 
   packages/types:
     specifiers:
@@ -3222,7 +3234,6 @@ packages:
 
   /immutable/4.2.4:
     resolution: {integrity: sha512-WDxL3Hheb1JkRN3sQkyujNlL/xRjAo3rJtaU5xeufUauG66JdMr32bLj4gF+vWl84DIA3Zxw7tiAjneYzRRw+w==}
-    dev: false
 
   /import-fresh/3.3.0:
     resolution: {integrity: sha512-veYYhQa+D1QBKznvhUHxb8faxlrwUnxseDAbAp457E0wLNio2bOSKnjYDhMj+YiAq61xrMGhQk9iXVk5FzgQMw==}
