@@ -17,7 +17,8 @@
         automerge: false,
     },
     ignorePaths: [
-        "example/"
+        "example/clients-example/clients/petstore/v1/package.json",
+        "example/**"
     ],
     rangeStrategy: "bump",
     lockFileMaintenance: {
