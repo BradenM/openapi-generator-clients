@@ -57,7 +57,7 @@
       "es2022"
     ],
     "ignores": [
-      "example/clients-example/clients/**"
+      "example/clients-example/**"
     ],
     "semicolon": false,
     "rules": {
