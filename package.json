@@ -1,7 +1,7 @@
 {
   "name": "root",
   "type": "module",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "author": "Braden Mars <bradenmars@bradenmars.me>",
   "private": true,
   "packageManager": "pnpm@7.27.0",
