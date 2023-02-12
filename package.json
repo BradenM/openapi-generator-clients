@@ -94,5 +94,10 @@
     "*.{json,ts}": [
       "xo --fix"
     ]
+  },
+  "pnpm": {
+    "overrides": {
+      "openapi-generator-clients": "workspace:*"
+    }
   }
 }
