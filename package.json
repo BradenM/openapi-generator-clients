@@ -9,7 +9,7 @@
     "node": ">=16"
   },
   "scripts": {
-    "pnpm:devPreinstall": "is-ci || pnpm exec simple-git-hooks || pnpm dlx simple-git-hooks",
+    "prepare": "is-ci || pnpm exec simple-git-hooks || pnpm dlx simple-git-hooks",
     "pnpm:pkgs": "pnpm -r --stream --no-bail -F './packages/*'",
     "pnpm:pkgs:p": "nr pnpm:pkgs --parallel",
     "build": "nr pnpm:pkgs --parallel run build",
