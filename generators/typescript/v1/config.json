@@ -1,4 +1,0 @@
-{
-  "extends": "../base",
-  "drop": ["package.json", "tsconfig.json", "git_push.sh"]
-}
