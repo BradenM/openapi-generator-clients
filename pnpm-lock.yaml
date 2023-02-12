@@ -75,7 +75,6 @@ importers:
       '@openapi-generator-clients/types': workspace:*
       '@openapi-generator-clients/utils': workspace:*
       '@openapitools/openapi-generator-cli': ^2.5.2
-      '@types/fs-extra': ^11.0.1
       consola: ^2.15.3
       execa: ^7.0.0
       fast-glob: ^3.2.12
@@ -98,8 +97,6 @@ importers:
       minimist: 1.2.8
       pathe: 1.1.0
       rambdax: 9.0.0
-    devDependencies:
-      '@types/fs-extra': 11.0.1
 
   packages/types:
     specifiers:
