@@ -24,7 +24,7 @@
   "dependencies": {
     "whatwg-fetch": "^3.0.0",
     "es6-promise": "^4.2.4",
-    "url-parse": "^1.4.3"
+    "url-parse": "^1.5.10"
   },
   "devDependencies": {
     "typescript": "^4.9",
