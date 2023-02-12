@@ -1,103 +1,115 @@
 {
-  "name": "@openapi-generator-clients/monorepo-root",
-  "type": "module",
-  "version": "0.1.0",
-  "author": "Braden Mars <bradenmars@bradenmars.me>",
-  "private": true,
-  "packageManager": "pnpm@7.27.0",
-  "engines": {
-    "node": ">=16"
-  },
-  "scripts": {
-    "postinstall": "is-ci || pnpm exec simple-git-hooks || pnpm dlx simple-git-hooks",
-    "pnpm:pkgs": "pnpm -r --stream --no-bail",
-    "pnpm:pkgs:p": "nr pnpm:pkgs --parallel",
-    "build": "nr pnpm:pkgs --parallel run build",
-    "dev": "nr pnpm:pkgs --parallel run dev",
-    "lint": "xo .",
-    "lint:fix": "xo --fix .",
-    "prepublishOnly": "nr build",
-    "release": "bumpp && npm publish",
-    "test": "vitest",
-    "typecheck": "nr pnpm:pkgs run --parallel typecheck",
-    "clean": "concurrently 'pnpm:clean:*'",
-    "clean:dist": "nr pnpm:pkgs:p exec -- fse remove --quiet dist"
-  },
-  "devDependencies": {
-    "@antfu/ni": "^0.20.0",
-    "@atao60/fse-cli": "^0.1.7",
-    "@openapi-generator-clients/config": "workspace:*",
-    "@openapi-generator-clients/types": "workspace:*",
-    "@openapi-generator-clients/utils": "workspace:*",
-    "@tsconfig/node-lts-strictest-esm": "^18.12.1",
-    "@types/fs-extra": "^11.0.1",
-    "@types/minimist": "^1.2.2",
-    "@types/node": "^18.13.0",
-    "concurrently": "^7.6.0",
-    "fs-extra": "^11.1.0",
-    "is-ci": "^3.0.1",
-    "lint-staged": "^13.1.1",
-    "openapi-generator-clients": "workspace:*",
-    "pnpm": "7.27.0",
-    "prettier": "^2.8.4",
-    "rimraf": "^4.1.2",
-    "simple-git-hooks": "^2.8.1",
-    "tsx": "^3.12.3",
-    "type-fest": "^3.5.7",
-    "typescript": "^4.9.5",
-    "unbuild": "^1.1.1",
-    "vitest": "^0.28.4",
-    "webpack": ">=1.15.0",
-    "xo": "^0.53.1"
-  },
-  "xo": {
-    "prettier": true,
-    "envs": [
-      "node",
-      "es2022"
-    ],
-    "ignores": [
-      "example/clients-example/**"
-    ],
-    "semicolon": false,
-    "rules": {
-      "@typescript-eslint/consistent-type-definitions": [
-        "error",
-        "interface"
-      ],
-      "@typescript-eslint/naming-convention": "warn",
-      "import/extensions": "off",
-      "n/prefer-global/process": "off",
-      "n/file-extension-in-import": "off",
-      "no-template-curly-in-string": "warn",
-      "@typescript-eslint/no-redeclare": "warn",
-      "unicorn/no-await-expression-member": "warn",
-      "@typescript-eslint/no-unsafe-declaration-merging": "warn",
-      "new-cap": "warn",
-      "unicorn/no-array-callback-reference": "warn"
-    },
-    "overrides": [
-      {
-        "files": "**/*.test.ts",
-        "rules": {
-          "import/no-extraneous-dependencies": "warn",
-          "@typescript-eslint/no-unsafe-assignment": "warn",
-          "@typescript-eslint/no-unsafe-call": "warn"
-        }
-      }
-    ]
-  },
-  "simple-git-hooks": {
-    "pre-commit": "lint-staged"
-  },
-  "lint-staged": {
-    "*.{json,ts}": [
-      "xo --fix"
-    ]
-  },
-  "pnpm": {
-    "overrides": {
-      "openapi-generator-clients": "workspace:*"
-    }
-  }
+	"name": "@openapi-generator-clients/monorepo-root",
+	"type": "module",
+	"version": "0.1.0",
+	"author": "Braden Mars <bradenmars@bradenmars.me>",
+	"private": true,
+	"packageManager": "pnpm@7.27.0",
+	"engines": {
+		"node": ">=16"
+	},
+	"scripts": {
+		"postinstall": "is-ci || pnpm exec simple-git-hooks || pnpm dlx simple-git-hooks",
+		"pnpm:pkgs": "pnpm -r --stream --no-bail",
+		"pnpm:pkgs:p": "nr pnpm:pkgs --parallel",
+		"build": "nr pnpm:pkgs --parallel run build",
+		"dev": "nr pnpm:pkgs --parallel run dev",
+		"lint": "xo .",
+		"lint:fix": "xo --fix .",
+		"prepublishOnly": "nr build",
+		"release": "bumpp && npm publish",
+		"test": "vitest",
+		"typecheck": "nr pnpm:pkgs run --parallel typecheck",
+		"clean": "concurrently 'pnpm:clean:*'",
+		"clean:dist": "nr pnpm:pkgs:p exec -- fse remove --quiet dist"
+	},
+	"devDependencies": {
+		"@antfu/ni": "^0.20.0",
+		"@atao60/fse-cli": "^0.1.7",
+		"@openapi-generator-clients/config": "workspace:*",
+		"@openapi-generator-clients/types": "workspace:*",
+		"@openapi-generator-clients/utils": "workspace:*",
+		"@tsconfig/node-lts-strictest-esm": "^18.12.1",
+		"@types/fs-extra": "^11.0.1",
+		"@types/minimist": "^1.2.2",
+		"@types/node": "^18.13.0",
+		"concurrently": "^7.6.0",
+		"fs-extra": "^11.1.0",
+		"is-ci": "^3.0.1",
+		"lint-staged": "^13.1.1",
+		"openapi-generator-clients": "workspace:*",
+		"pnpm": "7.27.0",
+		"prettier": "^2.8.4",
+		"rimraf": "^4.1.2",
+		"simple-git-hooks": "^2.8.1",
+		"tsx": "^3.12.3",
+		"type-fest": "^3.5.7",
+		"typescript": "^4.9.5",
+		"unbuild": "^1.1.1",
+		"vitest": "^0.28.4",
+		"webpack": ">=1.15.0",
+		"xo": "^0.53.1"
+	},
+	"prettier": {
+		"singleQuote": true,
+		"semi": false,
+		"bracketSpacing": false,
+		"bracketSameLine": false,
+		"trailingComma": "all",
+		"tabWidth": 2,
+		"useTabs": true
+	},
+	"xo": {
+		"prettier": true,
+		"envs": [
+			"node",
+			"es2022"
+		],
+		"ignores": [
+			"example/clients-example/**"
+		],
+		"semicolon": false,
+		"rules": {
+			"@typescript-eslint/consistent-type-definitions": [
+				"error",
+				"interface"
+			],
+			"@typescript-eslint/naming-convention": "warn",
+			"import/extensions": "warn",
+			"n/prefer-global/process": "off",
+			"n/file-extension-in-import": "off",
+			"no-template-curly-in-string": "warn",
+			"@typescript-eslint/no-redeclare": "warn",
+			"unicorn/no-await-expression-member": "warn",
+			"@typescript-eslint/no-unsafe-declaration-merging": "warn",
+			"new-cap": "warn",
+			"unicorn/no-array-callback-reference": "warn"
+		},
+		"overrides": [
+			{
+				"files": "**/*.test.ts",
+				"rules": {
+					"import/no-extraneous-dependencies": "warn",
+					"@typescript-eslint/no-unsafe-assignment": "warn",
+					"@typescript-eslint/no-unsafe-call": "warn"
+				}
+			}
+		]
+	},
+	"simple-git-hooks": {
+		"pre-commit": "lint-staged"
+	},
+	"lint-staged": {
+		"*": [
+			"prettier --write --cache --ignore-unknown"
+		],
+		"*.{json,ts}": [
+			"xo --fix"
+		]
+	},
+	"pnpm": {
+		"overrides": {
+			"openapi-generator-clients": "workspace:*"
+		}
+	}
 }
