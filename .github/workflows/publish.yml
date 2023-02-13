@@ -5,6 +5,12 @@ on:
     types:
       - created
 
+concurrency:
+  # release-please may create multiple releases,
+  # but pnpm can release recursively (only publishes if applicable.)
+  # so just ensure only one job runs at a given time.
+  group: publish-lock
+
 jobs:
   release:
     runs-on: ubuntu-latest
