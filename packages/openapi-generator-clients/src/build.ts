@@ -1,4 +1,3 @@
-import {pathToFileURL} from 'node:url'
 import type {
 	BuildOptions,
 	BuildTemplate,
@@ -19,15 +18,18 @@ import type {
 	TemplateConfig,
 } from '@openapi-generator-clients/types'
 import fse from 'fs-extra'
-import {downloadGitDir} from '@openapi-generator-clients/utils'
+import {
+	downloadGitDir,
+	maybeRequireFrom,
+} from '@openapi-generator-clients/utils'
 import consola from 'consola'
 import {execa} from 'execa'
 import {
-	trim,
 	mapFastAsync,
 	partial,
-	tapAsync,
 	pipeAsync,
+	tapAsync,
+	trim,
 	tryCatchAsync,
 } from 'rambdax'
 import {temporaryWorkspaceProvider} from './workspace'
@@ -159,9 +161,9 @@ export const generateClient = async (client: ClientRecord) => {
 	})
 
 	const resolveFile = partial(path.resolve, [client.workspace.outputPath])
-	const dropTargets = (client.templateConfig.drop ?? []).map(resolveFile)
 	const dropFile = tryCatchAsync<string>(
 		pipeAsync<string>(
+			resolveFile,
 			tapAsync<string>(consola.info.bind(consola, 'Dropping file: ')),
 			tapAsync<string>(fse.rm),
 		),
@@ -175,8 +177,11 @@ export const generateClient = async (client: ClientRecord) => {
 
 	try {
 		await proc
-		await fileDropper(dropTargets)
-		consola.info('Updating ignore file with drops: ', dropTargets)
+		await fileDropper(client.templateConfig.drop ?? [])
+		consola.info(
+			'Updating ignore file with drops: ',
+			client.templateConfig.drop,
+		)
 		await updateIgnores(
 			resolveFile('.openapi-generator-ignore'),
 			client.templateConfig.drop ?? [],
@@ -189,10 +194,7 @@ export const generateClient = async (client: ClientRecord) => {
 export const build = async (rootDir: string, config?: BuildOptions) => {
 	rootDir = path.resolve(process.cwd(), rootDir || '.')
 	consola.info('Root dir:', rootDir)
-	const configPath = pathToFileURL(
-		path.resolve(rootDir, './clients.config'),
-	).toString()
-	config ??= (await import(configPath))?.default as BuildOptions
+	config ??= maybeRequireFrom<BuildOptions>('./clients.config', rootDir)
 	consola.info('Loaded config: ', config)
 
 	const {templates, generators} = config
