@@ -1,6 +1,7 @@
 import type {
 	ExtendedGeneratorConfig,
 	GeneratorConfig,
+	GeneratorProps,
 	OASConfig,
 	TemplateConfig,
 } from '@openapi-generator-clients/types'
@@ -9,10 +10,25 @@ import type {PartialDeep} from 'type-fest'
 
 const OAS_GENERATOR_VERSION = '6.0.0-beta'
 
+export const defaultProperties: GeneratorProps = {
+	supportsES6: true,
+	usePromise: true,
+	useRxJS6: true,
+	withInterfaces: true,
+	useInversify: undefined,
+	useObjectParameters: undefined,
+	legacyDiscriminatorBehavior: false,
+	platform: undefined,
+	disallowAdditionalPropertiesIfNotPresent: undefined,
+	npmName: undefined,
+}
+
 export const templateConfigDefaults: TemplateConfig = {
 	generatorVersion: '',
+	additionalProperties: defaultProperties,
 	drop: [],
 	additionalArgs: [],
+	files: {},
 }
 
 export const generatorRecordDefaults: GeneratorConfig = {
@@ -26,18 +42,8 @@ export const generatorRecordDefaults: GeneratorConfig = {
 	glob: undefined,
 	removeOperationIdPrefix: true,
 	legacyDiscriminatorBehavior: false,
-	additionalProperties: {
-		supportsES6: true,
-		usePromise: true,
-		useRxJS6: true,
-		withInterfaces: true,
-		useInversify: undefined,
-		useObjectParameters: undefined,
-		legacyDiscriminatorBehavior: false,
-		platform: undefined,
-		disallowAdditionalPropertiesIfNotPresent: undefined,
-		npmName: undefined,
-	},
+	files: {},
+	additionalProperties: defaultProperties,
 }
 
 export const GeneratorRecord = ImRecord<ExtendedGeneratorConfig>(
