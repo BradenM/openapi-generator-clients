@@ -63,7 +63,9 @@ export const buildTemplate = async (
 			return {
 				path: templatePath,
 				version: vers,
-				config: TemplateConfigRecord(template).toJS() as TemplateConfig,
+				config: TemplateConfigRecord(
+					template as TemplateConfig,
+				).toJS() as TemplateConfig,
 			}
 		}),
 	)
@@ -224,7 +226,7 @@ export const build = async (rootDir: string, config?: BuildOptions) => {
 		}
 
 		const templateCfg = TemplateConfigRecord(templateVersion.config).mergeDeep(
-			TemplateConfigRecord(value),
+			TemplateConfigRecord(value as TemplateConfig),
 		)
 		return new ClientRecord({
 			name: key,
