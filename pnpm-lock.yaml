@@ -96,7 +96,7 @@ importers:
       immutable: ^4.2.4
       minimist: ^1.2.8
       pathe: ^1.1.0
-      rambdax: 8.1.0
+      rambdax: 9.0.0
       type-fest: ^3.5.7
     dependencies:
       '@antfu/utils': 0.7.2
@@ -111,7 +111,7 @@ importers:
       immutable: 4.2.4
       minimist: 1.2.8
       pathe: 1.1.0
-      rambdax: 8.1.0
+      rambdax: 9.0.0
       type-fest: 3.5.7
 
   packages/types:
@@ -4450,8 +4450,8 @@ packages:
     engines: {node: '>=12'}
     dev: true
 
-  /rambdax/8.1.0:
-    resolution: {integrity: sha512-8TQS3jorlSSubddKTyVrsp9mevF2WMBtdEPjp9Bk8ipVijD5/9gVXGgBF4d0JzO6kzegCFYWANrbHLyKLE6YVA==}
+  /rambdax/9.0.0:
+    resolution: {integrity: sha512-8vcixAlXoFNdCoa35nDzLqntyimVMiQpWUhQgMkOb/pdxZULN+8d9l2kosEQ6Aq0awpI2m+u973cSlg2UrAbyw==}
     dev: false
 
   /randombytes/2.1.0:
