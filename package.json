@@ -9,7 +9,7 @@
 	},
 	"scripts": {
 		"postinstall": "is-ci || pnpm exec simple-git-hooks || pnpm dlx simple-git-hooks",
-		"pnpm:pkgs": "pnpm -r -F '!example'",
+		"pnpm:pkgs": "pnpm -r",
 		"pnpm:pkgs:p": "nr pnpm:pkgs --parallel",
 		"build": "nr pnpm:pkgs:p run build",
 		"dev": "nr pnpm:pkgs:p run dev",
