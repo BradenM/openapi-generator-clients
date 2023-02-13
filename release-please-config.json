@@ -64,14 +64,28 @@
 	],
 	"plugins": [
 		{
+			"type": "node-workspace"
+		},
+		{
 			"type": "sentence-case"
 		}
 	],
 	"packages": {
-		"packages/types": {},
-		"packages/utils": {},
-		"packages/config": {},
-		"packages/openapi-generator-clients": {},
-		"generators/ts-generator": {}
+		".": {},
+		"packages/types": {
+			"component": "@openapi-generator-clients/types"
+		},
+		"packages/utils": {
+			"component": "@openapi-generator-clients/utils"
+		},
+		"packages/config": {
+			"component": "@openapi-generator-clients/config"
+		},
+		"packages/openapi-generator-clients": {
+			"component": "openapi-generator-clients"
+		},
+		"generators/ts-generator": {
+			"component": "@openapi-generator-clients/ts-generator"
+		}
 	}
 }
