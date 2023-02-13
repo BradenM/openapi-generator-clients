@@ -8,6 +8,7 @@
 		"moduleResolution": "node",
 		"experimentalDecorators": true,
 		"emitDecoratorMetadata": true,
+		"isolatedModules": true,
 		"strict": true,
 		"strictNullChecks": true,
 		"resolveJsonModule": true,
