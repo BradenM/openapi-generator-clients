@@ -22,7 +22,14 @@ import fse from 'fs-extra'
 import {downloadGitDir} from '@openapi-generator-clients/utils'
 import consola from 'consola'
 import {execa} from 'execa'
-import R from 'rambdax'
+import {
+	trim,
+	mapFastAsync,
+	partial,
+	tapAsync,
+	pipeAsync,
+	tryCatchAsync,
+} from 'rambdax'
 import {temporaryWorkspaceProvider} from './workspace'
 
 export const buildTemplate = async (
@@ -122,7 +129,7 @@ export const updateIgnores = async (
 		ignoreContents
 			.toString()
 			.split('\n')
-			.map((ln) => R.trim(ln)),
+			.map((ln) => trim(ln)),
 	)
 	const newIgnores = extraIgnores.filter((drop) => !ignores.has(drop))
 	if (newIgnores.length > 0) {
@@ -151,12 +158,12 @@ export const generateClient = async (client: ClientRecord) => {
 		windowsHide: false,
 	})
 
-	const resolveFile = R.partial(path.resolve, [client.workspace.outputPath])
-	const dropTargets = R.map(resolveFile, client.templateConfig.drop ?? [])
-	const dropFile = R.tryCatchAsync<string>(
-		R.pipeAsync<string>(
-			R.tapAsync<string>(consola.info.bind(consola, 'Dropping file: ')),
-			R.tapAsync<string>(fse.rm),
+	const resolveFile = partial(path.resolve, [client.workspace.outputPath])
+	const dropTargets = (client.templateConfig.drop ?? []).map(resolveFile)
+	const dropFile = tryCatchAsync<string>(
+		pipeAsync<string>(
+			tapAsync<string>(consola.info.bind(consola, 'Dropping file: ')),
+			tapAsync<string>(fse.rm),
 		),
 		async (file: string) => {
 			consola.warn(`Could not drop file: ${file}`)
@@ -164,7 +171,7 @@ export const generateClient = async (client: ClientRecord) => {
 		},
 	)
 
-	const fileDropper = R.mapParallelAsync(dropFile)
+	const fileDropper = mapFastAsync(dropFile)
 
 	try {
 		await proc
@@ -245,6 +252,6 @@ export const build = async (rootDir: string, config?: BuildOptions) => {
 		configs: workClients.map((c) => c.oasGenerator.toJS()),
 	})
 
-	await R.mapParallelAsync(generateClient, workClients)
+	await mapFastAsync(generateClient, workClients)
 	consola.success('Done!')
 }
