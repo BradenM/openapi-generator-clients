@@ -1,7 +1,6 @@
 {
 	"name": "@openapi-generator-clients/monorepo-root",
 	"type": "module",
-	"version": "0.0.0",
 	"author": "Braden Mars <bradenmars@bradenmars.me>",
 	"private": true,
 	"packageManager": "pnpm@7.27.0",

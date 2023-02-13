@@ -64,14 +64,10 @@
 	],
 	"plugins": [
 		{
-			"type": "node-workspace"
-		},
-		{
 			"type": "sentence-case"
 		}
 	],
 	"packages": {
-		".": {},
 		"packages/types": {
 			"component": "@openapi-generator-clients/types"
 		},
