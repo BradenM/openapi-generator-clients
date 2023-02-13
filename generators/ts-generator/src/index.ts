@@ -1,5 +1,5 @@
 import {fileURLToPath} from 'node:url'
-import {defineGenerator} from 'openapi-generator-clients'
+import {defineGenerator} from '@openapi-generator-clients/config'
 
 export default defineGenerator('ts-generator', {
 	name: 'typescript',

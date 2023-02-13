@@ -48,15 +48,6 @@
 		"typecheck": "tsc --noEmit"
 	},
 	"peerDependencies": {
-		"openapi-generator-clients": "workspace:*",
-		"@openapi-generator-clients/config": "workspace:*",
-		"@openapi-generator-clients/types": "workspace:*",
-		"immutable": "^4.2.4",
-		"type-fest": "^3.5.7"
-	},
-	"devDependencies": {
-		"openapi-generator-clients": "workspace:*",
-		"immutable": "^4.2.4",
-		"type-fest": "^3.5.7"
+		"@openapi-generator-clients/config": "workspace:*"
 	}
 }

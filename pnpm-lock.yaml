@@ -59,14 +59,7 @@ importers:
       xo: 0.53.1_webpack@5.75.0
 
   generators/ts-generator:
-    specifiers:
-      immutable: ^4.2.4
-      openapi-generator-clients: workspace:*
-      type-fest: ^3.5.7
-    devDependencies:
-      immutable: 4.2.4
-      openapi-generator-clients: link:../../packages/openapi-generator-clients
-      type-fest: 3.5.7
+    specifiers: {}
 
   packages/config:
     specifiers:
@@ -4390,6 +4383,7 @@ packages:
       {
         integrity: sha512-WDxL3Hheb1JkRN3sQkyujNlL/xRjAo3rJtaU5xeufUauG66JdMr32bLj4gF+vWl84DIA3Zxw7tiAjneYzRRw+w==,
       }
+    dev: false
 
   /import-fresh/3.3.0:
     resolution:
