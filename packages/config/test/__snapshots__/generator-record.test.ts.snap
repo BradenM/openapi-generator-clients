@@ -16,6 +16,7 @@ exports[`'GeneratorRecord' inits with defaults > GeneratorRecord 1`] = `
     "withInterfaces": true,
   },
   "drop": [],
+  "files": {},
   "generatorName": "",
   "generatorVersion": "",
   "gitHost": "github.com",
@@ -44,6 +45,7 @@ exports[`'OASGeneratorRecord' inits with defaults > OASGeneratorRecord 1`] = `
     "useRxJS6": true,
     "withInterfaces": true,
   },
+  "files": {},
   "generatorName": "",
   "gitHost": "github.com",
   "gitRepoId": "",
@@ -71,7 +73,20 @@ exports[`'OASRecord' inits with defaults > OASRecord 1`] = `
 exports[`'TemplateConfigRecord' inits with defaults > TemplateConfigRecord 1`] = `
 {
   "additionalArgs": [],
+  "additionalProperties": {
+    "disallowAdditionalPropertiesIfNotPresent": undefined,
+    "legacyDiscriminatorBehavior": false,
+    "npmName": undefined,
+    "platform": undefined,
+    "supportsES6": true,
+    "useInversify": undefined,
+    "useObjectParameters": undefined,
+    "usePromise": true,
+    "useRxJS6": true,
+    "withInterfaces": true,
+  },
   "drop": [],
+  "files": {},
   "generatorVersion": "",
 }
 `;
