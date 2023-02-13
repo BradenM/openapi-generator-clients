@@ -8,7 +8,8 @@
 	"homepage": "https://github.com/BradenM/openapi-generator-clients#readme",
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/BradenM/openapi-generator-clients.git"
+		"url": "git+https://github.com/BradenM/openapi-generator-clients.git",
+		"directory": "packages/openapi-generator-clients"
 	},
 	"bugs": "https://github.com/BradenM/openapi-generator-clients/issues",
 	"keywords": [],
