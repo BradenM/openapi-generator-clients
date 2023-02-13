@@ -6,6 +6,7 @@ export interface GitConfig {
 
 export interface GeneratorProps {
 	[key: string]: string | boolean | undefined
+
 	useRxJS6: boolean | string | undefined
 	usePromise: boolean | string | undefined
 	supportsES6: boolean | string | undefined
@@ -19,8 +20,40 @@ export interface GeneratorProps {
 	npmName: string | undefined
 }
 
-export interface GeneratorConfig extends GitConfig {
-	additionalProperties: GeneratorProps
+export const FileTemplateType = {
+	Api: 'API',
+	ApiDocs: 'APIDocs',
+	ApiTests: 'APITests',
+	Model: 'Model',
+	ModelDocs: 'ModelDocs',
+	ModelTests: 'ModelTests',
+	SupportingFiles: 'SupportingFiles',
+} as const
+
+export type FileTemplateType =
+	(typeof FileTemplateType)[keyof typeof FileTemplateType]
+
+export interface FileTemplate {
+	templateType: FileTemplateType
+	destinationFilename: string
+	folder?: string
+}
+
+export interface FileTemplateExtensions {
+	/**
+	 * Path relative to client output to write file in.
+	 */
+	destinationPath?: string
+	sourcePath?: string
+}
+
+export interface ExtendedFileTemplate
+	extends FileTemplate,
+		FileTemplateExtensions {}
+
+export interface GeneratorConfig<T extends GeneratorProps = GeneratorProps>
+	extends GitConfig {
+	additionalProperties?: T
 	generatorName: string | undefined
 	templateDir?: string | undefined
 	output: string
@@ -28,17 +61,24 @@ export interface GeneratorConfig extends GitConfig {
 	inputSpec: string | undefined
 	removeOperationIdPrefix: boolean
 	legacyDiscriminatorBehavior: boolean
+	files?: Record<string, FileTemplate>
 }
 
-export interface TemplateConfig {
+export interface TemplateConfig<T extends GeneratorProps = GeneratorProps> {
 	generatorVersion?: string | undefined
+	additionalProperties?: T
 	additionalArgs: string[]
 	drop?: string[]
+	files?: Record<string, ExtendedFileTemplate>
 }
 
-export interface ExtendedGeneratorConfig
-	extends GeneratorConfig,
-		TemplateConfig {}
+export interface ExtendedGeneratorConfig<
+	T extends GeneratorProps = GeneratorProps,
+> extends GeneratorConfig<T>,
+		TemplateConfig<T> {
+	files?: TemplateConfig['files']
+	addtionalProperties?: TemplateConfig['additionalProperties']
+}
 
 export interface OASConfig {
 	$schema?: string
@@ -47,11 +87,6 @@ export interface OASConfig {
 		version: string
 		generators: Record<string, GeneratorConfig>
 	}
-}
-
-export interface TemplatesConfig {
-	extends: string
-	drop?: string[]
 }
 
 export interface GenerateOptions {
@@ -74,8 +109,10 @@ export interface Workspace {
 
 export interface WorkspaceProvider<T extends Workspace = Workspace> {
 	workspace: T
+
 	create(outputDir: string, overwrite?: boolean): Promise<this>
 
 	addTemplatePath(path: string, ...args: any[]): Promise<this>
+
 	setConfig(config: GeneratorConfig): Promise<this>
 }
