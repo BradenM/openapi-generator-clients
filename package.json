@@ -9,7 +9,7 @@
 	},
 	"scripts": {
 		"postinstall": "is-ci || pnpm exec simple-git-hooks || pnpm dlx simple-git-hooks",
-		"pnpm:pkgs": "pnpm -r --stream --no-bail",
+		"pnpm:pkgs": "pnpm -r -F '!example'",
 		"pnpm:pkgs:p": "nr pnpm:pkgs --parallel",
 		"build": "nr pnpm:pkgs:p run build",
 		"dev": "nr pnpm:pkgs:p run dev",
@@ -18,7 +18,7 @@
 		"prepublishOnly": "nr build",
 		"release": "bumpp && npm publish",
 		"test": "vitest",
-		"typecheck": "nr pnpm:pkgs run --parallel typecheck",
+		"typecheck": "nr pnpm:pkgs:p run typecheck",
 		"clean": "concurrently 'pnpm:clean:*'",
 		"clean:dist": "nr pnpm:pkgs:p exec -- fse remove --quiet dist"
 	},
