@@ -12,7 +12,9 @@ const petstore = tsGenerator.defineClient('v1', {
 			gitUserId: 'BradenM',
 			legacyDiscriminatorBehavior: false,
 			removeOperationIdPrefix: true,
-			additionalProperties: {},
+			additionalProperties: {
+				npmName: 'petstore-client-example',
+			},
 			additionalArgs: [],
 		},
 	},

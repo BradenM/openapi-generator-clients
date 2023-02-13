@@ -1,5 +1,4 @@
 .gitignore
-.openapi-generator-ignore
 PetApi.md
 README.md
 StoreApi.md
@@ -11,7 +10,6 @@ apis/baseapi.ts
 apis/exception.ts
 auth/auth.ts
 configuration.ts
-git_push.sh
 http/http.ts
 http/isomorphic-fetch.ts
 index.ts
