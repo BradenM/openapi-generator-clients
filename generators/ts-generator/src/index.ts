@@ -11,6 +11,13 @@ export default defineGenerator('ts-generator', {
 			generatorVersion: 'v1',
 			drop: ['git_push.sh'],
 			additionalArgs: [],
+			additionalProperties: {
+				disallowAdditionalPropertiesIfNotPresent: false,
+				legacyDiscriminatorBehavior: false,
+				platform: 'node',
+				supportsES6: true,
+				useObjectParameters: true,
+			},
 		},
 	},
 })

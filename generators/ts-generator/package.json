@@ -48,6 +48,7 @@
 		"typecheck": "tsc --noEmit"
 	},
 	"peerDependencies": {
-		"@openapi-generator-clients/config": "workspace:*"
+		"@openapi-generator-clients/config": "workspace:*",
+		"@openapi-generator-clients/types": "workspace:*"
 	}
 }
