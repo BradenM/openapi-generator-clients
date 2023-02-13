@@ -47,7 +47,7 @@
 		"test": "vitest",
 		"typecheck": "tsc --noEmit"
 	},
-	"peerDependencies": {
+	"dependencies": {
 		"@openapi-generator-clients/config": "workspace:*",
 		"@openapi-generator-clients/types": "workspace:*"
 	}

@@ -69,7 +69,12 @@ importers:
       openapi-generator-clients: link:../../packages/openapi-generator-clients
 
   generators/ts-generator:
-    specifiers: {}
+    specifiers:
+      '@openapi-generator-clients/config': workspace:*
+      '@openapi-generator-clients/types': workspace:*
+    dependencies:
+      '@openapi-generator-clients/config': link:../../packages/config
+      '@openapi-generator-clients/types': link:../../packages/types
 
   packages/config:
     specifiers:
