@@ -11,7 +11,7 @@
 		"postinstall": "is-ci || pnpm exec simple-git-hooks || pnpm dlx simple-git-hooks",
 		"pnpm:pkgs": "pnpm -r",
 		"pnpm:pkgs:p": "nr pnpm:pkgs --parallel",
-		"build": "nr pnpm:pkgs:p run build",
+		"build": "nr pnpm:pkgs run build",
 		"dev": "nr pnpm:pkgs:p run dev",
 		"lint": "xo .",
 		"lint:fix": "xo --fix .",
@@ -19,7 +19,8 @@
 		"test": "vitest",
 		"typecheck": "nr pnpm:pkgs:p run typecheck",
 		"clean": "concurrently 'pnpm:clean:*'",
-		"clean:dist": "nr pnpm:pkgs:p exec -- fse remove --quiet dist"
+		"clean:dist": "nr pnpm:pkgs:p exec -- fse remove --quiet dist",
+		"clean:modules": "nr pnpm:pkgs:p exec -- fse remove --quiet node_modules"
 	},
 	"devDependencies": {
 		"@antfu/ni": "^0.20.0",

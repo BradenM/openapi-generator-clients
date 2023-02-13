@@ -20,18 +20,14 @@ export interface GeneratorProps {
 	npmName: string | undefined
 }
 
-export const FileTemplateType = {
-	Api: 'API',
-	ApiDocs: 'APIDocs',
-	ApiTests: 'APITests',
-	Model: 'Model',
-	ModelDocs: 'ModelDocs',
-	ModelTests: 'ModelTests',
-	SupportingFiles: 'SupportingFiles',
-} as const
-
 export type FileTemplateType =
-	(typeof FileTemplateType)[keyof typeof FileTemplateType]
+	| 'API'
+	| 'APIDocs'
+	| 'APITests'
+	| 'Model'
+	| 'ModelDocs'
+	| 'ModelTests'
+	| 'SupportingFiles'
 
 export interface FileTemplate {
 	templateType: FileTemplateType
