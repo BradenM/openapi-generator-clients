@@ -36,6 +36,6 @@
 		"typecheck": "tsc --noEmit"
 	},
 	"dependencies": {
-		"type-fest": "^3.5.7"
+		"type-fest": "^3.6.0"
 	}
 }
