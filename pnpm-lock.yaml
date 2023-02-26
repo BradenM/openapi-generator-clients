@@ -26,7 +26,7 @@ importers:
       rimraf: ^4.1.2
       simple-git-hooks: ^2.8.1
       tsx: ^3.12.3
-      type-fest: ^3.6.0
+      type-fest: ^3.6.1
       typescript: ^4.9.5
       unbuild: ^1.1.2
       vite: ^4.1.4
@@ -53,7 +53,7 @@ importers:
       rimraf: 4.1.2
       simple-git-hooks: 2.8.1
       tsx: 3.12.3
-      type-fest: 3.6.0
+      type-fest: 3.6.1
       typescript: 4.9.5
       unbuild: 1.1.2
       vite: 4.1.4_@types+node@18.14.1
@@ -3901,7 +3901,7 @@ packages:
       read-pkg-up: 9.1.0
       redent: 4.0.0
       trim-newlines: 4.0.2
-      type-fest: 3.6.0
+      type-fest: 3.6.1
       yargs-parser: 21.1.1
     dev: true
 
@@ -5173,6 +5173,12 @@ packages:
   /type-fest/3.6.0:
     resolution: {integrity: sha512-RqTRtKTzvPpNdDUp1dVkKQRunlPITk4mXeqFlAZoJsS+fLRn8AdPK0TcQDumGayhU7fjlBfiBjsq3pe3rIfXZQ==}
     engines: {node: '>=14.16'}
+    dev: false
+
+  /type-fest/3.6.1:
+    resolution: {integrity: sha512-htXWckxlT6U4+ilVgweNliPqlsVSSucbxVexRYllyMVJDtf5rTjv6kF/s+qAd4QSL1BZcnJPEJavYBPQiWuZDA==}
+    engines: {node: '>=14.16'}
+    dev: true
 
   /typed-array-length/1.0.4:
     resolution: {integrity: sha512-KjZypGq+I/H7HI5HlOoGHkWUUGq+Q0TPhQurLbyrVrvnKTBgzLhIJ7j6J/XTQOi0d1RjyZ0wdas8bKs2p0x3Ng==}
