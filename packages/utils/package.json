@@ -51,7 +51,7 @@
 		"chalk": "^5.2.0",
 		"consola": "^2.15.3",
 		"fs-extra": "^11.1.0",
-		"got": "^12.5.3",
+		"got": "^12.6.0",
 		"jiti": "^1.17.1",
 		"list-github-dir-content": "^3.0.0"
 	}
