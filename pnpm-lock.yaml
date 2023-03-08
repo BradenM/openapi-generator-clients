@@ -31,7 +31,7 @@ importers:
       unbuild: ^1.1.2
       vite: ^4.1.4
       vitest: ^0.29.2
-      webpack: '>=5.75.0'
+      webpack: '>=5.76.0'
       xo: ^0.53.1
     devDependencies:
       '@antfu/ni': 0.20.0
@@ -58,8 +58,8 @@ importers:
       unbuild: 1.1.2
       vite: 4.1.4_@types+node@18.14.6
       vitest: 0.29.2
-      webpack: 5.75.0
-      xo: 0.53.1_webpack@5.75.0
+      webpack: 5.76.0
+      xo: 0.53.1_webpack@5.76.0
 
   example/clients-example:
     specifiers:
@@ -1151,7 +1151,7 @@ packages:
     resolution: {integrity: sha512-9K4zoImiZc3HlIp6AVUDE4CWYx22a+lhSZMYNpbjW04+YF0KWj4pJXnEMjdnFTiQibFFmElcsasJXDbdI/EPhA==}
     dependencies:
       '@types/eslint': 8.21.1
-      '@types/estree': 0.0.51
+      '@types/estree': 1.0.0
     dev: true
 
   /@types/eslint/7.29.0:
@@ -1164,7 +1164,7 @@ packages:
   /@types/eslint/8.21.1:
     resolution: {integrity: sha512-rc9K8ZpVjNcLs8Fp0dkozd5Pt2Apk1glO4Vgz8ix1u6yFByxfqo5Yavpy65o+93TAe24jr7v+eSBtFLvOQtCRQ==}
     dependencies:
-      '@types/estree': 0.0.51
+      '@types/estree': 1.0.0
       '@types/json-schema': 7.0.11
     dev: true
 
@@ -2413,7 +2413,7 @@ packages:
       - supports-color
     dev: true
 
-  /eslint-import-resolver-webpack/0.13.2_w42pkqsix7fbbniun6k4diz5ie:
+  /eslint-import-resolver-webpack/0.13.2_oj36h3vmjyzpig2jnmiak555qy:
     resolution: {integrity: sha512-XodIPyg1OgE2h5BDErz3WJoK7lawxKTJNhgPNafRST6csC/MZC+L5P6kKqsZGRInpbgc02s/WZMrb4uGJzcuRg==}
     engines: {node: '>= 6'}
     peerDependencies:
@@ -2432,7 +2432,7 @@ packages:
       lodash: 4.17.21
       resolve: 1.22.1
       semver: 5.7.1
-      webpack: 5.75.0
+      webpack: 5.76.0
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -2462,7 +2462,7 @@ packages:
       debug: 3.2.7
       eslint: 8.35.0
       eslint-import-resolver-node: 0.3.7
-      eslint-import-resolver-webpack: 0.13.2_w42pkqsix7fbbniun6k4diz5ie
+      eslint-import-resolver-webpack: 0.13.2_oj36h3vmjyzpig2jnmiak555qy
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -5046,7 +5046,7 @@ packages:
       supports-hyperlinks: 2.3.0
     dev: true
 
-  /terser-webpack-plugin/5.3.6_webpack@5.75.0:
+  /terser-webpack-plugin/5.3.6_webpack@5.76.0:
     resolution: {integrity: sha512-kfLFk+PoLUQIbLmB1+PZDMRSZS99Mp+/MHqDNmMA6tOItzRt+Npe3E+fsMs5mfcM0wCtrrdU387UnV+vnSffXQ==}
     engines: {node: '>= 10.13.0'}
     peerDependencies:
@@ -5067,7 +5067,7 @@ packages:
       schema-utils: 3.1.1
       serialize-javascript: 6.0.1
       terser: 5.16.5
-      webpack: 5.75.0
+      webpack: 5.76.0
     dev: true
 
   /terser/5.16.5:
@@ -5479,8 +5479,8 @@ packages:
     engines: {node: '>=10.13.0'}
     dev: true
 
-  /webpack/5.75.0:
-    resolution: {integrity: sha512-piaIaoVJlqMsPtX/+3KTTO6jfvrSYgauFVdt8cr9LTHKmcq/AMd4mhzsiP7ZF/PGRNPGA8336jldh9l2Kt2ogQ==}
+  /webpack/5.76.0:
+    resolution: {integrity: sha512-l5sOdYBDunyf72HW8dF23rFtWq/7Zgvt/9ftMof71E/yUb1YLOBmTgA2K4vQthB3kotMrSj609txVE0dnr2fjA==}
     engines: {node: '>=10.13.0'}
     hasBin: true
     peerDependencies:
@@ -5510,7 +5510,7 @@ packages:
       neo-async: 2.6.2
       schema-utils: 3.1.1
       tapable: 2.2.1
-      terser-webpack-plugin: 5.3.6_webpack@5.75.0
+      terser-webpack-plugin: 5.3.6_webpack@5.76.0
       watchpack: 2.4.0
       webpack-sources: 3.2.3
     transitivePeerDependencies:
@@ -5589,7 +5589,7 @@ packages:
   /wrappy/1.0.2:
     resolution: {integrity: sha512-l4Sp/DRseor9wL6EvV2+TuQn63dMkPjZ/sp9XkghTEbV9KlPS1xUsZ3u7/IQO4wxtcFB4bgpQPRcR3QCvezPcQ==}
 
-  /xo/0.53.1_webpack@5.75.0:
+  /xo/0.53.1_webpack@5.76.0:
     resolution: {integrity: sha512-/2R8SPehv1UhiIqJ9uSvrAjslcoygICNsUlEb/Zf2V6rMtr7YCoggc6hlt6b/kbncpR989Roqt6AvEO779dFxw==}
     engines: {node: '>=14.16'}
     hasBin: true
@@ -5610,7 +5610,7 @@ packages:
       eslint-config-xo: 0.43.1_eslint@8.35.0
       eslint-config-xo-typescript: 0.55.1_h4y5vq77dos4n2dv5xnmk2yq34
       eslint-formatter-pretty: 4.1.0
-      eslint-import-resolver-webpack: 0.13.2_w42pkqsix7fbbniun6k4diz5ie
+      eslint-import-resolver-webpack: 0.13.2_oj36h3vmjyzpig2jnmiak555qy
       eslint-plugin-ava: 13.2.0_eslint@8.35.0
       eslint-plugin-eslint-comments: 3.2.0_eslint@8.35.0
       eslint-plugin-import: 2.27.5_42nci3ix7eiwxk5ulhonfqdkta
@@ -5635,7 +5635,7 @@ packages:
       slash: 5.0.0
       to-absolute-glob: 2.0.2
       typescript: 4.9.5
-      webpack: 5.75.0
+      webpack: 5.76.0
     transitivePeerDependencies:
       - eslint-import-resolver-typescript
       - supports-color
