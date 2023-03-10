@@ -81,12 +81,12 @@ importers:
     specifiers:
       '@antfu/utils': ^0.7.2
       '@openapi-generator-clients/types': workspace:*
-      immutable: ^4.2.4
+      immutable: ^4.3.0
       type-fest: ^3.6.1
     dependencies:
       '@antfu/utils': 0.7.2
       '@openapi-generator-clients/types': link:../types
-      immutable: 4.2.4
+      immutable: 4.3.0
       type-fest: 3.6.1
 
   packages/openapi-generator-clients:
@@ -100,7 +100,7 @@ importers:
       execa: ^7.0.0
       fast-glob: ^3.2.12
       fs-extra: ^11.1.0
-      immutable: ^4.2.4
+      immutable: ^4.3.0
       minimist: ^1.2.8
       pathe: ^1.1.0
       rambdax: 8.1.0
@@ -115,7 +115,7 @@ importers:
       execa: 7.0.0
       fast-glob: 3.2.12
       fs-extra: 11.1.0
-      immutable: 4.2.4
+      immutable: 4.3.0
       minimist: 1.2.8
       pathe: 1.1.0
       rambdax: 8.1.0
@@ -3254,8 +3254,8 @@ packages:
     engines: {node: '>= 4'}
     dev: true
 
-  /immutable/4.2.4:
-    resolution: {integrity: sha512-WDxL3Hheb1JkRN3sQkyujNlL/xRjAo3rJtaU5xeufUauG66JdMr32bLj4gF+vWl84DIA3Zxw7tiAjneYzRRw+w==}
+  /immutable/4.3.0:
+    resolution: {integrity: sha512-0AOCmOip+xgJwEVTQj1EfiDDOkPmuyllDuTuEX+DDXUgapLAsBIfkg3sxCYyCEA8mQqZrrxPUGjcOQ2JS3WLkg==}
     dev: false
 
   /import-fresh/3.3.0:
