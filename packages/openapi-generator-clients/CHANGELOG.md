@@ -1,5 +1,15 @@
 # Changelog
 
+## [0.1.2](https://github.com/BradenM/openapi-generator-clients/compare/openapi-generator-clients-v0.1.1...openapi-generator-clients-v0.1.2) (2023-03-14)
+
+
+### Bug Fixes
+
+* **deps:** Update dependency execa to ^7.1.0 ([25ed267](https://github.com/BradenM/openapi-generator-clients/commit/25ed267285dc1dd068bdb501f6c1fba95642a103))
+* **deps:** Update dependency immutable to ^4.3.0 ([8409824](https://github.com/BradenM/openapi-generator-clients/commit/8409824951c36ddf30406819e568692264da6591))
+* **deps:** Update dependency type-fest to ^3.6.0 ([2f1efef](https://github.com/BradenM/openapi-generator-clients/commit/2f1efef409542ccf822e42429df5cc3c0192dfa0))
+* **deps:** Update dependency type-fest to ^3.6.1 ([6fa1c1b](https://github.com/BradenM/openapi-generator-clients/commit/6fa1c1b0d3522b9b47e22d68935a0ebdbebefd5d))
+
 ## [0.1.1](https://github.com/BradenM/openapi-generator-clients/compare/openapi-generator-clients-v0.1.0...openapi-generator-clients-v0.1.1) (2023-02-13)
 
 
