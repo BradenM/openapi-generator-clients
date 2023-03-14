@@ -1,5 +1,14 @@
 # Changelog
 
+## [0.1.2](https://github.com/BradenM/openapi-generator-clients/compare/@openapi-generator-clients/utils-v0.1.1...@openapi-generator-clients/utils-v0.1.2) (2023-03-14)
+
+
+### Bug Fixes
+
+* **deps:** Update dependency got to ^12.6.0 ([a03e094](https://github.com/BradenM/openapi-generator-clients/commit/a03e0940aa38afcbb6c8b0b9cf5723351f2ce22b))
+* **deps:** Update dependency jiti to ^1.17.1 ([8c11aa8](https://github.com/BradenM/openapi-generator-clients/commit/8c11aa84ca324dec13aa4cb75a22b2118f0c5bc0))
+* **deps:** Update dependency jiti to ^1.17.2 ([39d763c](https://github.com/BradenM/openapi-generator-clients/commit/39d763ca3da60315fe53072e4269fe4b0c342f45))
+
 ## [0.1.1](https://github.com/BradenM/openapi-generator-clients/compare/@openapi-generator-clients/utils-v0.1.0...@openapi-generator-clients/utils-v0.1.1) (2023-02-13)
 
 
