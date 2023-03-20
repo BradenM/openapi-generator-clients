@@ -38,7 +38,7 @@
 		"lint-staged": "^13.2.0",
 		"openapi-generator-clients": "workspace:*",
 		"pnpm": "7.30.0",
-		"prettier": "^2.8.4",
+		"prettier": "^2.8.5",
 		"rimraf": "^4.4.0",
 		"simple-git-hooks": "^2.8.1",
 		"tsx": "^3.12.5",
