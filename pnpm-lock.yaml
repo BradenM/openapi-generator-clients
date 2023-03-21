@@ -22,7 +22,7 @@ importers:
       lint-staged: ^13.2.0
       openapi-generator-clients: workspace:*
       pnpm: 7.30.0
-      prettier: ^2.8.5
+      prettier: ^2.8.6
       rimraf: ^4.4.0
       simple-git-hooks: ^2.8.1
       tsx: ^3.12.6
@@ -49,7 +49,7 @@ importers:
       lint-staged: 13.2.0
       openapi-generator-clients: link:packages/openapi-generator-clients
       pnpm: 7.30.0
-      prettier: 2.8.5
+      prettier: 2.8.6
       rimraf: 4.4.0
       simple-git-hooks: 2.8.1
       tsx: 3.12.6
@@ -2360,7 +2360,7 @@ packages:
       is-proto-prop: 2.0.0
     dev: true
 
-  /eslint-plugin-prettier/4.2.1_e4jq4ivnnnwcsomlcyj2qoljy4:
+  /eslint-plugin-prettier/4.2.1_w3shflqoegspmha2z74hzwkfbm:
     resolution: {integrity: sha512-f/0rXLXUt0oFYs8ra4w49wYZBG5GKZpAYsJSm6rnYL5uVDjd+zowwMwVZHnAjf4edNrKpCDYfXDgmRE/Ak7QyQ==}
     engines: {node: '>=12.0.0'}
     peerDependencies:
@@ -2373,7 +2373,7 @@ packages:
     dependencies:
       eslint: 8.36.0
       eslint-config-prettier: 8.7.0_eslint@8.36.0
-      prettier: 2.8.5
+      prettier: 2.8.6
       prettier-linter-helpers: 1.0.0
     dev: true
 
@@ -4246,8 +4246,8 @@ packages:
       fast-diff: 1.2.0
     dev: true
 
-  /prettier/2.8.5:
-    resolution: {integrity: sha512-3gzuxrHbKUePRBB4ZeU08VNkUcqEHaUaouNt0m7LGP4Hti/NuB07C7PPTM/LkWqXoJYJn2McEo5+kxPNrtQkLQ==}
+  /prettier/2.8.6:
+    resolution: {integrity: sha512-mtuzdiBbHwPEgl7NxWlqOkithPyp4VN93V7VeHVWBF+ad3I5avc0RVDT4oImXQy9H/AqxA2NSQH8pSxHW6FYbQ==}
     engines: {node: '>=10.13.0'}
     hasBin: true
     dev: true
@@ -5411,7 +5411,7 @@ packages:
       eslint-plugin-import: 2.27.5_vjqfmkqrtjoaz2m5x43zwi6jq4
       eslint-plugin-n: 15.6.1_eslint@8.36.0
       eslint-plugin-no-use-extend-native: 0.5.0
-      eslint-plugin-prettier: 4.2.1_e4jq4ivnnnwcsomlcyj2qoljy4
+      eslint-plugin-prettier: 4.2.1_w3shflqoegspmha2z74hzwkfbm
       eslint-plugin-unicorn: 44.0.2_eslint@8.36.0
       esm-utils: 4.1.2
       find-cache-dir: 4.0.0
@@ -5425,7 +5425,7 @@ packages:
       meow: 11.0.0
       micromatch: 4.0.5
       open-editor: 4.0.0
-      prettier: 2.8.5
+      prettier: 2.8.6
       semver: 7.3.8
       slash: 5.0.0
       to-absolute-glob: 2.0.2
