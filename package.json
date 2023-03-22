@@ -39,7 +39,7 @@
 		"openapi-generator-clients": "workspace:*",
 		"pnpm": "7.30.0",
 		"prettier": "^2.8.6",
-		"rimraf": "^4.4.0",
+		"rimraf": "^4.4.1",
 		"simple-git-hooks": "^2.8.1",
 		"tsx": "^3.12.6",
 		"type-fest": "^3.6.1",
@@ -47,7 +47,7 @@
 		"unbuild": "^1.1.2",
 		"vite": "^4.2.1",
 		"vitest": "^0.29.7",
-		"webpack": ">=5.76.2",
+		"webpack": ">=5.76.3",
 		"xo": "^0.53.1"
 	},
 	"prettier": {
