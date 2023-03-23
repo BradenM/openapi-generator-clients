@@ -21,12 +21,12 @@ importers:
       is-ci: ^3.0.1
       lint-staged: ^13.2.0
       openapi-generator-clients: workspace:*
-      pnpm: 7.30.0
+      pnpm: 7.30.1
       prettier: ^2.8.6
       rimraf: ^4.4.1
       simple-git-hooks: ^2.8.1
       tsx: ^3.12.6
-      type-fest: ^3.6.1
+      type-fest: ^3.7.0
       typescript: ^4.9.5
       unbuild: ^1.1.2
       vite: ^4.2.1
@@ -48,12 +48,12 @@ importers:
       is-ci: 3.0.1
       lint-staged: 13.2.0
       openapi-generator-clients: link:packages/openapi-generator-clients
-      pnpm: 7.30.0
+      pnpm: 7.30.1
       prettier: 2.8.6
       rimraf: 4.4.1
       simple-git-hooks: 2.8.1
       tsx: 3.12.6
-      type-fest: 3.6.1
+      type-fest: 3.7.0
       typescript: 4.9.5
       unbuild: 1.1.2
       vite: 4.2.1_@types+node@18.15.5
@@ -3714,7 +3714,7 @@ packages:
       read-pkg-up: 9.1.0
       redent: 4.0.0
       trim-newlines: 4.0.2
-      type-fest: 3.6.1
+      type-fest: 3.7.0
       yargs-parser: 21.1.1
     dev: true
 
@@ -4219,8 +4219,8 @@ packages:
     engines: {node: '>=4'}
     dev: true
 
-  /pnpm/7.30.0:
-    resolution: {integrity: sha512-6SUdrWSZ4qvQ4uBVg7smnabVKOFrT7DgSz2NfViG54nRii4ODB395qmHprBiv5WBdlC/jZYBn99fSfmzIMI3WQ==}
+  /pnpm/7.30.1:
+    resolution: {integrity: sha512-ThkXKxTUIUd7HhXkwQ+zl3dSU1xPdf7cA9Khthm4GuUJDkM2KJOCBXqlzoHQepXD0i7GbURXAx+WKQ/m6taBrQ==}
     engines: {node: '>=14.6'}
     hasBin: true
     dev: true
@@ -5018,6 +5018,12 @@ packages:
   /type-fest/3.6.1:
     resolution: {integrity: sha512-htXWckxlT6U4+ilVgweNliPqlsVSSucbxVexRYllyMVJDtf5rTjv6kF/s+qAd4QSL1BZcnJPEJavYBPQiWuZDA==}
     engines: {node: '>=14.16'}
+    dev: false
+
+  /type-fest/3.7.0:
+    resolution: {integrity: sha512-A2qUJ/j8vkKIT+UorxayZjFJoEdNkIPZkjOJSWezoAbRQd7QEhnz2iJlfVy4Or0GuEnCXts5cNorQNUvdLkaSQ==}
+    engines: {node: '>=14.16'}
+    dev: true
 
   /typed-array-length/1.0.4:
     resolution: {integrity: sha512-KjZypGq+I/H7HI5HlOoGHkWUUGq+Q0TPhQurLbyrVrvnKTBgzLhIJ7j6J/XTQOi0d1RjyZ0wdas8bKs2p0x3Ng==}
