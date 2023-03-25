@@ -3,7 +3,7 @@
 	"type": "module",
 	"author": "Braden Mars <bradenmars@bradenmars.me>",
 	"private": true,
-	"packageManager": "pnpm@7.30.2",
+	"packageManager": "pnpm@7.30.3",
 	"engines": {
 		"node": ">=v16.19.1"
 	},
