@@ -82,12 +82,12 @@ importers:
       '@antfu/utils': ^0.7.2
       '@openapi-generator-clients/types': workspace:*
       immutable: ^4.3.0
-      type-fest: ^3.8.0
+      type-fest: ^3.9.0
     dependencies:
       '@antfu/utils': 0.7.2
       '@openapi-generator-clients/types': link:../types
       immutable: 4.3.0
-      type-fest: 3.8.0
+      type-fest: 3.9.0
 
   packages/openapi-generator-clients:
     specifiers:
@@ -104,7 +104,7 @@ importers:
       minimist: ^1.2.8
       pathe: ^1.1.0
       rambdax: 8.1.0
-      type-fest: ^3.8.0
+      type-fest: ^3.9.0
     dependencies:
       '@antfu/utils': 0.7.2
       '@openapi-generator-clients/config': link:../config
@@ -119,13 +119,13 @@ importers:
       minimist: 1.2.8
       pathe: 1.1.0
       rambdax: 8.1.0
-      type-fest: 3.8.0
+      type-fest: 3.9.0
 
   packages/types:
     specifiers:
-      type-fest: ^3.8.0
+      type-fest: ^3.9.0
     dependencies:
-      type-fest: 3.8.0
+      type-fest: 3.9.0
 
   packages/utils:
     specifiers:
@@ -3719,7 +3719,7 @@ packages:
       read-pkg-up: 9.1.0
       redent: 4.0.0
       trim-newlines: 4.1.1
-      type-fest: 3.8.0
+      type-fest: 3.9.0
       yargs-parser: 21.1.1
     dev: true
 
@@ -5023,8 +5023,8 @@ packages:
     engines: {node: '>=14.16'}
     dev: true
 
-  /type-fest/3.8.0:
-    resolution: {integrity: sha512-FVNSzGQz9Th+/9R6Lvv7WIAkstylfHN2/JYxkyhhmKFYh9At2DST8t6L6Lref9eYO8PXFTfG9Sg1Agg0K3vq3Q==}
+  /type-fest/3.9.0:
+    resolution: {integrity: sha512-hR8JP2e8UiH7SME5JZjsobBlEiatFoxpzCP+R3ZeCo7kAaG1jXQE5X/buLzogM6GJu8le9Y4OcfNuIQX0rZskA==}
     engines: {node: '>=14.16'}
 
   /typed-array-length/1.0.4:
