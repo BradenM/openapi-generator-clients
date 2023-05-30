@@ -47,7 +47,7 @@
 		"typecheck": "tsc --noEmit"
 	},
 	"dependencies": {
-		"@antfu/utils": "^0.7.2",
+		"@antfu/utils": "^0.7.3",
 		"chalk": "^5.2.0",
 		"consola": "^2.15.3",
 		"fs-extra": "^11.1.1",

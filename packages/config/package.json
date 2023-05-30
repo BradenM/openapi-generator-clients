@@ -47,7 +47,7 @@
 		"typecheck": "tsc --noEmit"
 	},
 	"dependencies": {
-		"@antfu/utils": "^0.7.2",
+		"@antfu/utils": "^0.7.3",
 		"@openapi-generator-clients/types": "workspace:*",
 		"immutable": "^4.3.0",
 		"type-fest": "^3.11.0"
