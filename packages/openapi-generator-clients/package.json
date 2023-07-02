@@ -50,7 +50,7 @@
 		"typecheck": "tsc --noEmit"
 	},
 	"dependencies": {
-		"@antfu/utils": "^0.7.4",
+		"@antfu/utils": "^0.7.5",
 		"@openapi-generator-clients/config": "workspace:*",
 		"@openapi-generator-clients/types": "workspace:*",
 		"@openapi-generator-clients/utils": "workspace:*",
