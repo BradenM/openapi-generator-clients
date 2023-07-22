@@ -98,7 +98,7 @@ importers:
       '@openapitools/openapi-generator-cli': ^2.7.0
       consola: ^2.15.3
       execa: ^7.1.1
-      fast-glob: ^3.3.0
+      fast-glob: ^3.3.1
       fs-extra: ^11.1.1
       immutable: ^4.3.1
       minimist: ^1.2.8
@@ -113,7 +113,7 @@ importers:
       '@openapitools/openapi-generator-cli': 2.7.0
       consola: 2.15.3
       execa: 7.1.1
-      fast-glob: 3.3.0
+      fast-glob: 3.3.1
       fs-extra: 11.1.1
       immutable: 4.3.1
       minimist: 1.2.8
@@ -2643,8 +2643,8 @@ packages:
     resolution: {integrity: sha512-xJuoT5+L99XlZ8twedaRf6Ax2TgQVxvgZOYoPKqZufmJib0tL2tegPBOZb1pVNgIhlqDlA0eO0c3wBvQcmzx4w==}
     dev: true
 
-  /fast-glob/3.3.0:
-    resolution: {integrity: sha512-ChDuvbOypPuNjO8yIDf36x7BlZX1smcUMTTcyoIjycexOxd6DFsKsg21qVBzEmr3G7fUKIRy2/psii+CIUt7FA==}
+  /fast-glob/3.3.1:
+    resolution: {integrity: sha512-kNFPyjhh5cKjrUltxs+wFx+ZkbRaxxmZ+X0ZU31SOsxCEtP9VPgtq2teZw1DebupL5GmDaNQ6yKMMVcM41iqDg==}
     engines: {node: '>=8.6.0'}
     dependencies:
       '@nodelib/fs.stat': 2.0.5
@@ -2954,7 +2954,7 @@ packages:
     dependencies:
       array-union: 2.1.0
       dir-glob: 3.0.1
-      fast-glob: 3.3.0
+      fast-glob: 3.3.1
       ignore: 5.2.4
       merge2: 1.4.1
       slash: 3.0.0
@@ -2965,7 +2965,7 @@ packages:
     engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
     dependencies:
       dir-glob: 3.0.1
-      fast-glob: 3.3.0
+      fast-glob: 3.3.1
       ignore: 5.2.4
       merge2: 1.4.1
       slash: 4.0.0
