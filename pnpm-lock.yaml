@@ -97,7 +97,7 @@ importers:
       '@openapi-generator-clients/utils': workspace:*
       '@openapitools/openapi-generator-cli': ^2.7.0
       consola: ^2.15.3
-      execa: ^7.1.1
+      execa: ^7.2.0
       fast-glob: ^3.3.1
       fs-extra: ^11.1.1
       immutable: ^4.3.1
@@ -112,7 +112,7 @@ importers:
       '@openapi-generator-clients/utils': link:../utils
       '@openapitools/openapi-generator-cli': 2.7.0
       consola: 2.15.3
-      execa: 7.1.1
+      execa: 7.2.0
       fast-glob: 3.3.1
       fs-extra: 11.1.1
       immutable: 4.3.1
@@ -2613,8 +2613,8 @@ packages:
       strip-final-newline: 2.0.0
     dev: true
 
-  /execa/7.1.1:
-    resolution: {integrity: sha512-wH0eMf/UXckdUYnO21+HDztteVv05rq2GXksxT4fCGeHkBhw1DROXh40wcjMcRqDOWE7iPJ4n3M7e2+YFP+76Q==}
+  /execa/7.2.0:
+    resolution: {integrity: sha512-UduyVP7TLB5IcAQl+OzLyLcS/l32W/GLg+AhHJ+ow40FOk2U3SAllPwR44v4vmdFwIWqpdwxxpQbF1n5ta9seA==}
     engines: {node: ^14.18.0 || ^16.14.0 || >=18.0.0}
     dependencies:
       cross-spawn: 7.0.3
@@ -3568,7 +3568,7 @@ packages:
       cli-truncate: 3.1.0
       commander: 10.0.0
       debug: 4.3.4
-      execa: 7.1.1
+      execa: 7.2.0
       lilconfig: 2.1.0
       listr2: 5.0.8
       micromatch: 4.0.5
