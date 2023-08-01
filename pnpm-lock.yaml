@@ -21,7 +21,7 @@ importers:
       is-ci: ^3.0.1
       lint-staged: ^13.2.0
       openapi-generator-clients: workspace:*
-      pnpm: 7.30.5
+      pnpm: 7.33.4
       prettier: ^3.0.0
       rimraf: ^5.0.0
       simple-git-hooks: ^2.8.1
@@ -48,7 +48,7 @@ importers:
       is-ci: 3.0.1
       lint-staged: 13.2.0
       openapi-generator-clients: link:packages/openapi-generator-clients
-      pnpm: 7.30.5
+      pnpm: 7.33.4
       prettier: 3.0.0
       rimraf: 5.0.0
       simple-git-hooks: 2.8.1
@@ -4254,8 +4254,8 @@ packages:
     engines: {node: '>=4'}
     dev: true
 
-  /pnpm/7.30.5:
-    resolution: {integrity: sha512-kXiH7+iGhDcm3UVhjb4pzbRYljoT2KVR8WFL37b+c15F9CuaLau0RTozrXx/9snf1JEmGICjRnMM2XArmM01sg==}
+  /pnpm/7.33.4:
+    resolution: {integrity: sha512-xEbf/tkwHpGM/GXq5U/sDSiE6ykLPho+o71PHNRWqkVLm6dJe4G/5Pg619Ow32ovekrr7pii5qtfamujB/+1bA==}
     engines: {node: '>=14.6'}
     hasBin: true
     dev: true
