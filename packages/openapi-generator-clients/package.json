@@ -59,7 +59,7 @@
 		"execa": "^7.2.0",
 		"fast-glob": "^3.3.1",
 		"fs-extra": "^11.1.1",
-		"immutable": "^4.3.1",
+		"immutable": "^4.3.2",
 		"minimist": "^1.2.8",
 		"pathe": "^1.1.1",
 		"rambdax": "8.1.0",
