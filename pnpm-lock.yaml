@@ -79,19 +79,19 @@ importers:
 
   packages/config:
     specifiers:
-      '@antfu/utils': ^0.7.6
+      '@antfu/utils': ^0.7.7
       '@openapi-generator-clients/types': workspace:*
       immutable: ^4.3.4
       type-fest: ^3.13.1
     dependencies:
-      '@antfu/utils': 0.7.6
+      '@antfu/utils': 0.7.7
       '@openapi-generator-clients/types': link:../types
       immutable: 4.3.4
       type-fest: 3.13.1
 
   packages/openapi-generator-clients:
     specifiers:
-      '@antfu/utils': ^0.7.6
+      '@antfu/utils': ^0.7.7
       '@openapi-generator-clients/config': workspace:*
       '@openapi-generator-clients/types': workspace:*
       '@openapi-generator-clients/utils': workspace:*
@@ -106,7 +106,7 @@ importers:
       rambdax: 8.1.0
       type-fest: ^3.13.1
     dependencies:
-      '@antfu/utils': 0.7.6
+      '@antfu/utils': 0.7.7
       '@openapi-generator-clients/config': link:../config
       '@openapi-generator-clients/types': link:../types
       '@openapi-generator-clients/utils': link:../utils
@@ -129,7 +129,7 @@ importers:
 
   packages/utils:
     specifiers:
-      '@antfu/utils': ^0.7.6
+      '@antfu/utils': ^0.7.7
       chalk: ^5.3.0
       consola: ^2.15.3
       fs-extra: ^11.2.0
@@ -137,7 +137,7 @@ importers:
       jiti: ^1.21.0
       list-github-dir-content: ^3.0.0
     dependencies:
-      '@antfu/utils': 0.7.6
+      '@antfu/utils': 0.7.7
       chalk: 5.3.0
       consola: 2.15.3
       fs-extra: 11.2.0
@@ -160,8 +160,8 @@ packages:
     hasBin: true
     dev: true
 
-  /@antfu/utils/0.7.6:
-    resolution: {integrity: sha512-pvFiLP2BeOKA/ZOS6jxx4XhKzdVLHDhGlFEaZ2flWWYf2xOqVniqpk38I04DFRyz+L0ASggl7SkItTc+ZLju4w==}
+  /@antfu/utils/0.7.7:
+    resolution: {integrity: sha512-gFPqTG7otEJ8uP6wrhDv6mqwGWYZKNvAcCq6u9hOj0c+IKCEsY4L1oC9trPq2SaWIzAfHvqfBDxF591JkMf+kg==}
     dev: false
 
   /@atao60/fse-cli/0.1.7:
