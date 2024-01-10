@@ -61,7 +61,7 @@
 		"fs-extra": "^11.2.0",
 		"immutable": "^4.3.4",
 		"minimist": "^1.2.8",
-		"pathe": "^1.1.1",
+		"pathe": "^1.1.2",
 		"rambdax": "8.1.0",
 		"type-fest": "^3.13.1"
 	}
