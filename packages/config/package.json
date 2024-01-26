@@ -49,7 +49,7 @@
 	"dependencies": {
 		"@antfu/utils": "^0.7.7",
 		"@openapi-generator-clients/types": "workspace:*",
-		"immutable": "^4.3.4",
+		"immutable": "^4.3.5",
 		"type-fest": "^3.13.1"
 	}
 }
