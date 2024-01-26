@@ -62,7 +62,7 @@
 		"immutable": "^4.3.5",
 		"minimist": "^1.2.8",
 		"pathe": "^1.1.2",
-		"rambdax": "8.1.0",
+		"rambdax": "10.1.0",
 		"type-fest": "^3.13.1"
 	}
 }
