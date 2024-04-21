@@ -95,7 +95,7 @@ importers:
       '@openapi-generator-clients/config': workspace:*
       '@openapi-generator-clients/types': workspace:*
       '@openapi-generator-clients/utils': workspace:*
-      '@openapitools/openapi-generator-cli': ^2.13.2
+      '@openapitools/openapi-generator-cli': ^2.13.3
       consola: ^2.15.3
       execa: ^7.2.0
       fast-glob: ^3.3.2
@@ -110,7 +110,7 @@ importers:
       '@openapi-generator-clients/config': link:../config
       '@openapi-generator-clients/types': link:../types
       '@openapi-generator-clients/utils': link:../utils
-      '@openapitools/openapi-generator-cli': 2.13.2
+      '@openapitools/openapi-generator-cli': 2.13.3
       consola: 2.15.3
       execa: 7.2.0
       fast-glob: 3.3.2
@@ -1127,7 +1127,7 @@ packages:
     engines: {node: '>=8'}
     dev: false
 
-  /@nestjs/axios/3.0.1_azgmf6lyav3spnizrk7i56cfaq:
+  /@nestjs/axios/3.0.1_xuwdlhfn664l52sxv5kvardpv4:
     resolution: {integrity: sha512-VlOZhAGDmOoFdsmewn8AyClAdGpKXQQaY1+3PGB+g6ceurGIdTxZgRX3VXc1T6Zs60PedWjg3A82TDOB05mrzQ==}
     peerDependencies:
       '@nestjs/common': ^7.0.0 || ^8.0.0 || ^9.0.0 || ^10.0.0
@@ -1136,7 +1136,7 @@ packages:
       rxjs: ^6.0.0 || ^7.0.0
     dependencies:
       '@nestjs/common': 10.3.0_atc7tu2sld2m3nk4hmwkqn6qde
-      axios: 1.6.5
+      axios: 1.6.8
       reflect-metadata: 0.1.13
       rxjs: 7.8.1
     dev: false
@@ -1222,17 +1222,17 @@ packages:
       - encoding
     dev: false
 
-  /@openapitools/openapi-generator-cli/2.13.2:
-    resolution: {integrity: sha512-Zxq1KQpxqZe55xSUAebY7RSKo1EgPFS37KY74skJRpicDyn/xg+2r0xB30UfE6WRGqaK2YJaJn0GPKbS2pwI1Q==}
+  /@openapitools/openapi-generator-cli/2.13.3:
+    resolution: {integrity: sha512-dPTWr4f73xYhA+fjz3kay5yt+AxcpK78toWe2oAnsQAXqC1ulP1/35zurFNQWgju2pW1gR1udhr/ZqB4LrqlIA==}
     engines: {node: '>=10.0.0'}
     hasBin: true
     requiresBuild: true
     dependencies:
-      '@nestjs/axios': 3.0.1_azgmf6lyav3spnizrk7i56cfaq
+      '@nestjs/axios': 3.0.1_xuwdlhfn664l52sxv5kvardpv4
       '@nestjs/common': 10.3.0_atc7tu2sld2m3nk4hmwkqn6qde
       '@nestjs/core': 10.3.0_2w6gub3sxqmthikrcvrq2wspsy
       '@nuxtjs/opencollective': 0.3.2
-      axios: 1.6.5
+      axios: 1.6.8
       chalk: 4.1.2
       commander: 8.3.0
       compare-versions: 4.1.4
@@ -2034,10 +2034,10 @@ packages:
     engines: {node: '>= 0.4'}
     dev: true
 
-  /axios/1.6.5:
-    resolution: {integrity: sha512-Ii012v05KEVuUoFWmMW/UQv9aRIc3ZwkWDcM+h5Il8izZCtRVpDUfwpoFf7eOtajT3QiGR4yDUx7lPqHJULgbg==}
+  /axios/1.6.8:
+    resolution: {integrity: sha512-v/ZHtJDU39mDpyBoFVkETcd/uNdxrWRrg3bKpOKzXFA6Bvqopts6ALSMU3y6ijYxbw2B+wPrIv46egTzJXCLGQ==}
     dependencies:
-      follow-redirects: 1.15.5
+      follow-redirects: 1.15.6
       form-data: 4.0.0
       proxy-from-env: 1.1.0
     transitivePeerDependencies:
@@ -3329,8 +3329,8 @@ packages:
     resolution: {integrity: sha512-5nqDSxl8nn5BSNxyR3n4I6eDmbolI6WT+QqR547RwxQapgjQBmtktdP+HTBb/a/zLsbzERTONyUB5pefh5TtjQ==}
     dev: true
 
-  /follow-redirects/1.15.5:
-    resolution: {integrity: sha512-vSFWUON1B+yAw1VN4xMfxgn5fTUiaOzAJCKBwIIgT/+7CuGy9+r+5gITvP62j3RmaD5Ph65UaERdOSRGUzZtgw==}
+  /follow-redirects/1.15.6:
+    resolution: {integrity: sha512-wWN62YITEaOpSK584EZXJafH1AGpO8RVgElfkuXbTOrPX4fIfOyEpW/CsiNd8JdYrAoOvafRTOEnvsO++qCqFA==}
     engines: {node: '>=4.0'}
     peerDependencies:
       debug: '*'
