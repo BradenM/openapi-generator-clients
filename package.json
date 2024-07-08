@@ -39,7 +39,7 @@
 		"openapi-generator-clients": "workspace:*",
 		"pnpm": "7.33.4",
 		"prettier": "^3.0.0",
-		"rimraf": "^5.0.0",
+		"rimraf": "^6.0.0",
 		"simple-git-hooks": "^2.8.1",
 		"tsx": "^4.0.0",
 		"type-fest": "^3.7.2",
