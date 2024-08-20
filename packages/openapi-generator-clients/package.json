@@ -54,7 +54,7 @@
 		"@openapi-generator-clients/config": "workspace:*",
 		"@openapi-generator-clients/types": "workspace:*",
 		"@openapi-generator-clients/utils": "workspace:*",
-		"@openapitools/openapi-generator-cli": "^2.13.4",
+		"@openapitools/openapi-generator-cli": "^2.13.5",
 		"consola": "^2.15.3",
 		"execa": "^7.2.0",
 		"fast-glob": "^3.3.2",
