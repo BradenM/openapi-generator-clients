@@ -1,7 +1,7 @@
 {
 	"name": "openapi-generator-clients",
 	"type": "module",
-	"version": "0.1.1",
+	"version": "0.1.2",
 	"description": "OpenAPI Generator CLI wrapper for managing multiple versioned client packages, versioned generators, and partial template overrides.",
 	"author": "Braden Mars <bradenmars@bradenmars.me>",
 	"license": "MIT",
