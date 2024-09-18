@@ -95,7 +95,7 @@ importers:
       '@openapi-generator-clients/config': workspace:*
       '@openapi-generator-clients/types': workspace:*
       '@openapi-generator-clients/utils': workspace:*
-      '@openapitools/openapi-generator-cli': ^2.13.5
+      '@openapitools/openapi-generator-cli': ^2.13.6
       consola: ^2.15.3
       execa: ^7.2.0
       fast-glob: ^3.3.2
@@ -110,7 +110,7 @@ importers:
       '@openapi-generator-clients/config': link:../config
       '@openapi-generator-clients/types': link:../types
       '@openapi-generator-clients/utils': link:../utils
-      '@openapitools/openapi-generator-cli': 2.13.5
+      '@openapitools/openapi-generator-cli': 2.13.6
       consola: 2.15.3
       execa: 7.2.0
       fast-glob: 3.3.2
@@ -1137,8 +1137,8 @@ packages:
     engines: {node: '>=8'}
     dev: false
 
-  /@nestjs/axios/3.0.2_arror7t2xm6pzt6vsu2b7gp2c4:
-    resolution: {integrity: sha512-Z6GuOUdNQjP7FX+OuV2Ybyamse+/e0BFdTWBX5JxpBDKA+YkdLynDgG6HTF04zy6e9zPa19UX0WA2VDoehwhXQ==}
+  /@nestjs/axios/3.0.3_arror7t2xm6pzt6vsu2b7gp2c4:
+    resolution: {integrity: sha512-h6TCn3yJwD6OKqqqfmtRS5Zo4E46Ip2n+gK1sqwzNBC+qxQ9xpCu+ODVRFur6V3alHSCSBxb3nNtt73VEdluyA==}
     peerDependencies:
       '@nestjs/common': ^7.0.0 || ^8.0.0 || ^9.0.0 || ^10.0.0
       axios: ^1.3.1
@@ -1230,13 +1230,13 @@ packages:
       - encoding
     dev: false
 
-  /@openapitools/openapi-generator-cli/2.13.5:
-    resolution: {integrity: sha512-9VgeKOTiiatKSwZDKKB3C86cW8tN9eDcFohotD4eisdK38UQswk/4Ysoq9KChRCbymjoMp6AIDHPtK1DQ2fTgw==}
+  /@openapitools/openapi-generator-cli/2.13.6:
+    resolution: {integrity: sha512-w5qIHmxi9g0xTEYPGySPerzHIWOw51WGtpIXxyZX/GJO0trcOyLmIXj8dItZOUokQ/a4uqARgO5kqtEVnUVzTQ==}
     engines: {node: '>=10.0.0'}
     hasBin: true
     requiresBuild: true
     dependencies:
-      '@nestjs/axios': 3.0.2_arror7t2xm6pzt6vsu2b7gp2c4
+      '@nestjs/axios': 3.0.3_arror7t2xm6pzt6vsu2b7gp2c4
       '@nestjs/common': 10.3.0_atc7tu2sld2m3nk4hmwkqn6qde
       '@nestjs/core': 10.3.0_2w6gub3sxqmthikrcvrq2wspsy
       '@nuxtjs/opencollective': 0.3.2
@@ -3765,6 +3765,7 @@ packages:
 
   /inflight/1.0.6:
     resolution: {integrity: sha512-k92I/b08q4wvFscXCLvqfsHCrjrF7yiXsQuIVvVE7N82W3+aqpzuUdBbfhWcy/FZR3/4IgflMgKLOsvPDrGCJA==}
+    deprecated: This module is not supported, and leaks memory. Do not use it. Check out lru-cache if you want a good and tested way to coalesce async requests by a key value, which is much more comprehensive and powerful.
     dependencies:
       once: 1.4.0
       wrappy: 1.0.2
