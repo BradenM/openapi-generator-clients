@@ -95,7 +95,7 @@ importers:
       '@openapi-generator-clients/config': workspace:*
       '@openapi-generator-clients/types': workspace:*
       '@openapi-generator-clients/utils': workspace:*
-      '@openapitools/openapi-generator-cli': ^2.13.6
+      '@openapitools/openapi-generator-cli': ^2.13.7
       consola: ^2.15.3
       execa: ^7.2.0
       fast-glob: ^3.3.2
@@ -110,7 +110,7 @@ importers:
       '@openapi-generator-clients/config': link:../config
       '@openapi-generator-clients/types': link:../types
       '@openapi-generator-clients/utils': link:../utils
-      '@openapitools/openapi-generator-cli': 2.13.6
+      '@openapitools/openapi-generator-cli': 2.13.7
       consola: 2.15.3
       execa: 7.2.0
       fast-glob: 3.3.2
@@ -1137,24 +1137,24 @@ packages:
     engines: {node: '>=8'}
     dev: false
 
-  /@nestjs/axios/3.0.3_arror7t2xm6pzt6vsu2b7gp2c4:
+  /@nestjs/axios/3.0.3_gr6equa6e2t6shnq7lwdodna7e:
     resolution: {integrity: sha512-h6TCn3yJwD6OKqqqfmtRS5Zo4E46Ip2n+gK1sqwzNBC+qxQ9xpCu+ODVRFur6V3alHSCSBxb3nNtt73VEdluyA==}
     peerDependencies:
       '@nestjs/common': ^7.0.0 || ^8.0.0 || ^9.0.0 || ^10.0.0
       axios: ^1.3.1
       rxjs: ^6.0.0 || ^7.0.0
     dependencies:
-      '@nestjs/common': 10.3.0_atc7tu2sld2m3nk4hmwkqn6qde
+      '@nestjs/common': 10.4.3_atc7tu2sld2m3nk4hmwkqn6qde
       axios: 1.7.4
       rxjs: 7.8.1
     dev: false
 
-  /@nestjs/common/10.3.0_atc7tu2sld2m3nk4hmwkqn6qde:
-    resolution: {integrity: sha512-DGv34UHsZBxCM3H5QGE2XE/+oLJzz5+714JQjBhjD9VccFlQs3LRxo/epso4l7nJIiNlZkPyIUC8WzfU/5RTsQ==}
+  /@nestjs/common/10.4.3_atc7tu2sld2m3nk4hmwkqn6qde:
+    resolution: {integrity: sha512-4hbLd3XIJubHSylYd/1WSi4VQvG68KM/ECYpMDqA3k3J1/T17SAg40sDoq3ZoO5OZgU0xuNyjuISdOTjs11qVg==}
     peerDependencies:
       class-transformer: '*'
       class-validator: '*'
-      reflect-metadata: ^0.1.12
+      reflect-metadata: ^0.1.12 || ^0.2.0
       rxjs: ^7.1.0
     peerDependenciesMeta:
       class-transformer:
@@ -1165,19 +1165,19 @@ packages:
       iterare: 1.2.1
       reflect-metadata: 0.1.13
       rxjs: 7.8.1
-      tslib: 2.6.2
+      tslib: 2.7.0
       uid: 2.0.2
     dev: false
 
-  /@nestjs/core/10.3.0_2w6gub3sxqmthikrcvrq2wspsy:
-    resolution: {integrity: sha512-N06P5ncknW/Pm8bj964WvLIZn2gNhHliCBoAO1LeBvNImYkecqKcrmLbY49Fa1rmMfEM3MuBHeDys3edeuYAOA==}
+  /@nestjs/core/10.4.3_ka2mxeto5gus75iqgy5nuo6fn4:
+    resolution: {integrity: sha512-6OQz+5C8mT8yRtfvE5pPCq+p6w5jDot+oQku1KzQ24ABn+lay1KGuJwcKZhdVNuselx+8xhdMxknZTA8wrGLIg==}
     requiresBuild: true
     peerDependencies:
       '@nestjs/common': ^10.0.0
       '@nestjs/microservices': ^10.0.0
       '@nestjs/platform-express': ^10.0.0
       '@nestjs/websockets': ^10.0.0
-      reflect-metadata: ^0.1.12
+      reflect-metadata: ^0.1.12 || ^0.2.0
       rxjs: ^7.1.0
     peerDependenciesMeta:
       '@nestjs/microservices':
@@ -1187,14 +1187,14 @@ packages:
       '@nestjs/websockets':
         optional: true
     dependencies:
-      '@nestjs/common': 10.3.0_atc7tu2sld2m3nk4hmwkqn6qde
+      '@nestjs/common': 10.4.3_atc7tu2sld2m3nk4hmwkqn6qde
       '@nuxtjs/opencollective': 0.3.2
       fast-safe-stringify: 2.1.1
       iterare: 1.2.1
-      path-to-regexp: 3.2.0
+      path-to-regexp: 3.3.0
       reflect-metadata: 0.1.13
       rxjs: 7.8.1
-      tslib: 2.6.2
+      tslib: 2.7.0
       uid: 2.0.2
     transitivePeerDependencies:
       - encoding
@@ -1230,15 +1230,15 @@ packages:
       - encoding
     dev: false
 
-  /@openapitools/openapi-generator-cli/2.13.6:
-    resolution: {integrity: sha512-w5qIHmxi9g0xTEYPGySPerzHIWOw51WGtpIXxyZX/GJO0trcOyLmIXj8dItZOUokQ/a4uqARgO5kqtEVnUVzTQ==}
+  /@openapitools/openapi-generator-cli/2.13.7:
+    resolution: {integrity: sha512-DS3wWEma1WXPhlqcv+XRVPlCBkME0hkKBVr7GSwlQWvWwIekm/fU4PR8sxhVXYJ33EIpKHfGofT0ZH9+K2lvjQ==}
     engines: {node: '>=10.0.0'}
     hasBin: true
     requiresBuild: true
     dependencies:
-      '@nestjs/axios': 3.0.3_arror7t2xm6pzt6vsu2b7gp2c4
-      '@nestjs/common': 10.3.0_atc7tu2sld2m3nk4hmwkqn6qde
-      '@nestjs/core': 10.3.0_2w6gub3sxqmthikrcvrq2wspsy
+      '@nestjs/axios': 3.0.3_gr6equa6e2t6shnq7lwdodna7e
+      '@nestjs/common': 10.4.3_atc7tu2sld2m3nk4hmwkqn6qde
+      '@nestjs/core': 10.4.3_ka2mxeto5gus75iqgy5nuo6fn4
       '@nuxtjs/opencollective': 0.3.2
       axios: 1.7.4
       chalk: 4.1.2
@@ -4857,8 +4857,8 @@ packages:
       minipass: 7.1.2
     dev: true
 
-  /path-to-regexp/3.2.0:
-    resolution: {integrity: sha512-jczvQbCUS7XmS7o+y1aEO9OBVFeZBQ1MDSEqmO7xSoPgOPoowY/SxLpZ6Vh97/8qHZOteiCKb7gkG9gA2ZUxJA==}
+  /path-to-regexp/3.3.0:
+    resolution: {integrity: sha512-qyCH421YQPS2WFDxDjftfc1ZR5WKQzVzqsp4n9M2kQhVOo/ByahFoUNJfl58kOcEGfQ//7weFTDhm+ss8Ecxgw==}
     dev: false
 
   /path-type/4.0.0:
@@ -5695,6 +5695,10 @@ packages:
 
   /tslib/2.6.2:
     resolution: {integrity: sha512-AEYxH93jGFPn/a2iVAwW87VuUIkR1FVUKB77NwMF7nBTDkDrrT/Hpt/IrCJ0QXhW27jTBDcf5ZY7w6RiqTMw2Q==}
+
+  /tslib/2.7.0:
+    resolution: {integrity: sha512-gLXCKdN1/j47AiHiOkJN69hJmcbGTHI0ImLmbYLHykhgeN0jVGola9yVjFgzCUklsZQMW55o+dW7IXv3RCXDzA==}
+    dev: false
 
   /tsutils/3.21.0_typescript@4.9.5:
     resolution: {integrity: sha512-mHKK3iUXL+3UF6xL5k0PEhKRUBKPBCv/+RkEOpjRWxxx27KKRBmmA60A9pgOUvMi8GKhRMPEmjBRPzs2W7O1OA==}
