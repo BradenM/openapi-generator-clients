@@ -95,7 +95,7 @@ importers:
       '@openapi-generator-clients/config': workspace:*
       '@openapi-generator-clients/types': workspace:*
       '@openapi-generator-clients/utils': workspace:*
-      '@openapitools/openapi-generator-cli': ^2.13.7
+      '@openapitools/openapi-generator-cli': ^2.13.9
       consola: ^2.15.3
       execa: ^7.2.0
       fast-glob: ^3.3.2
@@ -110,7 +110,7 @@ importers:
       '@openapi-generator-clients/config': link:../config
       '@openapi-generator-clients/types': link:../types
       '@openapi-generator-clients/utils': link:../utils
-      '@openapitools/openapi-generator-cli': 2.13.7
+      '@openapitools/openapi-generator-cli': 2.13.9
       consola: 2.15.3
       execa: 7.2.0
       fast-glob: 3.3.2
@@ -1230,8 +1230,8 @@ packages:
       - encoding
     dev: false
 
-  /@openapitools/openapi-generator-cli/2.13.7:
-    resolution: {integrity: sha512-DS3wWEma1WXPhlqcv+XRVPlCBkME0hkKBVr7GSwlQWvWwIekm/fU4PR8sxhVXYJ33EIpKHfGofT0ZH9+K2lvjQ==}
+  /@openapitools/openapi-generator-cli/2.13.9:
+    resolution: {integrity: sha512-GJaWGcHmLsvj/G1mRDytm9PTDwRGSYUDTf1uA/2FYxQAb5sq4nkZz1tD4Z7qDlZ3xTYSTw4Z8BQUdlsnrA8rcw==}
     engines: {node: '>=10.0.0'}
     hasBin: true
     requiresBuild: true
@@ -5256,7 +5256,7 @@ packages:
   /rxjs/7.8.1:
     resolution: {integrity: sha512-AA3TVj+0A2iuIoQkWEK/tqFjBq2j+6PO6Y0zJcvzLAFhEFIO3HL0vls9hWLncZbAAbK0mar7oZ4V079I/qPMxg==}
     dependencies:
-      tslib: 2.6.2
+      tslib: 2.7.0
 
   /safe-buffer/5.2.1:
     resolution: {integrity: sha512-rp3So07KcdmmKbGvgaNxQSJr7bGVSVk5S9Eq1F+ppbRo70+YeaDxkw5Dd8NPN+GD6bjnYm2VuPuCXmpuYvmCXQ==}
@@ -5695,10 +5695,10 @@ packages:
 
   /tslib/2.6.2:
     resolution: {integrity: sha512-AEYxH93jGFPn/a2iVAwW87VuUIkR1FVUKB77NwMF7nBTDkDrrT/Hpt/IrCJ0QXhW27jTBDcf5ZY7w6RiqTMw2Q==}
+    dev: false
 
   /tslib/2.7.0:
     resolution: {integrity: sha512-gLXCKdN1/j47AiHiOkJN69hJmcbGTHI0ImLmbYLHykhgeN0jVGola9yVjFgzCUklsZQMW55o+dW7IXv3RCXDzA==}
-    dev: false
 
   /tsutils/3.21.0_typescript@4.9.5:
     resolution: {integrity: sha512-mHKK3iUXL+3UF6xL5k0PEhKRUBKPBCv/+RkEOpjRWxxx27KKRBmmA60A9pgOUvMi8GKhRMPEmjBRPzs2W7O1OA==}
