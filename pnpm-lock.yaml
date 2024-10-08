@@ -134,7 +134,7 @@ importers:
       consola: ^2.15.3
       fs-extra: ^11.2.0
       got: ^12.6.1
-      jiti: ^1.21.6
+      jiti: ^2.3.3
       list-github-dir-content: ^3.0.0
     dependencies:
       '@antfu/utils': 0.7.8
@@ -142,7 +142,7 @@ importers:
       consola: 2.15.3
       fs-extra: 11.2.0
       got: 12.6.1
-      jiti: 1.21.6
+      jiti: 2.3.3
       list-github-dir-content: 3.0.0
 
 packages:
@@ -4123,6 +4123,12 @@ packages:
   /jiti/1.21.6:
     resolution: {integrity: sha512-2yTgeWTWzMWkHu6Jp9NKgePDaYHbntiwvYuuJLbbN9vl7DC9DvXKOB2BC3ZZ92D3cvV/aflH0osDfwpHepQ53w==}
     hasBin: true
+    dev: true
+
+  /jiti/2.3.3:
+    resolution: {integrity: sha512-EX4oNDwcXSivPrw2qKH2LB5PoFxEvgtv2JgwW0bU858HoLQ+kutSvjLMUqBd0PeJYEinLWhoI9Ol0eYMqj/wNQ==}
+    hasBin: true
+    dev: false
 
   /js-sdsl/4.4.0:
     resolution: {integrity: sha512-FfVSdx6pJ41Oa+CF7RDaFmTnCaFhua+SNYQX74riGOpl96x+2jQCqEfQ2bnXu/5DPCqlRuiqyvTJM0Qjz26IVg==}
