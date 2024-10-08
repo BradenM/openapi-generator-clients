@@ -95,7 +95,7 @@ importers:
       '@openapi-generator-clients/config': workspace:*
       '@openapi-generator-clients/types': workspace:*
       '@openapi-generator-clients/utils': workspace:*
-      '@openapitools/openapi-generator-cli': ^2.13.13
+      '@openapitools/openapi-generator-cli': ^2.14.0
       consola: ^2.15.3
       execa: ^7.2.0
       fast-glob: ^3.3.2
@@ -110,7 +110,7 @@ importers:
       '@openapi-generator-clients/config': link:../config
       '@openapi-generator-clients/types': link:../types
       '@openapi-generator-clients/utils': link:../utils
-      '@openapitools/openapi-generator-cli': 2.13.13
+      '@openapitools/openapi-generator-cli': 2.14.0
       consola: 2.15.3
       execa: 7.2.0
       fast-glob: 3.3.2
@@ -1230,8 +1230,8 @@ packages:
       - encoding
     dev: false
 
-  /@openapitools/openapi-generator-cli/2.13.13:
-    resolution: {integrity: sha512-uioqbxB6TfiLoOEE3T8kqTn/ffaRzOwS3ATMQnoMvh2lwADKMT6bDLfE3YO3XTEj+HflXcsLXQGK6PLiqa8Mmw==}
+  /@openapitools/openapi-generator-cli/2.14.0:
+    resolution: {integrity: sha512-k+ioQLtXLXgNbhQbp1UOxtaUnnYTWwAPev88hP5qauFA+eq4NyeQGNojknFssXg2x0VT0TUGmU3PZ2DiQ70IVg==}
     engines: {node: '>=16'}
     hasBin: true
     requiresBuild: true
