@@ -96,7 +96,7 @@ importers:
       '@openapi-generator-clients/types': workspace:*
       '@openapi-generator-clients/utils': workspace:*
       '@openapitools/openapi-generator-cli': ^2.15.3
-      consola: ^2.15.3
+      consola: ^3.2.3
       execa: ^7.2.0
       fast-glob: ^3.3.2
       fs-extra: ^11.2.0
@@ -111,7 +111,7 @@ importers:
       '@openapi-generator-clients/types': link:../types
       '@openapi-generator-clients/utils': link:../utils
       '@openapitools/openapi-generator-cli': 2.15.3
-      consola: 2.15.3
+      consola: 3.2.3
       execa: 7.2.0
       fast-glob: 3.3.2
       fs-extra: 11.2.0
@@ -131,7 +131,7 @@ importers:
     specifiers:
       '@antfu/utils': ^0.7.8
       chalk: ^5.3.0
-      consola: ^2.15.3
+      consola: ^3.2.3
       fs-extra: ^11.2.0
       got: ^12.6.1
       jiti: ^1.21.6
@@ -139,7 +139,7 @@ importers:
     dependencies:
       '@antfu/utils': 0.7.8
       chalk: 5.3.0
-      consola: 2.15.3
+      consola: 3.2.3
       fs-extra: 11.2.0
       got: 12.6.1
       jiti: 1.21.6
@@ -2388,6 +2388,11 @@ packages:
 
   /consola/2.15.3:
     resolution: {integrity: sha512-9vAdYbHj6x2fLKC4+oPH0kFzY/orMZyG2Aj+kNylHxKGJ/Ed4dpNyAQYwJOdqO4zdM7XpVHmyejQDcQHrnuXbw==}
+
+  /consola/3.2.3:
+    resolution: {integrity: sha512-I5qxpzLv+sJhTVEoLYNcTW+bThDCPsit0vLNKShZx6rLtpilNpmmeTPaeqJb9ZE9dV3DGaeby6Vuhrw38WjeyQ==}
+    engines: {node: ^14.18.0 || >=16.10.0}
+    dev: false
 
   /console.table/0.10.0:
     resolution: {integrity: sha512-dPyZofqggxuvSf7WXvNjuRfnsOk1YazkVP8FdxH4tcH2c37wc79/Yl6Bhr7Lsu00KMgy2ql/qCMuNu8xctZM8g==}
