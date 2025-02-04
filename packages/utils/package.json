@@ -52,7 +52,7 @@
 		"consola": "^2.15.3",
 		"fs-extra": "^11.2.0",
 		"got": "^12.6.1",
-		"jiti": "^1.21.6",
+		"jiti": "^1.21.7",
 		"list-github-dir-content": "^3.0.0"
 	}
 }
