@@ -130,7 +130,7 @@ importers:
   packages/utils:
     specifiers:
       '@antfu/utils': ^0.7.8
-      chalk: ^5.3.0
+      chalk: ^5.4.1
       consola: ^2.15.3
       fs-extra: ^11.2.0
       got: ^12.6.1
@@ -138,7 +138,7 @@ importers:
       list-github-dir-content: ^3.0.0
     dependencies:
       '@antfu/utils': 0.7.8
-      chalk: 5.3.0
+      chalk: 5.4.1
       consola: 2.15.3
       fs-extra: 11.2.0
       got: 12.6.1
@@ -2218,6 +2218,11 @@ packages:
 
   /chalk/5.3.0:
     resolution: {integrity: sha512-dLitG79d+GV1Nb/VYcCDFivJeK1hiukt9QjRNVOsUtTy1rR1YJsmpGGTZ3qJos+uw7WmWF4wUwBd9jxjocFC2w==}
+    engines: {node: ^12.17.0 || ^14.13 || >=16.0.0}
+    dev: true
+
+  /chalk/5.4.1:
+    resolution: {integrity: sha512-zgVZuo2WcZgfUEmsn6eO3kINexW8RAE4maiQ8QNs8CtpPCSyMiYsULR3HQYkm3w8FIA3SberyMJMSldGsW+U3w==}
     engines: {node: ^12.17.0 || ^14.13 || >=16.0.0}
 
   /chardet/0.7.0:
@@ -6024,7 +6029,7 @@ packages:
       '@rollup/plugin-node-resolve': 15.0.1_rollup@3.20.2
       '@rollup/plugin-replace': 5.0.2_rollup@3.20.2
       '@rollup/pluginutils': 5.0.2_rollup@3.20.2
-      chalk: 5.3.0
+      chalk: 5.4.1
       consola: 2.15.3
       defu: 6.1.2
       esbuild: 0.17.14
