@@ -7,7 +7,7 @@ importers:
 
   .:
     specifiers:
-      '@antfu/ni': ^0.21.2
+      '@antfu/ni': ^23.3.1
       '@atao60/fse-cli': ^0.1.7
       '@openapi-generator-clients/config': workspace:*
       '@openapi-generator-clients/types': workspace:*
@@ -34,7 +34,7 @@ importers:
       webpack: '>=5.77.0'
       xo: ^0.53.1
     devDependencies:
-      '@antfu/ni': 0.21.2
+      '@antfu/ni': 23.3.1
       '@atao60/fse-cli': 0.1.7
       '@openapi-generator-clients/config': link:packages/config
       '@openapi-generator-clients/types': link:packages/types
@@ -155,8 +155,8 @@ packages:
       '@jridgewell/trace-mapping': 0.3.25
     dev: true
 
-  /@antfu/ni/0.21.2:
-    resolution: {integrity: sha512-nzj1bnkUIYZt6ANeQzGXGUOeeJ9k/TDnfwaAE/ElxSKQxBjjJ+PQMcZfpAKKwRc1rE+PGJ8WRQBWRUrQn7Mnuw==}
+  /@antfu/ni/23.3.1:
+    resolution: {integrity: sha512-C90iyzm/jLV7Lomv2UzwWUzRv9WZr1oRsFRKsX5HjQL4EXrbi9H/RtBkjCP+NF+ABZXUKpAa4F1dkoTaea4zHg==}
     hasBin: true
     dev: true
 
