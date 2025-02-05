@@ -18,7 +18,7 @@ importers:
       '@types/node': ^18.15.11
       concurrently: ^9.0.0
       fs-extra: ^11.1.1
-      is-ci: ^3.0.1
+      is-ci: ^4.1.0
       lint-staged: ^15.0.0
       openapi-generator-clients: workspace:*
       pnpm: 7.33.4
@@ -45,7 +45,7 @@ importers:
       '@types/node': 18.15.11
       concurrently: 9.0.0
       fs-extra: 11.1.1
-      is-ci: 3.0.1
+      is-ci: 4.1.0
       lint-staged: 15.0.0
       openapi-generator-clients: link:packages/openapi-generator-clients
       pnpm: 7.33.4
@@ -2247,6 +2247,11 @@ packages:
     engines: {node: '>=8'}
     dev: true
 
+  /ci-info/4.1.0:
+    resolution: {integrity: sha512-HutrvTNsF48wnxkzERIXOe5/mlcfFcbfCmwcg6CJnizbSue78AbDt+1cgl26zwn61WFxhcPykPfZrbqjGmBb4A==}
+    engines: {node: '>=8'}
+    dev: true
+
   /clean-regexp/1.0.0:
     resolution: {integrity: sha512-GfisEZEJvzKrmGWkvfhgzcz/BllN1USeqD2V6tg14OAOgaCD2Z/PUEuxnAZ/nPvmaHRG7a8y77p1T/IRQ4D1Hw==}
     engines: {node: '>=4'}
@@ -3993,11 +3998,11 @@ packages:
     engines: {node: '>= 0.4'}
     dev: true
 
-  /is-ci/3.0.1:
-    resolution: {integrity: sha512-ZYvCgrefwqoQ6yTyYUbQu64HsITZ3NfKX1lzaEYdkTDcfKzzCI/wthRRYKkdjHKFVgNiXKAKm65Zo1pk2as/QQ==}
+  /is-ci/4.1.0:
+    resolution: {integrity: sha512-Ab9bQDQ11lWootZUI5qxgN2ZXwxNI5hTwnsvOc1wyxQ7zQ8OkEDw79mI0+9jI3x432NfwbVRru+3noJfXF6lSQ==}
     hasBin: true
     dependencies:
-      ci-info: 3.8.0
+      ci-info: 4.1.0
     dev: true
 
   /is-core-module/2.11.0:
