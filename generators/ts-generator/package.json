@@ -37,7 +37,7 @@
 		"generators"
 	],
 	"engines": {
-		"node": ">=v16.20.2"
+		"node": ">=22.14.0"
 	},
 	"scripts": {
 		"build": "unbuild",
