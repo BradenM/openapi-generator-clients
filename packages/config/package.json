@@ -50,6 +50,6 @@
 		"@antfu/utils": "^0.7.8",
 		"@openapi-generator-clients/types": "workspace:*",
 		"immutable": "^4.3.7",
-		"type-fest": "^3.13.1"
+		"type-fest": "^4.41.0"
 	}
 }

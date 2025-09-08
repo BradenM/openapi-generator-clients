@@ -63,6 +63,6 @@
 		"minimist": "^1.2.8",
 		"pathe": "^1.1.2",
 		"rambdax": "8.1.0",
-		"type-fest": "^3.13.1"
+		"type-fest": "^4.41.0"
 	}
 }
