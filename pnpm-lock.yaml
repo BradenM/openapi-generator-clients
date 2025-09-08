@@ -96,7 +96,7 @@ importers:
       '@openapi-generator-clients/types': workspace:*
       '@openapi-generator-clients/utils': workspace:*
       '@openapitools/openapi-generator-cli': ^2.23.1
-      consola: ^2.15.3
+      consola: ^3.4.2
       execa: ^7.2.0
       fast-glob: ^3.3.3
       fs-extra: ^11.3.1
@@ -111,7 +111,7 @@ importers:
       '@openapi-generator-clients/types': link:../types
       '@openapi-generator-clients/utils': link:../utils
       '@openapitools/openapi-generator-cli': 2.23.1
-      consola: 2.15.3
+      consola: 3.4.2
       execa: 7.2.0
       fast-glob: 3.3.3
       fs-extra: 11.3.1
@@ -131,7 +131,7 @@ importers:
     specifiers:
       '@antfu/utils': ^0.7.8
       chalk: ^5.6.2
-      consola: ^2.15.3
+      consola: ^3.4.2
       fs-extra: ^11.3.1
       got: ^12.6.1
       jiti: ^1.21.7
@@ -139,7 +139,7 @@ importers:
     dependencies:
       '@antfu/utils': 0.7.8
       chalk: 5.6.2
-      consola: 2.15.3
+      consola: 3.4.2
       fs-extra: 11.3.1
       got: 12.6.1
       jiti: 1.21.7
