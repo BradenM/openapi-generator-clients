@@ -3,7 +3,7 @@
 	"type": "module",
 	"author": "Braden Mars <bradenmars@bradenmars.me>",
 	"private": true,
-	"packageManager": "pnpm@7.33.7",
+	"packageManager": "pnpm@10.0.0",
 	"engines": {
 		"node": ">=v16.20.2"
 	},
@@ -37,7 +37,7 @@
 		"is-ci": "^4.1.0",
 		"lint-staged": "^16.1.6",
 		"openapi-generator-clients": "workspace:*",
-		"pnpm": "7.33.4",
+		"pnpm": "10.0.0",
 		"prettier": "^3.0.0",
 		"rimraf": "^6.0.0",
 		"simple-git-hooks": "^2.8.1",
