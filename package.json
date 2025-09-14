@@ -35,7 +35,7 @@
 		"concurrently": "^9.0.0",
 		"fs-extra": "^11.1.1",
 		"is-ci": "^4.1.0",
-		"lint-staged": "^15.0.0",
+		"lint-staged": "^16.1.6",
 		"openapi-generator-clients": "workspace:*",
 		"pnpm": "7.33.4",
 		"prettier": "^3.0.0",
