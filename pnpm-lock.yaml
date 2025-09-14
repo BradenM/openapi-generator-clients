@@ -135,7 +135,7 @@ importers:
       fs-extra: ^11.3.1
       got: ^12.6.1
       jiti: ^1.21.7
-      list-github-dir-content: ^3.0.0
+      list-github-dir-content: ^4.0.4
     dependencies:
       '@antfu/utils': 0.7.8
       chalk: 5.6.2
@@ -143,7 +143,7 @@ importers:
       fs-extra: 11.3.1
       got: 12.6.1
       jiti: 1.21.7
-      list-github-dir-content: 3.0.0
+      list-github-dir-content: 4.0.4
 
 packages:
 
@@ -4591,12 +4591,9 @@ packages:
       - supports-color
     dev: true
 
-  /list-github-dir-content/3.0.0:
-    resolution: {integrity: sha512-bmyjpmEE5DggWv9zdTXj13AP9kbYkeZH1suo3Gx3nxCq1B84YwcYuWH/arkKisRomn+2bfGF5AUE2ScJ/Xeqeg==}
-    dependencies:
-      node-fetch: 2.6.9
-    transitivePeerDependencies:
-      - encoding
+  /list-github-dir-content/4.0.4:
+    resolution: {integrity: sha512-r41TU8MyYBcpndV+e8d5bxnH9u2jaoYGceJVvF/PlceUcOSTVjR9IDcmlkOnIpRsiS4K47TIo9jqFx7Uz5J19A==}
+    engines: {node: '>=18'}
     dev: false
 
   /listr2/9.0.3:
