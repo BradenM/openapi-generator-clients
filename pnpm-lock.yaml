@@ -81,7 +81,7 @@ importers:
     specifiers:
       '@antfu/utils': ^0.7.8
       '@openapi-generator-clients/types': workspace:*
-      immutable: ^4.3.7
+      immutable: ^4.3.8
       type-fest: ^3.13.1
     dependencies:
       '@antfu/utils': 0.7.8
@@ -100,7 +100,7 @@ importers:
       execa: ^7.2.0
       fast-glob: ^3.3.3
       fs-extra: ^11.3.4
-      immutable: ^4.3.7
+      immutable: ^4.3.8
       minimist: ^1.2.8
       pathe: ^1.1.2
       rambdax: 8.1.0
