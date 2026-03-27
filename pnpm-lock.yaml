@@ -95,7 +95,7 @@ importers:
       '@openapi-generator-clients/config': workspace:*
       '@openapi-generator-clients/types': workspace:*
       '@openapi-generator-clients/utils': workspace:*
-      '@openapitools/openapi-generator-cli': ^2.30.2
+      '@openapitools/openapi-generator-cli': ^2.31.0
       consola: ^2.15.3
       execa: ^7.2.0
       fast-glob: ^3.3.3
@@ -110,7 +110,7 @@ importers:
       '@openapi-generator-clients/config': link:../config
       '@openapi-generator-clients/types': link:../types
       '@openapi-generator-clients/utils': link:../utils
-      '@openapitools/openapi-generator-cli': 2.30.2
+      '@openapitools/openapi-generator-cli': 2.31.0
       consola: 2.15.3
       execa: 7.2.0
       fast-glob: 3.3.3
@@ -1187,20 +1187,20 @@ packages:
     engines: {node: '>=8'}
     dev: false
 
-  /@nestjs/axios/4.0.1_ze5n3kuw72jumkufvf7drzstlm:
+  /@nestjs/axios/4.0.1_3yyjl7ctd4ve3o7xoakvqzo2me:
     resolution: {integrity: sha512-68pFJgu+/AZbWkGu65Z3r55bTsCPlgyKaV4BSG8yUAD72q1PPuyVRgUwFv6BxdnibTUHlyxm06FmYWNC+bjN7A==}
     peerDependencies:
       '@nestjs/common': ^10.0.0 || ^11.0.0
       axios: ^1.3.1
       rxjs: ^7.0.0
     dependencies:
-      '@nestjs/common': 11.1.16_k4742egitefyufnv2ehz5inl5y
+      '@nestjs/common': 11.1.17_k4742egitefyufnv2ehz5inl5y
       axios: 1.13.6
       rxjs: 7.8.2
     dev: false
 
-  /@nestjs/common/11.1.16_k4742egitefyufnv2ehz5inl5y:
-    resolution: {integrity: sha512-JSIeW+USuMJkkcNbiOdcPkVCeI3TSnXstIVEPpp3HiaKnPRuSbUUKm9TY9o/XpIcPHWUOQItAtC5BiAwFdVITQ==}
+  /@nestjs/common/11.1.17_k4742egitefyufnv2ehz5inl5y:
+    resolution: {integrity: sha512-hLODw5Abp8OQgA+mUO4tHou4krKgDtUcM9j5Ihxncst9XeyxYBTt2bwZm4e4EQr5E352S4Fyy6V3iFx9ggxKAg==}
     peerDependencies:
       class-transformer: '>=0.4.1'
       class-validator: '>=0.13.2'
@@ -1212,7 +1212,7 @@ packages:
       class-validator:
         optional: true
     dependencies:
-      file-type: 21.3.0
+      file-type: 21.3.2
       iterare: 1.2.1
       load-esm: 1.0.3
       reflect-metadata: 0.2.2
@@ -1223,8 +1223,8 @@ packages:
       - supports-color
     dev: false
 
-  /@nestjs/core/11.1.16_ew6ngfvi5jmrumksj2j6b5wcxi:
-    resolution: {integrity: sha512-tXWXyCiqWthelJjrE0KLFjf0O98VEt+WPVx5CrqCf+059kIxJ8y1Vw7Cy7N4fwQafWNrmFL2AfN87DDMbVAY0w==}
+  /@nestjs/core/11.1.17_l4lgp6tgfwwhfh3mpsreqx5wja:
+    resolution: {integrity: sha512-lD5mAYekTTurF3vDaa8C2OKPnjiz4tsfxIc5XlcSUzOhkwWf6Ay3HKvt6FmvuWQam6uIIHX52Clg+e6tAvf/cg==}
     engines: {node: '>= 20'}
     requiresBuild: true
     peerDependencies:
@@ -1242,7 +1242,7 @@ packages:
       '@nestjs/websockets':
         optional: true
     dependencies:
-      '@nestjs/common': 11.1.16_k4742egitefyufnv2ehz5inl5y
+      '@nestjs/common': 11.1.17_k4742egitefyufnv2ehz5inl5y
       '@nuxt/opencollective': 0.4.1
       fast-safe-stringify: 2.1.1
       iterare: 1.2.1
@@ -1291,16 +1291,16 @@ packages:
       - encoding
     dev: false
 
-  /@openapitools/openapi-generator-cli/2.30.2:
-    resolution: {integrity: sha512-rGgLrY88f7/eTBc2wmehhcqQq7/1wEkNQUhvk1NF0nh/bCGGGRfzN6O4U2VHsREtshUT+IUaRoJwq4UeDrRXZQ==}
+  /@openapitools/openapi-generator-cli/2.31.0:
+    resolution: {integrity: sha512-sd+VIr5vx4PSknJLzh9thyRC8pw0r8ayCB4xH4G383BRClc3uFxIIz5EkBVndOumRsvPDip4wbszf5RRtxbmGA==}
     engines: {node: '>=20.19.0'}
     hasBin: true
     requiresBuild: true
     dependencies:
       '@inquirer/select': 1.3.3
-      '@nestjs/axios': 4.0.1_ze5n3kuw72jumkufvf7drzstlm
-      '@nestjs/common': 11.1.16_k4742egitefyufnv2ehz5inl5y
-      '@nestjs/core': 11.1.16_ew6ngfvi5jmrumksj2j6b5wcxi
+      '@nestjs/axios': 4.0.1_3yyjl7ctd4ve3o7xoakvqzo2me
+      '@nestjs/common': 11.1.17_k4742egitefyufnv2ehz5inl5y
+      '@nestjs/core': 11.1.17_l4lgp6tgfwwhfh3mpsreqx5wja
       '@nuxtjs/opencollective': 0.3.2
       axios: 1.13.6
       chalk: 4.1.2
@@ -2397,15 +2397,9 @@ packages:
       restore-cursor: 5.1.0
     dev: true
 
-  /cli-spinners/2.7.0:
-    resolution: {integrity: sha512-qu3pN8Y3qHNgE2AFweciB1IfMnmZ/fsNTEE+NOFjmGB2F/7rLhnhzppvpCnN4FovtP26k8lHyy9ptEbNwWFLzw==}
-    engines: {node: '>=6'}
-    dev: true
-
   /cli-spinners/2.9.2:
     resolution: {integrity: sha512-ywqV+5MmyL4E7ybXgKys4DugZbX0FC6LnwrhjuykIjnK9k8OQacQ7axGKnjDXWNhns0xot3bZI5h55H8yo9cJg==}
     engines: {node: '>=6'}
-    dev: false
 
   /cli-truncate/4.0.0:
     resolution: {integrity: sha512-nPdaFdQ0h/GEigbPClz11D0v/ZJEwxmeVZGeMo3Z5StPtUTkA9o1lD6QwoirYiSDzbcwn2XcjwmCp68W1IS4TA==}
@@ -3548,8 +3542,8 @@ packages:
       flat-cache: 3.0.4
     dev: true
 
-  /file-type/21.3.0:
-    resolution: {integrity: sha512-8kPJMIGz1Yt/aPEwOsrR97ZyZaD1Iqm8PClb1nYFclUCkBi0Ma5IsYNQzvSFS9ib51lWyIw5mIT9rWzI/xjpzA==}
+  /file-type/21.3.2:
+    resolution: {integrity: sha512-DLkUvGwep3poOV2wpzbHCOnSKGk1LzyXTv+aHFgN2VFl96wnp8YA9YjO2qPzg5PuL8q/SW9Pdi6WTkYOIh995w==}
     engines: {node: '>=20'}
     dependencies:
       '@tokenizer/inflate': 0.4.1
@@ -5122,7 +5116,7 @@ packages:
       bl: 4.1.0
       chalk: 4.1.2
       cli-cursor: 3.1.0
-      cli-spinners: 2.7.0
+      cli-spinners: 2.9.2
       is-interactive: 1.0.0
       is-unicode-supported: 0.1.0
       log-symbols: 4.1.0
