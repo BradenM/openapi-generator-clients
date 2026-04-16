@@ -7,7 +7,7 @@ importers:
 
   .:
     specifiers:
-      '@antfu/ni': ^29.0.0
+      '@antfu/ni': ^30.0.0
       '@atao60/fse-cli': ^0.1.7
       '@openapi-generator-clients/config': workspace:*
       '@openapi-generator-clients/types': workspace:*
@@ -34,7 +34,7 @@ importers:
       webpack: '>=5.77.0'
       xo: ^0.53.1
     devDependencies:
-      '@antfu/ni': 29.0.0
+      '@antfu/ni': 30.0.0
       '@atao60/fse-cli': 0.1.7
       '@openapi-generator-clients/config': link:packages/config
       '@openapi-generator-clients/types': link:packages/types
@@ -155,12 +155,11 @@ packages:
       '@jridgewell/trace-mapping': 0.3.31
     dev: true
 
-  /@antfu/ni/29.0.0:
-    resolution: {integrity: sha512-JbKx3nSr2HRLtchKfg6RCBB6lwJvYZIeGFTO0fzjXdaekIFHPMN6gfnRUZU1raPvXTVF7EqGTWEreDnZVvrzwQ==}
-    engines: {node: '>=20'}
+  /@antfu/ni/30.0.0:
+    resolution: {integrity: sha512-DqBVB3XqXH4VsDpER7iLlEtayMC98iXrY7kwBzp1v6LGc/6U6+qnN3+X0bcPK63LMXJCRG2D/XDq7dvtKDGogg==}
+    engines: {node: '>=20.19.0'}
     hasBin: true
     dependencies:
-      ansis: 4.2.0
       fzf: 0.5.2
       package-manager-detector: 1.6.0
       tinyexec: 1.0.4
@@ -2060,11 +2059,6 @@ packages:
   /ansi-styles/6.2.1:
     resolution: {integrity: sha512-bN798gFfQX+viw3R7yrGWRqnrN2oRkEkUjjl4JNn4E8GxxbjtG3FbrEIIY3l8/hrwUwIeCZvi4QuOTP4MErVug==}
     engines: {node: '>=12'}
-    dev: true
-
-  /ansis/4.2.0:
-    resolution: {integrity: sha512-HqZ5rWlFjGiV0tDm3UxxgNRqsOTniqoKZu0pIAfh7TZQMGuZK+hH0drySty0si0QXj1ieop4+SkSfPZBPPkHig==}
-    engines: {node: '>=14'}
     dev: true
 
   /arg/5.0.2:
