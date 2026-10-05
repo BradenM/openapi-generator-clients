@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.2](https://github.com/BradenM/openapi-generator-clients/compare/@openapi-generator-clients/ts-generator-v0.1.1...@openapi-generator-clients/ts-generator-v0.1.2) (2024-01-10)
+
+
+### Bug Fixes
+
+* **generators:** Config/types are deps not peer deps ([73cee05](https://github.com/BradenM/openapi-generator-clients/commit/73cee0569d15ebf434e2377982f857a812cc2e71))
+
 ## [0.1.1](https://github.com/BradenM/openapi-generator-clients/compare/@openapi-generator-clients/ts-generator-v0.1.0...@openapi-generator-clients/ts-generator-v0.1.1) (2023-02-13)
 
 
